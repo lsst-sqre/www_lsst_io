@@ -35,9 +35,12 @@ setup(
     packages=find_packages(exclude=('tests',)),
     use_scm_version=True,
     setup_requires=[
-        'setuptools-scm==1.15.6'
+        'setuptools-scm==1.15.6',
     ],
-    install_requires=[],
+    install_requires=[
+        'Flask==0.12.2',
+        'Jinja2==2.10'
+    ],
     extras_require={},
     entry_points={
         'console_scripts': []
