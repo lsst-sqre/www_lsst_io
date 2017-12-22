@@ -8,4 +8,5 @@ from flask import Blueprint
 
 view_blueprint = Blueprint('views', __name__)
 
-# TODO: import individual view modules
+# Individual view modules
+from . import homepage
