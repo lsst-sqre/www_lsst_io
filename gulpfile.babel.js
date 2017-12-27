@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
+import sourcemaps from 'gulp-sourcemaps';
 import minimist from 'minimist';
 
 // parse command line options
@@ -26,6 +27,11 @@ gulp.task('environment', () => console.log(`${env}`));
 // gulp scss
 gulp.task('scss', () => {
   return gulp.src(`${dirs.scss}/app.scss`)
+    // Initialize sourcemaps
+    .pipe(env === 'dev' ? sourcemaps.init() : gutil.noop())
+    // Compile scss
     .pipe(sass.sync({ includePaths: sassIncludes }).on('error', sass.logError))
+    // Write out sourcemaps
+    .pipe(env === 'dev' ? sourcemaps.write() : gutil.noop())
     .pipe(gulp.dest(dirs.static))
 });
