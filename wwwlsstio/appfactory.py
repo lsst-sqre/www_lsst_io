@@ -22,7 +22,10 @@ def create_app(profile='production'):
     app
         Flask application instance.
     """
-    app = Flask(__name__)
+    app = Flask(
+        __name__,
+        static_folder='static',  # package directory with static assets
+        template_folder='templates')  # package dir with Jinja templates
 
     profile = os.getenv('WWWLSSTIO_PROFILE', profile)
 
