@@ -7,7 +7,7 @@ help:
 	@echo "  make version     (print app version)"
 
 server:
-	FLASK_APP=wwwlsstio:app flask run
+	FLASK_DEBUG=1 WWWLSSTIO_PROFILE=dev FLASK_APP=wwwlsstio:app flask run
 
 scss:
 	gulp scss

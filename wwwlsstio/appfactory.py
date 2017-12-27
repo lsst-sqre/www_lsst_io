@@ -10,12 +10,12 @@ from flask import Flask
 from .config import config
 
 
-def create_app(profile='production'):
+def create_app(profile='prod'):
     """Create and configure the Flask application.
 
     The application configuration profile can be changed with the
     ``WWWLSSTIO_PROFILE`` environment variable. The default configuration
-    is ``production``. Other profiles are ``dev`` and ``test``.
+    is ``prod``. Other profiles are ``dev`` and ``test``.
 
     Returns
     -------
@@ -28,6 +28,7 @@ def create_app(profile='production'):
         template_folder='templates')  # package dir with Jinja templates
 
     profile = os.getenv('WWWLSSTIO_PROFILE', profile)
+    print("Using profile {}".format(profile))
 
     # apply configuration
     app.config.from_object(config[profile])
