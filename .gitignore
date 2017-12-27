@@ -105,3 +105,6 @@ venv.bak/
 
 # Node
 node_modules/
+
+# Compiled assets
+wwwlsstio/static/app.css
