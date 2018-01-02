@@ -108,3 +108,4 @@ node_modules/
 
 # Compiled assets
 wwwlsstio/static/app.css
+_build/

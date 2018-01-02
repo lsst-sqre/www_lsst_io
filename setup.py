@@ -39,7 +39,8 @@ setup(
     ],
     install_requires=[
         'Flask==0.12.2',
-        'Jinja2==2.10'
+        'Jinja2==2.10',
+        'Frozen-Flask==0.15'
     ],
     extras_require={},
     entry_points={

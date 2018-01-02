@@ -4,6 +4,7 @@
 __all__ = ['config']
 
 import abc
+import os
 
 
 class Config(object):
@@ -13,6 +14,11 @@ class Config(object):
 
     DEBUG = True
 
+    # Basic Frozen-Flask configurations
+    # https://pythonhosted.org/Frozen-Flask/#configuration
+    FREEZER_DESTINATION = os.path.join(os.path.abspath(os.getcwd()), '_build')
+    FREEZER_RELATIVE_URLS = True
+
     @abc.abstractclassmethod
     def init_app(cls, app):
         pass
@@ -20,6 +26,10 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     """Local development configuration."""
+
+    # Frozen-Flask configurations
+    # https://pythonhosted.org/Frozen-Flask/#configuration
+    FREEZER_IGNORE_404_NOT_FOUND = True
 
     @classmethod
     def init_app(cls, app):
@@ -38,6 +48,10 @@ class ProductionConfig(Config):
     """Production configuration."""
 
     DEBUG = False
+
+    # Frozen-Flask configurations
+    # https://pythonhosted.org/Frozen-Flask/#configuration
+    FREEZER_BASE_URL = 'https://www.lsst.io/'
 
     @classmethod
     def init_app(cls, app):
