@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import browserSync from 'browser-sync';
 import cleanCSS from 'gulp-clean-css';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -37,6 +38,18 @@ cleanCssConfig.set('prod', {
 // Print the current environment setting
 gulp.task('environment', () => console.log(`${env}`));
 
+// Initialize browser-sync and watch
+gulp.task('browser-sync', ['scss'], () => {
+  browserSync.init({
+    proxy: "localhost:5000"  // Flask server
+  });
+
+  // Watch for Flask app and template changes.
+  gulp.watch('wwwlsstio/**/*.{py,jinja}', ['browser-sync-reload']);
+  // Watch SCSS
+  gulp.watch(`${dirs.scss}/**/*.scss`, ['scss']);
+});
+
 // Compile Scss
 // gulp scss
 gulp.task('scss', () => {
@@ -53,6 +66,18 @@ gulp.task('scss', () => {
     stream.pipe(sourcemaps.write());
   }
 
+  // Write out CSS
   stream.pipe(gulp.dest(dirs.static));
+  // Stream CSS into the browser
+  stream.pipe(browserSync.stream());
   return stream;
 });
+
+// Reload Browser Sync (synchronously)
+gulp.task('browser-sync-reload', (done) => {
+  browserSync.reload();
+  done();
+});
+
+// Default task
+gulp.task('default', ['browser-sync']);
