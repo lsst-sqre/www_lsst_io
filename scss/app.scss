@@ -14,6 +14,7 @@
 @import "settings/settings.type";
 @import 'inuitcss/settings/settings.core';
 @import "settings/settings.global";
+@import "settings/settings.colors";
 
 // ===========================================================================
 // TOOLS
@@ -23,6 +24,7 @@
 @import "inuitcss/tools/tools.clearfix";
 @import "inuitcss/tools/tools.hidden";
 @import "sass-mq/mq";
+@import "tools/tools.fonts";
 
 // ===========================================================================
 // GENERIC
@@ -41,6 +43,7 @@
 @import "inuitcss/elements/elements.headings";
 @import "inuitcss/elements/elements.images";
 @import "inuitcss/elements/elements.tables";
+@import "elements/elements.page";
 
 // ===========================================================================
 // OBJECTS
