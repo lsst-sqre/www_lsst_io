@@ -34,13 +34,15 @@ setup(
     keywords='lsst lsst-the-docs',
     packages=find_packages(exclude=('tests',)),
     use_scm_version=True,
+    include_package_data=True,
     setup_requires=[
         'setuptools-scm==1.15.6',
     ],
     install_requires=[
         'Flask==0.12.2',
         'Jinja2==2.10',
-        'Frozen-Flask==0.15'
+        'Frozen-Flask==0.15',
+        'PyYAML==3.12'
     ],
     extras_require={},
     entry_points={
