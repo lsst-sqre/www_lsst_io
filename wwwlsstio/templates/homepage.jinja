@@ -19,10 +19,16 @@
 
       {% for item in data %}
         <article class="c-project-tile">
-          <h2><a href="{{ item.url  }}">{{ item.title }}</a></h2>
-          <p>{{ item.handle }}<p>
+          <header class="c-project-tile__header">
+            <h2 class="c-project-tile__title"><a class="u-hidden-link" href="{{ item.url  }}">{{ item.title }}</a></h2>
+            <p class="c-project-tile__subtitle">{{ item.handle }}<p>
+          </header>
+
           <p><a href="{{ item.url }}">{{ item.url }}</a></p>
-          {{ item.abstract_html|safe }}
+
+          <section class="c-project-tile__description">
+            {{ item.abstract_html|safe }}
+          </section>
         </article>
       {% endfor %}
 
