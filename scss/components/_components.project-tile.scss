@@ -40,6 +40,17 @@
   }
 
   &__description {
-    background-color: yellow;
+    // Constrain the height of the description text.
+    max-height: 200px;
+    overflow: auto;
+
+    // Use the shadow effect to give the users a hint that they can scroll
+    // This is based on Chapter 34 of CSS Secrets by Lea Verou.
+    background: linear-gradient(white 15px, hsla(0,0%,100%,0)) 0 0 / 100% 50px,
+                radial-gradient(at top, rgba(0,0,0,0.2), transparent 70%) 0 0 / 100% 15px,
+                linear-gradient(to top, white 15px, hsla(0,0%,100%,0)) bottom / 100% 50px,
+                radial-gradient(at bottom, rgba(0,0,0,0.2), transparent 70%) bottom / 100% 15px;
+    background-repeat: no-repeat;
+    background-attachment: local, scroll, local, scroll;
   }
 }
