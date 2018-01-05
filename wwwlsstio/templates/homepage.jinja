@@ -8,14 +8,32 @@
   {# <meta name="description" content="{{ config['page_description'] }}"> #}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+  <link rel="stylesheet" href="https://use.typekit.net/alj0azf.css">
 </head>
 
 <body class="wwwlsstio-page">
+  <section class="o-wrapper">
+    <h1>LSST Documentation Hub</h1>
 
-<h1>Hello world</h1>
+    <section class="c-project-tile-grid">
 
-<p>This is www.lsst.io.</p>
+      {% for item in data %}
+        <article class="c-project-tile">
+          <header class="c-project-tile__header">
+            <h2 class="c-project-tile__title"><a class="u-hidden-link" href="{{ item.url  }}">{{ item.title }}</a></h2>
+            <p class="c-project-tile__subtitle">{{ item.handle }}<p>
+          </header>
 
+          <p><a href="{{ item.url }}">{{ item.url }}</a></p>
+
+          <section class="c-project-tile__description">
+            {{ item.abstract_html|safe }}
+          </section>
+        </article>
+      {% endfor %}
+
+    </section>
+  </section>
 </body>
 
 </html>
