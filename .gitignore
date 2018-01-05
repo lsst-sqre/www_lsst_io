@@ -102,3 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Node
+node_modules/
+
+# Compiled assets
+wwwlsstio/static/app.css
+_build/

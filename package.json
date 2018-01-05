@@ -1,0 +1,36 @@
+{
+  "name": "www_lsst_io",
+  "version": "0.1.0",
+  "description": "www.lsst.io site generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsst-sqre/www_lsst_io.git"
+  },
+  "keywords": [
+    "lsst",
+    "documentation"
+  ],
+  "author": "Association of Universities for Research in Astronomy, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lsst-sqre/www_lsst_io/issues"
+  },
+  "homepage": "https://github.com/lsst-sqre/www_lsst_io#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "minimist": "^1.2.0"
+  },
+  "dependencies": {
+    "inuitcss": "^6.0.0-beta.5"
+  }
+}
