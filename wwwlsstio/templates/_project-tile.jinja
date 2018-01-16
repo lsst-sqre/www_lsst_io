@@ -1,0 +1,28 @@
+{# project-tile partial
+
+Use this inside a <section class="c-project-tile-grid">.
+
+Variables
+---------
+item
+  An object with project data attributes.
+current_header_level : int, optional
+  Header level that should be used as the title. Default is 2 (for <h2>).
+#}
+
+{% if current_header_level is not defined %}
+  {% set current_header_level = 2 %}
+{% endif %}
+
+<article class="c-project-tile">
+  <header class="c-project-tile__header">
+    <h{{ current_header_level }} class="c-project-tile__title"><a class="u-hidden-link" href="{{ item.url  }}">{{ item.title }}</a></h{{ current_header_level}}>
+    <p class="c-project-tile__subtitle">{{ item.handle }}<p>
+  </header>
+
+  <p><a href="{{ item.url }}">{{ item.url }}</a></p>
+
+  <section class="c-project-tile__description">
+    {{ item.abstract_html|safe }}
+  </section>
+</article>
