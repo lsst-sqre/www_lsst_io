@@ -16,7 +16,7 @@ Use the local development server to preview and iterate on the site.
 
 2. In another terminal, start Browsersync and the Gulp asset pipeline::
 
-     make browser-sync
+     make watch
 
 3. Follow the printed instructions to view the site, likely at http://localhost:3000
 
