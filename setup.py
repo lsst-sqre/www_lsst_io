@@ -42,7 +42,8 @@ setup(
         'Flask==0.12.2',
         'Jinja2==2.10',
         'Frozen-Flask==0.15',
-        'PyYAML==3.12'
+        'PyYAML==3.12',
+        'pymongo==3.6.0'
     ],
     extras_require={},
     entry_points={

@@ -38,4 +38,9 @@ def create_app(profile='prod'):
     from .views import view_blueprint
     app.register_blueprint(view_blueprint, url_prefix=None)
 
+    # Because of the order of imports and app creation, I'm creating
+    # the teardown callback here.
+    from .mongo import init_mongo_teardown
+    init_mongo_teardown(app)
+
     return app

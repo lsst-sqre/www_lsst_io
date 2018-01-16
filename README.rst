@@ -10,14 +10,18 @@ Development workflow
 
 Use the local development server to preview and iterate on the site.
 
-1. In one terminal, start the Flask server::
+1. Set the ``PROJECTMETA_MONGO`` environment variable with the URI for Projectmeta's MongoDB (``mongodb://`` or ``mongodb+srv://``).
+
+2. Start the Flask server::
 
      make server
 
-2. In another terminal, start Browsersync and the Gulp asset pipeline::
+3. In second terminal, start Browsersync and the Gulp asset pipeline::
 
      make watch
 
-3. Follow the printed instructions to view the site, likely at http://localhost:3000
+4. Follow the printed instructions to view the site, likely at http://localhost:3000
 
 Browsersync streams CSS changes to the browser and application changes trigger a browser reload.
+
+.. _Browsersync: https://browsersync.io

@@ -19,6 +19,8 @@ class Config(object):
     FREEZER_DESTINATION = os.path.join(os.path.abspath(os.getcwd()), '_build')
     FREEZER_RELATIVE_URLS = True
 
+    MONGO_URI = os.getenv('PROJECTMETA_MONGO', default=None)
+
     @abc.abstractclassmethod
     def init_app(cls, app):
         pass
