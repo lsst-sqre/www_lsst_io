@@ -16,13 +16,13 @@ current_header_level : int, optional
 
 <article class="c-project-tile">
   <header class="c-project-tile__header">
-    <h{{ current_header_level }} class="c-project-tile__title"><a class="u-hidden-link" href="{{ item.url  }}">{{ item.title }}</a></h{{ current_header_level}}>
-    <p class="c-project-tile__subtitle">{{ item.handle }}<p>
+    <h{{ current_header_level }} class="c-project-tile__title"><a class="u-hidden-link" href="{{ item.url  }}">{{ item.name }}</a></h{{ current_header_level}}>
+    <p class="c-project-tile__subtitle">{{ item.reportNumber }}<p>
   </header>
 
   <p><a href="{{ item.url }}">{{ item.url }}</a></p>
 
   <section class="c-project-tile__description">
-    {{ item.abstract_html|safe }}
+    {{ item.description|safe }}
   </section>
 </article>
