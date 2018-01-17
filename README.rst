@@ -5,6 +5,8 @@ www.lsst.io
 www.lsst.io is a portal for LSST project information and metadata.
 It's designed to help LSST staff and the astronomy community discover documentation, software, and other bits of information produced by the LSST project.
 
+The site uses data acquired separately by pipelines in the `lsst-projectmeta-kit`_ package.
+
 Development set up
 ==================
 
@@ -41,4 +43,30 @@ To iterate on the site design, use the local development server:
 
 Browsersync_ streams CSS changes to the browser and application changes trigger a browser reload.
 
+Deployment
+==========
+
+Set the following environment variables for LSST the Docs and Projectmeta:
+
+- ``LTD_KEEPER_USER`` — Password for LTD Keeper instance.
+- ``LTD_KEEPER_PASSWORD`` — Username for LTD Keeper instance.
+- ``LTD_MASON_AWS_ID`` — AWS access key ID.
+- ``LTD_MASON_AWS_SECRET`` — AWS secret access key.
+- ``PROJECTMETA_MONGO`` — URI of Projectmeta's MongoDB (``mongodb://`` or ``mongodb+srv://``).
+
+Then:
+
+1. Compile the Sass::
+
+      make scss
+
+2. Compile the static HTML site::
+
+      make site
+
+3. Deploy the site::
+
+      make deploy
+
 .. _Browsersync: https://browsersync.io
+.. _lsst-projectmeta-kit: https://github.com/lsst-sqre/lsst-projectmeta-kit
