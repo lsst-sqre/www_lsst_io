@@ -8,6 +8,7 @@ import os
 from flask import Flask
 
 from .config import config
+from .filters import register_filters
 
 
 def create_app(profile='prod'):
@@ -42,5 +43,8 @@ def create_app(profile='prod'):
     # the teardown callback here.
     from .mongo import init_mongo_teardown
     init_mongo_teardown(app)
+
+    # Jinja filters
+    register_filters(app)
 
     return app

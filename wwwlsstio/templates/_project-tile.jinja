@@ -20,7 +20,7 @@ current_header_level : int, optional
     <p class="c-project-tile__subtitle">{{ item.reportNumber }}<p>
   </header>
 
-  <p><a href="{{ item.url }}">{{ item.url }}</a></p>
+  <p><a href="{{ item.url }}">{{ item.url | strip_protocol }}</a></p>
 
   <section class="c-project-tile__description">
     {{ item.description|safe }}
