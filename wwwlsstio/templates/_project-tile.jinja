@@ -35,4 +35,8 @@ current_header_level : int, optional
   <section class="c-project-tile__description">
     {{ item.description|safe }}
   </section>
+
+  {% if item.dateModified %}
+    <p class="c-project-tile__datetime"><time datetime="{{ item.dateModified | format_iso_8601_datetime }}">{{ item.dateModified | format_iso_8601_date }}</time><p>
+  {% endif %}
 </article>

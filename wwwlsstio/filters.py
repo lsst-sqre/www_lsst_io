@@ -12,6 +12,9 @@ def register_filters(app):
     app.jinja_env.filters['strip_protocol'] = strip_protocol
     app.jinja_env.filters['format_schema_author_name'] \
         = format_schema_author_name
+    app.jinja_env.filters['format_iso_8601_date'] = format_iso_8061_date
+    app.jinja_env.filters['format_iso_8601_datetime'] \
+        = format_iso_8061_datetime
 
 
 def strip_protocol(url):
@@ -33,3 +36,15 @@ def format_schema_author_name(author):
         # NOTE: there may be other ways to encode a name in schema.org JSON,
         # so this function may have to be expanded to deal with those.
         return 'unknown'
+
+
+def format_iso_8061_date(value):
+    """Format a `datetime.datetime` into a 'YYYY-MM-DD' (ISO 8601) date string.
+    """
+    return value.strftime('%Y-%m-%d')
+
+
+def format_iso_8061_datetime(value):
+    """Format a `datetime.datetime` into a full ISO 8601 datetime string.
+    """
+    return value.isoformat(sep='T')
