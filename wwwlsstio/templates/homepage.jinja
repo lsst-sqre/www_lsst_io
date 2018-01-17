@@ -15,14 +15,45 @@
   <section class="o-wrapper">
     <h1>LSST Documentation Hub</h1>
 
-    <section class="c-project-tile-grid">
+    <section id="dmtn" class="c-tile-section">
+      <h2>LSST Data Management Technical Notes</h2>
 
-      {% set current_header_level = 2 %}
-      {% for item in data %}
-        {% include "_project-tile.jinja" %}
-      {% endfor %}
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
 
+        {% for item in datasets['DMTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
     </section>
+
+    <section id="sqr" class="c-tile-section">
+      <h2>LSST SQuaRE Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['SQR'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="smtn" class="c-tile-section">
+      <h2>LSST Simulations Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['SMTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
   </section>
 </body>
 

@@ -14,9 +14,17 @@ def get_homepage():
 
     mongo_client = get_mongo()
     collection = mongo_client['lsstprojectmeta']['resources']
-    query = {'data.reportNumber': {'$regex': r'^SQR-'}}
-    cursor = collection.find(query)\
-        .sort('data.reportNumber', pymongo.DESCENDING)
-    data = [doc['data'] for doc in cursor]
 
-    return render_template('homepage.jinja', data=data)
+    queries = {
+        'SQR': {'data.reportNumber': {'$regex': r'^SQR-'}},
+        'DMTN': {'data.reportNumber': {'$regex': r'^DMTN-'}},
+        'SMTN': {'data.reportNumber': {'$regex': r'^SMTN-'}},
+    }
+
+    datasets = {}
+    for series, query in queries.items():
+        cursor = collection.find(query)\
+            .sort('data.reportNumber', pymongo.DESCENDING)
+        datasets[series] = [doc['data'] for doc in cursor]
+
+    return render_template('homepage.jinja', datasets=datasets)
