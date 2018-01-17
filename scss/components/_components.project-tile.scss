@@ -46,6 +46,10 @@
     @include source-sans-bold;
   }
 
+  &__authors {
+    margin-bottom: 1em;
+  }
+
   &__description {
     // Constrain the height of the description text.
     max-height: 200px;

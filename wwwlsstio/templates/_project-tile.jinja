@@ -22,6 +22,16 @@ current_header_level : int, optional
 
   <p><a href="{{ item.url }}">{{ item.url | strip_protocol }}</a></p>
 
+  {% if item.author %}
+  <section class="c-project-tile__authors">
+    <ul class="c-author-list">
+      {% for author in item.author %}
+        <li>{{ author | format_schema_author_name }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   <section class="c-project-tile__description">
     {{ item.description|safe }}
   </section>
