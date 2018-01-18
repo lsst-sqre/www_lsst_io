@@ -44,6 +44,7 @@ setup(
         'Frozen-Flask==0.15',
         'PyYAML==3.12',
         'pymongo==3.6.0',
+        'misaka==2.1.0',
         'ltd-mason==0.2.5'
     ],
     extras_require={},

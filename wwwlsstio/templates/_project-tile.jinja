@@ -32,9 +32,11 @@ current_header_level : int, optional
   </section>
   {% endif %}
 
+  {% if item.description %}
   <section class="c-project-tile__description">
-    {{ item.description|safe }}
+    {{ item.description | markdown | safe }}
   </section>
+  {% endif %}
 
   {% if item.dateModified %}
     <p class="c-project-tile__datetime"><time datetime="{{ item.dateModified | format_iso_8601_datetime }}">{{ item.dateModified | format_iso_8601_date }}</time><p>

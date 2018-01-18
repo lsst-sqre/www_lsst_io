@@ -5,6 +5,8 @@ __all__ = ('register_filters',)
 
 from urllib.parse import urlparse
 
+import misaka
+
 
 def register_filters(app):
     """Add filters to the Flask application's Jinja environment.
@@ -15,6 +17,7 @@ def register_filters(app):
     app.jinja_env.filters['format_iso_8601_date'] = format_iso_8061_date
     app.jinja_env.filters['format_iso_8601_datetime'] \
         = format_iso_8061_datetime
+    app.jinja_env.filters['markdown'] = format_markdown
 
 
 def strip_protocol(url):
@@ -48,3 +51,9 @@ def format_iso_8061_datetime(value):
     """Format a `datetime.datetime` into a full ISO 8601 datetime string.
     """
     return value.isoformat(sep='T')
+
+
+def format_markdown(content):
+    """Format text Markdown/HTML content into HTML.
+    """
+    return misaka.html(content)

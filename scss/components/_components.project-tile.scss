@@ -50,10 +50,8 @@
     margin-bottom: 1em;
   }
 
-  // Hack to push the datetime down the tile.
-  // I'm not entirely sure why we need to eat up the bottom margin.
   &__description + &__datetime {
-    margin-top: 1em;
+    // I'm not entirely sure why we need to eat up the bottom margin.
     margin-bottom: -1em;
   }
 
