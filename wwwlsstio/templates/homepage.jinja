@@ -12,28 +12,58 @@
 </head>
 
 <body class="wwwlsstio-page">
-  <section class="o-wrapper">
+  <main class="o-wrapper">
     <h1>LSST Documentation Hub</h1>
 
-    <section class="c-project-tile-grid">
+    <nav>
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#dmtn">LSST Data Management Technical Notes (DMTN)</a></li>
+        <li><a href="#sqr">LSST SQuaRE Technical Notes (SQR)</a></li>
+        <li><a href="#smtn">LSST Simulations Technical Notes (SMTN)</a></li>
+      </ul>
+    </nav>
 
-      {% for item in data %}
-        <article class="c-project-tile">
-          <header class="c-project-tile__header">
-            <h2 class="c-project-tile__title"><a class="u-hidden-link" href="{{ item.url  }}">{{ item.title }}</a></h2>
-            <p class="c-project-tile__subtitle">{{ item.handle }}<p>
-          </header>
+    <section id="dmtn" class="c-tile-section">
+      <h2>LSST Data Management Technical Notes</h2>
 
-          <p><a href="{{ item.url }}">{{ item.url }}</a></p>
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
 
-          <section class="c-project-tile__description">
-            {{ item.abstract_html|safe }}
-          </section>
-        </article>
-      {% endfor %}
-
+        {% for item in datasets['DMTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
     </section>
-  </section>
+
+    <section id="sqr" class="c-tile-section">
+      <h2>LSST SQuaRE Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['SQR'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="smtn" class="c-tile-section">
+      <h2>LSST Simulations Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['SMTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+  </main>
 </body>
 
 </html>
