@@ -19,6 +19,10 @@ def get_homepage():
         'SQR': {'data.reportNumber': {'$regex': r'^SQR-'}},
         'DMTN': {'data.reportNumber': {'$regex': r'^DMTN-'}},
         'SMTN': {'data.reportNumber': {'$regex': r'^SMTN-'}},
+        'LDM': {'data.reportNumber': {'$regex': r'^LDM-'}},
+        'LSE': {'data.reportNumber': {'$regex': r'^LSE-'}},
+        'LPM': {'data.reportNumber': {'$regex': r'^LPM-'}},
+        'DMTR': {'data.reportNumber': {'$regex': r'^DMTR-'}},
     }
 
     datasets = {}
