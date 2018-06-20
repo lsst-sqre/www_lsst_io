@@ -1,0 +1,24 @@
+sudo: false
+dist: trusty
+language: python
+matrix:
+  include:
+    # Job that can also build the Docker image
+    - python: "3.6"
+      env: "DEPLOY_DOCKER_IMAGE=true"
+install:
+  - "nvm install node"  # latest version of node
+  - "nvm use node"
+  - "npm install"
+  - "npm install gulp --global"
+  - "pip install -e ."
+script:
+  - "make scss"
+  - "make image"
+after_success:
+  - "make travis-docker-deploy"
+env:
+  global:
+    - "DEPLOY_DOCKER_IMAGE=false"  # disable docker push in regular test matrix
+    # DOCKER_USERNAME and DOCKER_PASSWORD
+    - secure: "YmfiVXcwEQkTIyPEHv7cPtOqibXp0w2RbpnC1BepmPxqGkAmYpsvogg8+EOdQW5FhGo7tBsZBiC2rp4G/xXa3hlkrhIGkdpYFAIKE0Czk5PVbvkvr6km3x9ZSD1ngWowNq/ABHLVyIIrfIjPTnqetlTDlTuLUiLY0Vu02m05VdJcQ/QODV8FjhKrGXzidQJzj+JFdb5F44xq1PjE3vAkb/pYNyAtrkfVCLSzBhZgUstkd+ZbMIwvCGwB634kOuL0fyEkT8CB8wuHxJmrl11Dawuw4brdHIFlCNGasG5pNIAc8fVwoGk0BpnFS9ye+7QuYp+fnQ9fCIuXBlNxjDDdYM1btipRGgT5+UVKuJB4FYC6Jlvk5tSqh5dEr2ckcRyxRoAVSa6F18PtzcWGbwJdyXfk+a+ZVkDeBm6H0jHZys7kclg9ymMW7lLUq2/ZANSGU/M9PfICKiFlt/qs53roM0NdTOXn8okd6Ymgd3CgU3czHiefysDD2usyOL7ElM8sM3F8kpEymOzd5PtTCjxniZNkJXhdva27KYsqY4IHCcoTMWQ9X8oxweE7KMlGmhhY/Pw/hTc1HYcrMeXjrcGbOzKHRrAcZqg7dXLc+wpgtdtd9Uxl1Rr0VD0No08n0uE97VdCLIg01qnVayhpiigK+yLoPIDPRWzil3rXCA0nl5I="
