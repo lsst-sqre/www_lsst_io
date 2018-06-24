@@ -29,7 +29,6 @@ def create_app(profile='prod'):
         template_folder='templates')  # package dir with Jinja templates
 
     profile = os.getenv('WWWLSSTIO_PROFILE', profile)
-    print("Using profile {}".format(profile))
 
     # apply configuration
     app.config.from_object(config[profile])
