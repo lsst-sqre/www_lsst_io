@@ -10,7 +10,13 @@ LABEL version="$VERSION"
 
 COPY dist/www-lsst-io-$VERSION.tar.gz .
 
+ENV FLASK_APP wwwlsstio:app
+
 RUN pip install --upgrade pip && \
     pip install www-lsst-io-${VERSION}.tar.gz && \
     rm www-lsst-io-$VERSION.tar.gz && \
     rm -rf /root/.cache
+
+# Run `flask build` as the default command
+ENTRYPOINT ["flask"]
+CMD ["build"]
