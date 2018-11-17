@@ -23,6 +23,7 @@ def get_homepage():
         'LSE': {'data.reportNumber': {'$regex': r'^LSE-'}},
         'LPM': {'data.reportNumber': {'$regex': r'^LPM-'}},
         'DMTR': {'data.reportNumber': {'$regex': r'^DMTR-'}},
+        'PSTN': {'data.reportNumber': {'$regex': r'^PSTN-'}},
     }
 
     datasets = {}
@@ -30,5 +31,6 @@ def get_homepage():
         cursor = collection.find(query)\
             .sort('data.reportNumber', pymongo.DESCENDING)
         datasets[series] = [doc['data'] for doc in cursor]
+        print('Series {0} {1:d} docs'.format(series, len(datasets[series])))
 
     return render_template('homepage.jinja', datasets=datasets)

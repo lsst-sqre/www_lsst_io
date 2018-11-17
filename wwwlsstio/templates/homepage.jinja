@@ -20,6 +20,7 @@
       <ul>
         <li><a href="#lpm">LSST Project Management (LPM)</a></li>
         <li><a href="#lse">LSST Systems Engineering (LSE)</a></li>
+        <li><a href="#pstn">LSST Project Science Team Technical Notes (PSTN)</a></li>
         <li><a href="#ldm">LSST Data Management (LDM)</a></li>
         <li><a href="#dmtr">LSST Data Management Test Reports (DMTR)</a></li>
         <li><a href="#dmtn">LSST Data Management Technical Notes (DMTN)</a></li>
@@ -49,6 +50,19 @@
         {% set current_header_level = 3 %}
 
         {% for item in datasets['LSE'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="pstn" class="c-tile-section">
+      <h2>LSST Project Science Team Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['PSTN'] %}
           {% include "_project-tile.jinja" %}
         {% endfor %}
       </div>
