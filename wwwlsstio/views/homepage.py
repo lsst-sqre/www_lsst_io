@@ -1,6 +1,8 @@
 """Homepage view.
 """
 
+import datetime
+
 from flask import render_template
 import pymongo
 
@@ -33,4 +35,12 @@ def get_homepage():
         datasets[series] = [doc['data'] for doc in cursor]
         print('Series {0} {1:d} docs'.format(series, len(datasets[series])))
 
-    return render_template('homepage.jinja', datasets=datasets)
+    date = datetime.datetime.now()
+    date_updated = '{month} {day:d}, {year:d}'.format(
+        month=date.strftime('%B'),
+        day=date.day,
+        year=date.year)
+
+    return render_template(
+        'homepage.jinja', datasets=datasets,
+        date_updated=date_updated)
