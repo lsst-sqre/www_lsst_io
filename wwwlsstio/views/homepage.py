@@ -37,6 +37,13 @@ def get_homepage():
         datasets[series] = [doc['data'] for doc in cursor]
         print('Series {0} {1:d} docs'.format(series, len(datasets[series])))
 
+        # Resort by the number
+        datasets[series] = sorted(
+            datasets[series],
+            key=lambda x: int(x['reportNumber'].split('-')[-1]),
+            reverse=True
+        )
+
     date = datetime.datetime.now()
     date_updated = '{month} {day:d}, {year:d}'.format(
         month=date.strftime('%B'),
