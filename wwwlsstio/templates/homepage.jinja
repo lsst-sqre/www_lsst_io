@@ -26,8 +26,10 @@
         <li><a href="#ldm">LSST Data Management (LDM)</a></li>
         <li><a href="#dmtr">LSST Data Management Test Reports (DMTR)</a></li>
         <li><a href="#dmtn">LSST Data Management Technical Notes (DMTN)</a></li>
-        <li><a href="#sqr">LSST SQuaRE Technical Notes (SQR)</a></li>
+        <li><a href="#sitcomtn">LSST Systems Integrations, Testing, and Commissioning Technical Notes (SITCOMTN)</a></li>
         <li><a href="#smtn">LSST Simulations Technical Notes (SMTN)</a></li>
+        <li><a href="#sqr">LSST SQuaRE Technical Notes (SQR)</a></li>
+        <li><a href="#tstn">LSST Telescope & Site Technical Notes (TSTN)</a></li>
       </ul>
     </nav>
 
@@ -109,14 +111,14 @@
       </div>
     </section>
 
-    <section id="sqr" class="c-tile-section">
-      <h2>LSST SQuaRE Technical Notes</h2>
+    <section id="sitcomtn" class="c-tile-section">
+      <h2>LSST Systems Integration, Testing, and Commissioning Technical Notes</h2>
 
       <div class="c-project-tile-grid">
         {# Set header level used for project tiles #}
         {% set current_header_level = 3 %}
 
-        {% for item in datasets['SQR'] %}
+        {% for item in datasets['SITCOMTN'] %}
           {% include "_project-tile.jinja" %}
         {% endfor %}
       </div>
@@ -130,6 +132,32 @@
         {% set current_header_level = 3 %}
 
         {% for item in datasets['SMTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="sqr" class="c-tile-section">
+      <h2>LSST SQuaRE Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['SQR'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="tstn" class="c-tile-section">
+      <h2>LSST Telescope & Site Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['TSTN'] %}
           {% include "_project-tile.jinja" %}
         {% endfor %}
       </div>
