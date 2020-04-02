@@ -1,0 +1,42 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-json
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v6.8.0
+    hooks:
+      - id: eslint
+        additional_dependencies:
+          # Manually mirror dev dependencies related to eslint here
+          - babel-eslint@9.0.0
+          - eslint@5.16.0
+          - eslint-config-airbnb@17.1.1
+          - eslint-config-prettier@4.3.0
+          - eslint-config-wesbos@0.0.19
+          - eslint-plugin-html@5.0.5
+          - eslint-plugin-import@2.20.2
+          - eslint-plugin-jsx-a11y@6.2.3
+          - eslint-plugin-prettier@3.1.2
+          - eslint-plugin-react@7.19.0
+          - eslint-plugin-react-hooks@1.7.0
+          - prettier@1.19.1
+
+  - repo: https://github.com/prettier/prettier
+    rev: 1.19.1
+    hooks:
+      - id: prettier
+        files: "\\.(\
+          css|less|scss\
+          |graphql|gql\
+          |html\
+          |json\
+          |md|markdown|mdown|mkdn\
+          |mdx\
+          |ts|tsx\
+          |vue\
+          |yaml|yml\
+          )$"
