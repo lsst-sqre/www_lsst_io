@@ -33,8 +33,30 @@ View the site at http://localhost:8000.
 
 Also view the GraphiQL playground at http://localhost:8000/___graphql to explore the site's data layer.
 
-Linting and formatting
-----------------------
+Install pre-commit hooks
+------------------------
+
+You can automatically lint and format code using pre-commit_ hooks.
+
+First, install pre-commit in an isolated virtual environment:
+
+.. code-block:: bash
+
+   python3 -m venv .venv
+   source .venv/bin/activate
+   python -m pip install pre-commit
+   pre-commit install
+
+After this initialization step, you can re-activate the hooks in the virtual environment:
+
+.. code-block:: bash
+
+   source .venv/bin/activate
+
+Manual linting and formatting
+-----------------------------
+
+You can also manually lint and format code.
 
 Lint JavaScript:
 
@@ -84,6 +106,9 @@ Here are the important files and directories:
 ``src/``
     This directory contains all the front-end code for www.lsst.io itself.
 
+``.pre-commit-config.yaml``
+    Pre-commit hooks that ensure code is correctly formatting and doesn't have any linting issues.
+
 ``.prettierrc``
     This file configures Prettier_, which automatically formats the codebase.
 
@@ -118,3 +143,4 @@ Here are the important files and directories:
 .. _Algolia: https://www.algolia.com
 .. _Ook: https://github.com/lsst-sqre/ook
 .. _Prettier: https://prettier.io/
+.. _pre-commit: https://pre-commit.com/
