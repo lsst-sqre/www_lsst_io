@@ -33,6 +33,27 @@ View the site at http://localhost:8000.
 
 Also view the GraphiQL playground at http://localhost:8000/___graphql to explore the site's data layer.
 
+Linting and formatting
+----------------------
+
+Lint JavaScript:
+
+.. code-block:: bash
+
+   npm run lint
+
+Lint and auto-format JavaScript (powered by Prettier_):
+
+.. code-block:: bash
+
+   npm run lint:fix
+
+Format other types of code with Prettier_:
+
+.. code-block:: bash
+
+   npm run format
+
 Create a production build
 -------------------------
 

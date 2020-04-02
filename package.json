@@ -19,6 +19,17 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -28,11 +39,14 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{json,css,graphql,yaml}\"",
+    "format:check": "prettier --check \"**/*.{json,css,graphql,yaml}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -40,5 +54,10 @@
   },
   "bugs": {
     "url": "https://github.com/lsst-sqre/www_lsst_io/issues"
+  },
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ]
   }
 }
