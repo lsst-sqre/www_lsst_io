@@ -10,8 +10,90 @@ The search experience is powered by Algolia_.
 It's deployed on `LSST the Docs <https://sqr-006.lsst.io>`__.
 Searchable content is curated and ingested by Ook_, the Rubin Observatory librarian service.
 
+Development workflow primer
+===========================
+
+Install locally
+---------------
+
+Clone this repository then install the JavaScript packages:
+
+.. code-block:: bash
+
+   npm install .
+
+Start the development server
+----------------------------
+
+.. code-block:: bash
+
+   gatsby develop
+
+View the site at http://localhost:8000.
+
+Also view the GraphiQL playground at http://localhost:8000/___graphql to explore the site's data layer.
+
+Create a production build
+-------------------------
+
+.. code-block:: bash
+
+   gatsby build
+
+This build static HTML and optimized per-route JavaScript code bundles.
+
+You can serve the production build locally:
+
+.. code-block:: bash
+
+   gatsby serve
+
+Project layout
+==============
+
+Here are the important files and directories:
+
+``licenses/``
+    This directory contains licenses for third-party code that is vendored by this project (such as the license for the Gatsby starter files).
+
+``node_modules/``
+    This directory contains npm packages, as defined by ``package.json`` / ``package-lock.json``.
+    This directory isn't maintained in Git.
+
+``src/``
+    This directory contains all the front-end code for www.lsst.io itself.
+
+``.prettierrc``
+    This file configures Prettier_, which automatically formats the codebase.
+
+``.prettierignore``
+    This file lists files and directories that Prettier_ will not format.
+
+``gatsby-browser.js``
+    This file is where we extend or customize Gatsby's default settings affecting the browser, through the `Gatsby browser APIs <https://www.gatsbyjs.org/docs/browser-apis/>`__.
+
+``gatsby-config.js``
+    This is the main Gatsby configuration file.
+    See the `Gatsby config docs <https://www.gatsbyjs.org/docs/gatsby-config/>`__ for details.
+
+``gatsby-node.js``
+    This file is where we customize the build process using `Gatsby Node APIs <https://www.gatsbyjs.org/docs/node-apis/>`__.
+
+``gatsby-ssr.js``
+    This file is where we customize Gatsby's server-side rendering with the `Gatsby SSR APIs <https://www.gatsbyjs.org/docs/ssr-apis/`__.
+
+``LICENSE``
+    This project is licensed under MIT, along with the sub-licenses listed in ``licenses/``.
+
+``package-lock.json``
+    A file is generated based on ``package.json`` and contains the exact version of npm dependencies.
+
+``pacakge.json``
+    This file is the manifest for the Node.js project and contains the project's metadata and abstract dependencies.
+
 .. _Rubin Observatory: https://www.lsst.org
 .. _Gatsby: https://www.gatsbyjs.org
 .. _React: https://reactjs.org
 .. _Algolia: https://www.algolia.com
 .. _Ook: https://github.com/lsst-sqre/ook
+.. _Prettier: https://prettier.io/
