@@ -36,9 +36,13 @@ const Layout = ({ children }) => {
       <ContentContainer>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <p>
+            © {new Date().getFullYear()} Association of Universities for
+            Research in Astronomy (AURA), Inc..
+          </p>
+          <p>
+            Built with <a href="https://www.gatsbyjs.org">Gatsby</a>.
+          </p>
         </footer>
       </ContentContainer>
     </>
