@@ -9,6 +9,7 @@ import {
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import DocumentHit from '../components/documentHit';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -25,7 +26,7 @@ const AdvancedSearchPage = () => (
 
       <SearchBox />
 
-      <Hits />
+      <Hits hitComponent={DocumentHit} />
     </InstantSearch>
   </Layout>
 );
