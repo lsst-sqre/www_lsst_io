@@ -10,6 +10,9 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
+// Full Algolia instantsearch theme includes its reset
+import 'instantsearch.css/themes/algolia.css';
+
 import Header from './header';
 import './layout.css';
 
