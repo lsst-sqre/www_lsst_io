@@ -30,6 +30,8 @@
         <li><a href="#smtn">LSST Simulations Technical Notes (SMTN)</a></li>
         <li><a href="#sqr">LSST SQuaRE Technical Notes (SQR)</a></li>
         <li><a href="#tstn">LSST Telescope & Site Technical Notes (TSTN)</a></li>
+        <li><a href="#ittn">LSST IT Technical Notes (ITTN)</a></li>
+        <li><a href="#opstn">LSST Operations Technical Notes (OPSTN)</a></li>
       </ul>
     </nav>
 
@@ -158,6 +160,32 @@
         {% set current_header_level = 3 %}
 
         {% for item in datasets['TSTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="ittn" class="c-tile-section">
+      <h2>LSST IT Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['ITTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="opstn" class="c-tile-section">
+      <h2>LSST Operations Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['OPSTN'] %}
           {% include "_project-tile.jinja" %}
         {% endfor %}
       </div>

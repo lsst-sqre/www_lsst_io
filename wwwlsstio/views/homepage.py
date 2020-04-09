@@ -28,6 +28,8 @@ def get_homepage():
         'PSTN': {'data.reportNumber': {'$regex': r'^PSTN-'}},
         'TSTN': {'data.reportNumber': {'$regex': r'^TSTN-'}},
         'SITCOMTN': {'data.reportNumber': {'$regex': r'^SITCOMTN-'}},
+        'OPSTN': {'data.reportNumber': {'$regex': r'^OPSTN-'}},
+        'ITTN': {'data.reportNumber': {'$regex': r'^ITTN-'}},
     }
 
     datasets = {}
