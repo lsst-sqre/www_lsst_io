@@ -20,18 +20,72 @@
     <nav>
       <h2>On this page</h2>
       <ul>
+        <li><a href="#dmtn">LSST Data Management Technical Notes (DMTN)</a></li>
+        <li><a href="#dmtr">LSST Data Management Test Reports (DMTR)</a></li>
+        <li><a href="#ittn">LSST IT Technical Notes (ITTN)</a></li>
+        <li><a href="#ldm">LSST Data Management (LDM)</a></li>
         <li><a href="#lpm">LSST Project Management (LPM)</a></li>
         <li><a href="#lse">LSST Systems Engineering (LSE)</a></li>
+        <li><a href="#opstn">LSST Operations Technical Notes (OPSTN)</a></li>
         <li><a href="#pstn">LSST Project Science Team Technical Notes (PSTN)</a></li>
-        <li><a href="#ldm">LSST Data Management (LDM)</a></li>
-        <li><a href="#dmtr">LSST Data Management Test Reports (DMTR)</a></li>
-        <li><a href="#dmtn">LSST Data Management Technical Notes (DMTN)</a></li>
-        <li><a href="#sitcomtn">LSST Systems Integrations, Testing, and Commissioning Technical Notes (SITCOMTN)</a></li>
         <li><a href="#smtn">LSST Simulations Technical Notes (SMTN)</a></li>
+        <li><a href="#sitcomtn">LSST Systems Integrations, Testing, and Commissioning Technical Notes (SITCOMTN)</a></li>
         <li><a href="#sqr">LSST SQuaRE Technical Notes (SQR)</a></li>
         <li><a href="#tstn">LSST Telescope & Site Technical Notes (TSTN)</a></li>
       </ul>
     </nav>
+
+    <section id="dmtn" class="c-tile-section">
+      <h2>LSST Data Management Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['DMTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="dmtr" class="c-tile-section">
+      <h2>LSST Data Management Test Reports</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['DMTR'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="ittn" class="c-tile-section">
+      <h2>LSST IT Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['ITTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="ldm" class="c-tile-section">
+      <h2>LSST Data Management</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['LDM'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
 
     <section id="lpm" class="c-tile-section">
       <h2>LSST Project Management</h2>
@@ -59,6 +113,19 @@
       </div>
     </section>
 
+    <section id="opstn" class="c-tile-section">
+      <h2>LSST Operations Technical Notes</h2>
+
+      <div class="c-project-tile-grid">
+        {# Set header level used for project tiles #}
+        {% set current_header_level = 3 %}
+
+        {% for item in datasets['OPSTN'] %}
+          {% include "_project-tile.jinja" %}
+        {% endfor %}
+      </div>
+    </section>
+
     <section id="pstn" class="c-tile-section">
       <h2>LSST Project Science Team Technical Notes</h2>
 
@@ -72,40 +139,14 @@
       </div>
     </section>
 
-    <section id="ldm" class="c-tile-section">
-      <h2>LSST Data Management</h2>
+    <section id="smtn" class="c-tile-section">
+      <h2>LSST Simulations Technical Notes</h2>
 
       <div class="c-project-tile-grid">
         {# Set header level used for project tiles #}
         {% set current_header_level = 3 %}
 
-        {% for item in datasets['LDM'] %}
-          {% include "_project-tile.jinja" %}
-        {% endfor %}
-      </div>
-    </section>
-
-    <section id="dmtr" class="c-tile-section">
-      <h2>LSST Data Management Test Reports</h2>
-
-      <div class="c-project-tile-grid">
-        {# Set header level used for project tiles #}
-        {% set current_header_level = 3 %}
-
-        {% for item in datasets['DMTR'] %}
-          {% include "_project-tile.jinja" %}
-        {% endfor %}
-      </div>
-    </section>
-
-    <section id="dmtn" class="c-tile-section">
-      <h2>LSST Data Management Technical Notes</h2>
-
-      <div class="c-project-tile-grid">
-        {# Set header level used for project tiles #}
-        {% set current_header_level = 3 %}
-
-        {% for item in datasets['DMTN'] %}
+        {% for item in datasets['SMTN'] %}
           {% include "_project-tile.jinja" %}
         {% endfor %}
       </div>
@@ -119,19 +160,6 @@
         {% set current_header_level = 3 %}
 
         {% for item in datasets['SITCOMTN'] %}
-          {% include "_project-tile.jinja" %}
-        {% endfor %}
-      </div>
-    </section>
-
-    <section id="smtn" class="c-tile-section">
-      <h2>LSST Simulations Technical Notes</h2>
-
-      <div class="c-project-tile-grid">
-        {# Set header level used for project tiles #}
-        {% set current_header_level = 3 %}
-
-        {% for item in datasets['SMTN'] %}
           {% include "_project-tile.jinja" %}
         {% endfor %}
       </div>
