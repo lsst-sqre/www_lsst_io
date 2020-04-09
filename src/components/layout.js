@@ -18,7 +18,7 @@ import './layout.css';
 
 const ContentContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 0 1.0875rem 1.45rem;
 `;
 

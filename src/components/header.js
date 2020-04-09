@@ -1,43 +1,32 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import rubinLogoDark from '../images/rubin-logo-dark.svg';
+
 const HeaderLayer = styled.header`
-  background: rebeccapurple;
+  background: #222222;
   margin-bottom: 1.45rem;
 `;
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 1.45rem 1.0875rem;
 `;
 
-const Header = ({ siteTitle }) => (
+const RubinLogo = styled.img`
+  max-width: 16em;
+`;
+
+const Header = () => (
   <HeaderLayer>
     <HeaderContainer>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <Link to="/">
+        <RubinLogo src={rubinLogoDark} alt="Rubin Observatory logo" />
+      </Link>
     </HeaderContainer>
   </HeaderLayer>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Header;
