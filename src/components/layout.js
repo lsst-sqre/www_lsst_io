@@ -12,14 +12,32 @@ import styled from 'styled-components';
 
 // Full Algolia instantsearch theme includes its reset
 import 'instantsearch.css/themes/algolia.css';
-
-import Header from './header';
 import './layout.css';
 
-const ContentContainer = styled.div`
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 1.0875rem 1.45rem;
+import Header from './header';
+import Footer from './footer';
+import { mainWidthRem } from '../utilities/sizes';
+
+const StyledLayout = styled.div`
+  /* Sticky-footer implementation
+  * https://css-tricks.com/couple-takes-sticky-footer/
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .content {
+    flex: 1 0 auto;
+
+    .content-container {
+      margin: 0 auto;
+      max-width: ${mainWidthRem}rem;
+    }
+  }
+
+  ${Footer} {
+    flex-shrink: 0;
+  }
 `;
 
 const Layout = ({ children }) => {
@@ -34,21 +52,15 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <ContentContainer>
-        <main>{children}</main>
-        <footer>
-          <p>
-            © {new Date().getFullYear()} Association of Universities for
-            Research in Astronomy (AURA), Inc..
-          </p>
-          <p>
-            Built with <a href="https://www.gatsbyjs.org">Gatsby</a>.
-          </p>
-        </footer>
-      </ContentContainer>
-    </>
+    <StyledLayout>
+      <div className="content">
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main className="content-layer">
+          <div className="content-container">{children}</div>
+        </main>
+      </div>
+      <Footer />
+    </StyledLayout>
   );
 };
 

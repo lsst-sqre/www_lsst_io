@@ -1,0 +1,29 @@
+/* Footer layout component. */
+
+import React from 'react';
+import styled from 'styled-components';
+
+import { mainWidthRem } from '../utilities/sizes';
+
+const StyledFooter = styled.footer`
+  background: #222222;
+  color: #ffffff;
+
+  .footer-container {
+    margin: 0 auto;
+    max-width: ${mainWidthRem}rem;
+  }
+`;
+
+const Footer = () => (
+  <StyledFooter>
+    <div className="footer-container">
+      <p>
+        © {new Date().getFullYear()} Association of Universities for Research in
+        Astronomy (AURA), Inc..
+      </p>
+    </div>
+  </StyledFooter>
+);
+
+export default Footer;

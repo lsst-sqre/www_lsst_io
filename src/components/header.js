@@ -1,32 +1,40 @@
+/* Header layout component. */
+
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
+import { mainWidthRem, regularMarginRem } from '../utilities/sizes';
 
-const HeaderLayer = styled.header`
+const StyledHeader = styled.header`
   background: #222222;
-  margin-bottom: 1.45rem;
-`;
+  color: #ffffff;
+  padding-top: ${regularMarginRem}rem;
+  padding-bottom: ${regularMarginRem}rem;
 
-const HeaderContainer = styled.div`
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 1.45rem 1.0875rem;
-`;
+  .header-container {
+    margin: 0 auto;
+    max-width: ${mainWidthRem}rem;
+  }
 
-const RubinLogo = styled.img`
-  max-width: 16em;
+  .header-logo {
+    max-width: 16rem;
+  }
 `;
 
 const Header = () => (
-  <HeaderLayer>
-    <HeaderContainer>
+  <StyledHeader>
+    <div className="header-container">
       <Link to="/">
-        <RubinLogo src={rubinLogoDark} alt="Rubin Observatory logo" />
+        <img
+          className="header-logo"
+          src={rubinLogoDark}
+          alt="Rubin Observatory logo"
+        />
       </Link>
-    </HeaderContainer>
-  </HeaderLayer>
+    </div>
+  </StyledHeader>
 );
 
 export default Header;
