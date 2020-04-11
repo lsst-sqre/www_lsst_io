@@ -8,6 +8,7 @@ import { mainWidthRem } from '../utilities/sizes';
 const StyledFooter = styled.footer`
   background: #222222;
   color: #ffffff;
+  flex-shrink: 0;
 
   .footer-container {
     margin: 0 auto;

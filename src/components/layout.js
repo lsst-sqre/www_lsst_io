@@ -34,10 +34,6 @@ const StyledLayout = styled.div`
       max-width: ${mainWidthRem}rem;
     }
   }
-
-  ${Footer} {
-    flex-shrink: 0;
-  }
 `;
 
 const Layout = ({ children }) => {
