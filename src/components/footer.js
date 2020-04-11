@@ -3,12 +3,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { mainWidthRem } from '../utilities/sizes';
+import { mainWidthRem, mediumMarginRem } from '../utilities/sizes';
 
 const StyledFooter = styled.footer`
   background: #222222;
   color: #ffffff;
   flex-shrink: 0;
+  margin-top: ${mediumMarginRem}rem;
 
   .footer-container {
     margin: 0 auto;
