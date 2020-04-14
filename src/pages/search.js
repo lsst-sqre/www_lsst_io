@@ -10,6 +10,12 @@ import {
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import DocumentHit from '../components/documentHit';
+import {
+  SearchLayout,
+  SearchResultsArea,
+  SearchBoxArea,
+  SearchRefinementsArea,
+} from '../components/searchLayout';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -24,9 +30,19 @@ const AdvancedSearchPage = () => (
     <InstantSearch searchClient={searchClient} indexName="document_dev">
       <Configure distinct />
 
-      <SearchBox />
+      <SearchLayout>
+        <SearchBoxArea>
+          <SearchBox />
+        </SearchBoxArea>
 
-      <Hits hitComponent={DocumentHit} />
+        <SearchRefinementsArea>
+          <h2>Refinements</h2>
+        </SearchRefinementsArea>
+
+        <SearchResultsArea>
+          <Hits hitComponent={DocumentHit} />
+        </SearchResultsArea>
+      </SearchLayout>
     </InstantSearch>
   </Layout>
 );
