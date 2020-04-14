@@ -1,11 +1,6 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import {
-  InstantSearch,
-  SearchBox,
-  Hits,
-  Configure,
-} from 'react-instantsearch-dom';
+import { InstantSearch, Hits, Configure } from 'react-instantsearch-dom';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -15,6 +10,8 @@ import {
   SearchResultsArea,
   SearchBoxArea,
   SearchRefinementsArea,
+  StyledSearchBox,
+  StyledPoweredBy,
 } from '../components/searchLayout';
 
 const searchClient = algoliasearch(
@@ -32,7 +29,8 @@ const AdvancedSearchPage = () => (
 
       <SearchLayout>
         <SearchBoxArea>
-          <SearchBox />
+          <StyledSearchBox />
+          <StyledPoweredBy />
         </SearchBoxArea>
 
         <SearchRefinementsArea>
