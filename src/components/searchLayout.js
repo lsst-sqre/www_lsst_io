@@ -1,7 +1,7 @@
 /* Layout for the Algolia search UI. */
 
 import styled from 'styled-components';
-import { PoweredBy, SearchBox } from 'react-instantsearch-dom';
+import { PoweredBy, SearchBox, Hits } from 'react-instantsearch-dom';
 
 export const SearchLayout = styled.div`
   display: grid;
@@ -52,4 +52,17 @@ export const SearchRefinementSection = styled.div`
 export const SearchResultsArea = styled.div`
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+`;
+
+export const StyledHits = styled(Hits)`
+  .ais-Hits-list {
+    display: block;
+    margin: 0;
+  }
+
+  .ais-Hits-item {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 `;

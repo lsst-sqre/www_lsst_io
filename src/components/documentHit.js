@@ -6,15 +6,46 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const DocumentHitContainer = styled.div`
+  margin-bottom: -1rem;
+
+  h2 {
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &: hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const ContentTypeBanner = styled.div`
+  background: #222222;
+  color: #ffffff;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: 0.5rem;
+  margin-top: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+`;
 
 const DocumentHit = ({ hit }) => (
-  <>
+  <DocumentHitContainer>
+    <ContentTypeBanner>
+      <span>{hit.handle}</span>
+    </ContentTypeBanner>
     <a href={hit.url}>
       <h2>{hit.h1}</h2>
-      <span>{hit.handle}</span>
     </a>
     <p>{hit.content}</p>
-  </>
+  </DocumentHitContainer>
 );
 
 DocumentHit.propTypes = {
