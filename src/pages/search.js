@@ -40,7 +40,7 @@ const AdvancedSearchPage = () => (
 
       <SearchLayout>
         <SearchBoxArea>
-          <StyledSearchBox />
+          <StyledSearchBox autoFocus />
           <StyledPoweredBy />
         </SearchBoxArea>
 
