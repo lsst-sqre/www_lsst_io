@@ -30,6 +30,11 @@ const AdvancedSearchPage = () => (
     <SEO title="Advanced search" />
     <h1>Advanced search</h1>
 
+    <p>
+      Search the entire universe of Rubin Observatory documentation and open
+      source projects.
+    </p>
+
     <InstantSearch searchClient={searchClient} indexName="document_dev">
       <Configure distinct facetingAfterDistinct="true" />
 
