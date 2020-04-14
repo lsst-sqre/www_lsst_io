@@ -1,6 +1,11 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Hits, Configure } from 'react-instantsearch-dom';
+import {
+  InstantSearch,
+  Hits,
+  Configure,
+  RefinementList,
+} from 'react-instantsearch-dom';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -12,6 +17,7 @@ import {
   SearchRefinementsArea,
   StyledSearchBox,
   StyledPoweredBy,
+  SearchRefinementSection,
 } from '../components/searchLayout';
 
 const searchClient = algoliasearch(
@@ -25,7 +31,7 @@ const AdvancedSearchPage = () => (
     <h1>Advanced search</h1>
 
     <InstantSearch searchClient={searchClient} indexName="document_dev">
-      <Configure distinct />
+      <Configure distinct facetingAfterDistinct="true" />
 
       <SearchLayout>
         <SearchBoxArea>
@@ -34,7 +40,15 @@ const AdvancedSearchPage = () => (
         </SearchBoxArea>
 
         <SearchRefinementsArea>
-          <h2>Refinements</h2>
+          <SearchRefinementSection>
+            <h2>Series</h2>
+            <RefinementList attribute="series" />
+          </SearchRefinementSection>
+
+          <SearchRefinementSection>
+            <h2>Contributors</h2>
+            <RefinementList attribute="authorNames" />
+          </SearchRefinementSection>
         </SearchRefinementsArea>
 
         <SearchResultsArea>
