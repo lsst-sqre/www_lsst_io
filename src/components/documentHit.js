@@ -57,6 +57,21 @@ const StyledSnippet = styled(Snippet)`
   }
 `;
 
+const StyledDetails = styled.details`
+  summary {
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #1d00f8; // default link color
+    cursor: pointer;
+    font-size: 0.9rem;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+`;
+
 const StyledHighlight = styled(Highlight)`
   ${({ tagName }) => tagName} {
     background: yellow;
@@ -81,12 +96,15 @@ const DocumentHit = ({ hit }) => (
         />{' '}
       </StyledSnippetBlock>
     )}
-    <StyledHighlight
-      hit={hit}
-      attribute="content"
-      tagName="mark"
-      nonHighlightedTagName="span"
-    />
+    <StyledDetails>
+      <summary>Details</summary>
+      <StyledHighlight
+        hit={hit}
+        attribute="content"
+        tagName="mark"
+        nonHighlightedTagName="span"
+      />
+    </StyledDetails>
   </DocumentHitContainer>
 );
 
