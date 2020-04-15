@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Highlight } from 'react-instantsearch-dom';
+import { Highlight, Snippet } from 'react-instantsearch-dom';
 
 const DocumentHitContainer = styled.div`
   h2 {
@@ -36,6 +36,27 @@ const ContentTypeBanner = styled.div`
   padding-right: 1rem;
 `;
 
+const StyledSnippetBlock = styled.blockquote`
+  padding-left: 2rem;
+  padding-right: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  border-left: 4px solid #aaaaaa;
+  background: #eeeeee;
+`;
+
+const StyledSnippet = styled(Snippet)`
+  span,
+  ${({ tagName }) => tagName} {
+    // more specific than Algolia theme
+    font-size: 1.1rem;
+  }
+
+  ${({ tagName }) => tagName} {
+    background: yellow;
+  }
+`;
+
 const StyledHighlight = styled(Highlight)`
   ${({ tagName }) => tagName} {
     background: yellow;
@@ -50,6 +71,16 @@ const DocumentHit = ({ hit }) => (
     <a href={hit.url}>
       <h2>{hit.h1}</h2>
     </a>
+    {hit._snippetResult.content.matchLevel !== 'none' && (
+      <StyledSnippetBlock>
+        <StyledSnippet
+          attribute="content"
+          hit={hit}
+          tagName="mark"
+          nonHighlightedTagName="span"
+        />{' '}
+      </StyledSnippetBlock>
+    )}
     <StyledHighlight
       hit={hit}
       attribute="content"

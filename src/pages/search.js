@@ -36,7 +36,11 @@ const AdvancedSearchPage = () => (
     </p>
 
     <InstantSearch searchClient={searchClient} indexName="document_dev">
-      <Configure distinct facetingAfterDistinct="true" />
+      <Configure
+        distinct
+        facetingAfterDistinct="true"
+        attributesToSnippet={['content:20']}
+      />
 
       <SearchLayout>
         <SearchBoxArea>
