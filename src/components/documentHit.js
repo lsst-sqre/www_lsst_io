@@ -7,13 +7,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Highlight } from 'react-instantsearch-dom';
 
 const DocumentHitContainer = styled.div`
-  margin-bottom: -1rem;
-
   h2 {
     line-height: 1.1;
     margin: 0;
+    margin-bottom: 1rem;
   }
 
   a {
@@ -36,6 +36,12 @@ const ContentTypeBanner = styled.div`
   padding-right: 1rem;
 `;
 
+const StyledHighlight = styled(Highlight)`
+  ${({ tagName }) => tagName} {
+    background: yellow;
+  }
+`;
+
 const DocumentHit = ({ hit }) => (
   <DocumentHitContainer>
     <ContentTypeBanner>
@@ -44,7 +50,12 @@ const DocumentHit = ({ hit }) => (
     <a href={hit.url}>
       <h2>{hit.h1}</h2>
     </a>
-    <p>{hit.content}</p>
+    <StyledHighlight
+      hit={hit}
+      attribute="content"
+      tagName="mark"
+      nonHighlightedTagName="span"
+    />
   </DocumentHitContainer>
 );
 
