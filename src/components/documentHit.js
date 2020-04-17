@@ -78,6 +78,51 @@ const StyledHighlight = styled(Highlight)`
   }
 `;
 
+const PersonList = ({ className, names }) => (
+  <ol className={className}>
+    {names.map(name => (
+      <li key={name}>{name}</li>
+    ))}
+  </ol>
+);
+
+PersonList.propTypes = {
+  className: PropTypes.string.isRequired,
+  names: PropTypes.array.isRequired,
+};
+
+/**
+ * Style the PersonList component.
+ *
+ * The main goal here is to lay out the list of person names as an inline list
+ * and add the Oxford comma.
+ */
+const StyledPersonList = styled(PersonList)`
+  margin-top: 1rem;
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline;
+  }
+
+  li:after {
+    content: ', ';
+  }
+
+  li:last-child:after {
+    content: '';
+  }
+
+  li:nth-last-child(2):after {
+    content: ' and ';
+  }
+
+  li:nth-last-child(3) ~ li:nth-last-child(2):after {
+    content: ', and ';
+  }
+`;
+
 const DocumentHit = ({ hit }) => (
   <DocumentHitContainer>
     <ContentTypeBanner>
@@ -104,6 +149,7 @@ const DocumentHit = ({ hit }) => (
         tagName="mark"
         nonHighlightedTagName="span"
       />
+      <StyledPersonList names={hit.authorNames} />
     </StyledDetails>
   </DocumentHitContainer>
 );
