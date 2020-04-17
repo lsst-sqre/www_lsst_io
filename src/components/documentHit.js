@@ -150,6 +150,10 @@ const DocumentHit = ({ hit }) => (
         nonHighlightedTagName="span"
       />
       <StyledPersonList names={hit.authorNames} />
+      <p>
+        Source: <a href={hit.githubRepoUrl}>{hit.githubRepoUrl}</a>
+      </p>
+      <p>Updated: {hit.sourceUpdateTime}</p>
     </StyledDetails>
   </DocumentHitContainer>
 );
