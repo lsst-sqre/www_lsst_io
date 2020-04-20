@@ -11,13 +11,19 @@ import { connectHits } from 'react-instantsearch-dom';
 /**
  * Custom Hits component that passes props to individual Hit components.
  */
-const Hits = ({ hits, hitComponent, className = '' }) => {
+const Hits = ({
+  hits,
+  hitComponent,
+  hitCardsExpanded = false,
+  className = '',
+}) => {
   const HitComponent = hitComponent;
+
   return (
     <ol className={className}>
       {hits.map(hit => (
         <li key={hit.objectID} className="hits-item">
-          <HitComponent hit={hit} />
+          <HitComponent hit={hit} expanded={hitCardsExpanded} />
         </li>
       ))}
     </ol>
@@ -32,6 +38,7 @@ const HitPropTypes = PropTypes.shape({
 Hits.propTypes = {
   hits: PropTypes.arrayOf(HitPropTypes.isRequired).isRequired,
   hitComponent: PropTypes.func.isRequired,
+  hitCardsExpanded: PropTypes.bool,
   className: PropTypes.string,
 };
 

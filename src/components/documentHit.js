@@ -123,7 +123,7 @@ const StyledPersonList = styled(PersonList)`
   }
 `;
 
-const DocumentHit = ({ hit }) => (
+const DocumentHit = ({ hit, expanded }) => (
   <DocumentHitContainer>
     <ContentTypeBanner>
       <span>{hit.handle}</span>
@@ -141,7 +141,7 @@ const DocumentHit = ({ hit }) => (
         />{' '}
       </StyledSnippetBlock>
     )}
-    <StyledDetails>
+    <StyledDetails open={expanded}>
       <summary>Details</summary>
       <StyledHighlight
         hit={hit}
@@ -160,6 +160,7 @@ const DocumentHit = ({ hit }) => (
 
 DocumentHit.propTypes = {
   hit: PropTypes.object.isRequired,
+  expanded: PropTypes.bool.isRequired,
 };
 
 export default DocumentHit;

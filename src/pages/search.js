@@ -19,53 +19,65 @@ import {
   SearchRefinementSection,
 } from '../components/searchLayout';
 import { StyledHits } from '../components/hits';
+import { StyledDetailsToggleButton } from '../components/detailsToggle';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
   'b7bd2f1080a5c4fe5eee502462bcc9d3'
 );
 
-const AdvancedSearchPage = () => (
-  <Layout>
-    <SEO title="Advanced search" />
-    <h1>Advanced search</h1>
+const AdvancedSearchPage = () => {
+  const [hitCardsExpanded, setHitCardsExpanded] = React.useState(false);
 
-    <p>
-      Search the entire universe of Rubin Observatory documentation and open
-      source projects.
-    </p>
+  return (
+    <Layout>
+      <SEO title="Advanced search" />
+      <h1>Advanced search</h1>
 
-    <InstantSearch searchClient={searchClient} indexName="document_dev">
-      <Configure
-        distinct
-        facetingAfterDistinct="true"
-        attributesToSnippet={['content:20']}
-      />
+      <p>
+        Search the entire universe of Rubin Observatory documentation and open
+        source projects.
+      </p>
 
-      <SearchLayout>
-        <SearchBoxArea>
-          <StyledSearchBox autoFocus />
-          <StyledPoweredBy />
-        </SearchBoxArea>
+      <InstantSearch searchClient={searchClient} indexName="document_dev">
+        <Configure
+          distinct
+          facetingAfterDistinct="true"
+          attributesToSnippet={['content:20']}
+        />
 
-        <SearchRefinementsArea>
-          <SearchRefinementSection>
-            <h2>Series</h2>
-            <RefinementList attribute="series" />
-          </SearchRefinementSection>
+        <SearchLayout>
+          <SearchBoxArea>
+            <StyledSearchBox autoFocus />
+            <StyledPoweredBy />
+          </SearchBoxArea>
 
-          <SearchRefinementSection>
-            <h2>Contributors</h2>
-            <RefinementList attribute="authorNames" />
-          </SearchRefinementSection>
-        </SearchRefinementsArea>
+          <SearchRefinementsArea>
+            <SearchRefinementSection>
+              <h2>Series</h2>
+              <RefinementList attribute="series" />
+            </SearchRefinementSection>
 
-        <SearchResultsArea>
-          <StyledHits hitComponent={DocumentHit} />
-        </SearchResultsArea>
-      </SearchLayout>
-    </InstantSearch>
-  </Layout>
-);
+            <SearchRefinementSection>
+              <h2>Contributors</h2>
+              <RefinementList attribute="authorNames" />
+            </SearchRefinementSection>
+          </SearchRefinementsArea>
+
+          <SearchResultsArea>
+            <StyledDetailsToggleButton
+              hitCardsExpanded={hitCardsExpanded}
+              setHitCardsExpanded={setHitCardsExpanded}
+            />
+            <StyledHits
+              hitComponent={DocumentHit}
+              hitCardsExpanded={hitCardsExpanded}
+            />
+          </SearchResultsArea>
+        </SearchLayout>
+      </InstantSearch>
+    </Layout>
+  );
+};
 
 export default AdvancedSearchPage;
