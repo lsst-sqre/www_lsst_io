@@ -17,8 +17,8 @@ import {
   StyledSearchBox,
   StyledPoweredBy,
   SearchRefinementSection,
-  StyledHits,
 } from '../components/searchLayout';
+import { StyledHits } from '../components/hits';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
