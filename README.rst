@@ -2,71 +2,145 @@
 www.lsst.io
 ###########
 
-www.lsst.io is a portal for LSST project information and metadata.
-It's designed to help LSST staff and the astronomy community discover documentation, software, and other bits of information produced by the LSST project.
+https://www.lsst.io is a portal for `Rubin Observatory`_ documentation.
+It's designed to help Rubin Observatory staff and the astronomy community discover documentation, software, and other bits of information produced by the Rubin Observatory and LSST.
 
-The site uses data acquired separately by pipelines in the `lsst-projectmeta-kit`_ package.
+This site is built with Gatsby_ and React_.
+The search experience is powered by Algolia_.
+It's deployed on `LSST the Docs <https://sqr-006.lsst.io>`__.
+Searchable content is curated and ingested by Ook_, the Rubin Observatory librarian service.
 
-Development set up
-==================
+Development workflow primer
+===========================
 
-This project relies on both Python 3.5 (and newer) and Node.js (with npm).
+Install locally
+---------------
 
-Install the node dependencies by running::
+Clone this repository then install the JavaScript packages:
 
-   npm install
+.. code-block:: bash
 
-You can install the Python dependencies for local development by running::
+   npm install .
 
-   pip install -e .
+Start the development server
+----------------------------
 
-Development workflow
-====================
+.. code-block:: bash
 
-You can test the Python backend by running the Python unit tests by running::
+   gatsby develop
 
-   make test
+View the site at http://localhost:8000.
 
-To iterate on the site design, use the local development server:
+Also view the GraphiQL playground at http://localhost:8000/___graphql to explore the site's data layer.
 
-1. Set the ``PROJECTMETA_MONGO`` environment variable with the URI for Projectmeta's MongoDB (``mongodb://`` or ``mongodb+srv://``).
+Install pre-commit hooks
+------------------------
 
-2. Start the Flask server::
+You can automatically lint and format code using pre-commit_ hooks.
 
-     make server
+First, install pre-commit in an isolated virtual environment:
 
-3. In second terminal, start Browsersync_ and the Gulp asset pipeline::
+.. code-block:: bash
 
-     make watch
+   python3 -m venv .venv
+   source .venv/bin/activate
+   python -m pip install pre-commit
+   pre-commit install
 
-4. Follow the printed instructions to view the site, likely at http://localhost:3000
+After this initialization step, you can re-activate the hooks in the virtual environment:
 
-Browsersync_ streams CSS changes to the browser and application changes trigger a browser reload.
+.. code-block:: bash
 
-Deployment
-==========
+   source .venv/bin/activate
 
-Set the following environment variables for LSST the Docs and Projectmeta:
+Manual linting and formatting
+-----------------------------
 
-- ``LTD_KEEPER_USER`` — Password for LTD Keeper instance.
-- ``LTD_KEEPER_PASSWORD`` — Username for LTD Keeper instance.
-- ``LTD_MASON_AWS_ID`` — AWS access key ID.
-- ``LTD_MASON_AWS_SECRET`` — AWS secret access key.
-- ``PROJECTMETA_MONGO`` — URI of Projectmeta's MongoDB (``mongodb://`` or ``mongodb+srv://``).
+You can also manually lint and format code.
 
-Then:
+Lint JavaScript:
 
-1. Compile the Sass::
+.. code-block:: bash
 
-      make scss
+   npm run lint
 
-2. Compile the static HTML site::
+Lint and auto-format JavaScript (powered by Prettier_):
 
-      make site
+.. code-block:: bash
 
-3. Deploy the site::
+   npm run lint:fix
 
-      make deploy
+Format other types of code with Prettier_:
 
-.. _Browsersync: https://browsersync.io
-.. _lsst-projectmeta-kit: https://github.com/lsst-sqre/lsst-projectmeta-kit
+.. code-block:: bash
+
+   npm run format
+
+Create a production build
+-------------------------
+
+.. code-block:: bash
+
+   gatsby build
+
+This build static HTML and optimized per-route JavaScript code bundles.
+
+You can serve the production build locally:
+
+.. code-block:: bash
+
+   gatsby serve
+
+Project layout
+==============
+
+Here are the important files and directories:
+
+``licenses/``
+    This directory contains licenses for third-party code that is vendored by this project (such as the license for the Gatsby starter files).
+
+``node_modules/``
+    This directory contains npm packages, as defined by ``package.json`` / ``package-lock.json``.
+    This directory isn't maintained in Git.
+
+``src/``
+    This directory contains all the front-end code for www.lsst.io itself.
+
+``.pre-commit-config.yaml``
+    Pre-commit hooks that ensure code is correctly formatting and doesn't have any linting issues.
+
+``.prettierrc``
+    This file configures Prettier_, which automatically formats the codebase.
+
+``.prettierignore``
+    This file lists files and directories that Prettier_ will not format.
+
+``gatsby-browser.js``
+    This file is where we extend or customize Gatsby's default settings affecting the browser, through the `Gatsby browser APIs <https://www.gatsbyjs.org/docs/browser-apis/>`__.
+
+``gatsby-config.js``
+    This is the main Gatsby configuration file.
+    See the `Gatsby config docs <https://www.gatsbyjs.org/docs/gatsby-config/>`__ for details.
+
+``gatsby-node.js``
+    This file is where we customize the build process using `Gatsby Node APIs <https://www.gatsbyjs.org/docs/node-apis/>`__.
+
+``gatsby-ssr.js``
+    This file is where we customize Gatsby's server-side rendering with the `Gatsby SSR APIs <https://www.gatsbyjs.org/docs/ssr-apis/`__.
+
+``LICENSE``
+    This project is licensed under MIT, along with the sub-licenses listed in ``licenses/``.
+
+``package-lock.json``
+    A file is generated based on ``package.json`` and contains the exact version of npm dependencies.
+
+``pacakge.json``
+    This file is the manifest for the Node.js project and contains the project's metadata and abstract dependencies.
+
+.. _Rubin Observatory: https://www.lsst.org
+.. _Gatsby: https://www.gatsbyjs.org
+.. _React: https://reactjs.org
+.. _Algolia: https://www.algolia.com
+.. _Ook: https://github.com/lsst-sqre/ook
+.. _Prettier: https://prettier.io/
+.. _pre-commit: https://pre-commit.com/

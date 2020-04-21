@@ -1,8 +1,0 @@
-include LICENSE
-include README.rst
-recursive-include wwwlsstio *.svg
-recursive-include wwwlsstio *.html
-recursive-include wwwlsstio *.jinja
-recursive-include wwwlsstio *.css
-recursive-include wwwlsstio *.js
-recursive-include wwwlsstio *.yaml

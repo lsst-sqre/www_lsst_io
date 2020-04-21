@@ -1,0 +1,46 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - uses: actions/setup-node@v1
+        name: Use Node.js
+        with:
+          node-version: 13.3.0 # known to be compatible with current build
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Install npm packages
+        run: npm install .
+
+      - name: Lint
+        run: pre-commit run --all-files
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        name: Use Node.js
+        with:
+          node-version: 13.3.0 # known to be compatible with current build
+
+      - name: Install npm packages
+        run: npm install .
+
+      - name: Build Gatsby site
+        run: npm run build

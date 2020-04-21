@@ -1,36 +1,70 @@
 {
-  "name": "www_lsst_io",
+  "name": "www-lsst-io",
+  "private": true,
+  "description": "Portal for Rubin Observatory documentation.",
   "version": "0.1.0",
-  "description": "www.lsst.io site generator",
-  "main": "index.js",
+  "author": "Jonathan Sick <jsick@lsst.org>",
+  "dependencies": {
+    "algoliasearch": "^4.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "gatsby": "^2.19.45",
+    "gatsby-image": "^2.2.44",
+    "gatsby-plugin-manifest": "^2.2.48",
+    "gatsby-plugin-offline": "^3.0.41",
+    "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-sharp": "^2.4.13",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-source-filesystem": "^2.1.56",
+    "gatsby-transformer-sharp": "^2.3.19",
+    "instantsearch.css": "^7.4.2",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.4.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{json,css,graphql,yaml}\"",
+    "format:check": "prettier --check \"**/*.{json,css,graphql,yaml}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lsst-sqre/www_lsst_io.git"
+    "url": "https://github.com/lsst-sqre/www_lsst_io"
   },
-  "keywords": [
-    "lsst",
-    "documentation"
-  ],
-  "author": "Association of Universities for Research in Astronomy, Inc.",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lsst-sqre/www_lsst_io/issues"
   },
-  "homepage": "https://github.com/lsst-sqre/www_lsst_io#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.23.2",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.2",
-    "minimist": "^1.2.0"
-  },
-  "dependencies": {
-    "inuitcss": "^6.0.0-beta.5"
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ]
   }
 }
