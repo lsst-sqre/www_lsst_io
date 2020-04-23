@@ -4,6 +4,7 @@ import {
   InstantSearch,
   Configure,
   RefinementList,
+  HierarchicalMenu,
 } from 'react-instantsearch-dom';
 
 import Layout from '../components/layout';
@@ -54,8 +55,13 @@ const AdvancedSearchPage = () => {
 
           <SearchRefinementsArea>
             <SearchRefinementSection>
-              <h2>Series</h2>
-              <RefinementList attribute="series" />
+              <h2>Content types</h2>
+              <HierarchicalMenu
+                attributes={[
+                  'contentCategories.lvl0',
+                  'contentCategories.lvl1',
+                ]}
+              />
             </SearchRefinementSection>
 
             <SearchRefinementSection>
