@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
@@ -6,6 +7,7 @@ import {
   RefinementList,
   HierarchicalMenu,
 } from 'react-instantsearch-dom';
+import qs from 'qs';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -27,8 +29,82 @@ const searchClient = algoliasearch(
   'b7bd2f1080a5c4fe5eee502462bcc9d3'
 );
 
-const AdvancedSearchPage = () => {
+/**
+ * Create the URL parameters from the state.
+ */
+const createUrlParams = state => `?${qs.stringify(state)}`;
+
+/**
+ * Create a full URL from the search state.
+ */
+const searchStateToUrl = ({ location }, searchState) =>
+  searchState ? `${location.pathname}${createUrlParams(searchState)}` : '';
+
+/**
+ * Parse the search state from a URL.
+ */
+const urlToSearchState = ({ search }) => qs.parse(search.slice(1));
+
+/**
+ * Debounce time to update browser history given user input into search UI
+ * (milliseconds).
+ */
+const DEBOUNCE_TIME = 800;
+
+/**
+ * Debounce hook
+ *
+ * https://usehooks.com/useDebounce/
+ */
+function useDebounce(value, delay) {
+  // State and setters for debounced value
+  const [debouncedValue, setDebouncedValue] = React.useState(value);
+
+  React.useEffect(
+    () => {
+      // Update debounced value after delay
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+      // Cancel the timeout if value changes (also on delay change or unmount)
+      // This is how we prevent debounced value from updating if value is
+      // changed within the delay period. Timeout gets cleared and restarted.
+      return () => {
+        clearTimeout(handler);
+      };
+    },
+    [value, delay] // Only re-call effect if value or delay changes
+  );
+
+  return debouncedValue;
+}
+
+const AdvancedSearchPage = ({ location }) => {
   const [hitCardsExpanded, setHitCardsExpanded] = React.useState(false);
+  const [searchState, setSearchState] = React.useState(
+    urlToSearchState(location)
+  );
+  const debouncedSearchState = useDebounce(searchState, DEBOUNCE_TIME);
+
+  const onSearchStateChange = updatedSearchState => {
+    setSearchState(updatedSearchState);
+  };
+
+  // Prettier struggles with this useEffect but I don't know why.
+  // prettier-ignore
+  React.useEffect(
+    () => {
+      if (debouncedSearchState) {
+        window.history.pushState(
+          debouncedSearchState,
+          '',
+          searchStateToUrl({ location }, debouncedSearchState)
+        );
+      }
+    },
+    [debouncedSearchState, location]
+  );
 
   return (
     <Layout>
@@ -40,7 +116,13 @@ const AdvancedSearchPage = () => {
         source projects.
       </p>
 
-      <InstantSearch searchClient={searchClient} indexName="document_dev">
+      <InstantSearch
+        searchClient={searchClient}
+        indexName="document_dev"
+        searchState={searchState}
+        onSearchStateChange={onSearchStateChange}
+        createUrl={createUrlParams}
+      >
         <Configure
           distinct
           facetingAfterDistinct="true"
@@ -84,6 +166,10 @@ const AdvancedSearchPage = () => {
       </InstantSearch>
     </Layout>
   );
+};
+
+AdvancedSearchPage.propTypes = {
+  location: PropTypes.object.isRequired,
 };
 
 export default AdvancedSearchPage;
