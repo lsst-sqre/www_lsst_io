@@ -96,7 +96,11 @@ const AdvancedSearchPage = ({ location }) => {
   React.useEffect(
     () => {
       if (debouncedSearchState) {
-        window.history.pushState(
+        // I tried using setState here, but I found that that broke the "Back"
+        // button. Ultimately this means that the search state overwrites
+        // itself as the user refines their search. There is no "undo" to the
+        // refinements.
+        window.history.replaceState(
           debouncedSearchState,
           '',
           searchStateToUrl({ location }, debouncedSearchState)
