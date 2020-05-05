@@ -18,6 +18,7 @@
     "gatsby-transformer-sharp": "^2.3.19",
     "instantsearch.css": "^7.4.2",
     "normalize.css": "^8.0.1",
+    "polished": "^3.6.1",
     "prop-types": "^15.7.2",
     "qs": "^6.9.3",
     "react": "^16.12.0",
