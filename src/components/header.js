@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import { mainWidthRem, regularMarginRem } from '../utilities/sizes';
+import ThemeToggleButton from './themeToggle';
 
 const StyledHeader = styled.header`
   background: #222222;
@@ -33,6 +34,8 @@ const Header = () => (
           alt="Rubin Observatory logo"
         />
       </Link>
+
+      <ThemeToggleButton />
     </div>
   </StyledHeader>
 );
