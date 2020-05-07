@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 import { normalize } from 'polished';
 
+import { fontFamily } from '../design/type';
+
 /*
  * Global styles for the entire application via createGlobalStyle.
  */
@@ -45,8 +47,7 @@ const GlobalStyle = createGlobalStyle`
   * https://css-tricks.com/snippets/css/system-font-stack/
   */
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-      Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    ${fontFamily.sans}
     line-height: 1.5;
   }
 `;
