@@ -16,7 +16,7 @@ import 'instantsearch.css/themes/algolia.css';
 import GlobalStyle from './globalStyles';
 import Header from './header';
 import Footer from './footer';
-import { mainWidthRem } from '../utilities/sizes';
+import PageContentContainer from './pageContentContainer';
 
 const StyledLayout = styled.div`
   /* Sticky-footer implementation
@@ -28,11 +28,6 @@ const StyledLayout = styled.div`
 
   .content {
     flex: 1 0 auto;
-
-    .content-container {
-      margin: 0 auto;
-      max-width: ${mainWidthRem}rem;
-    }
   }
 `;
 
@@ -54,7 +49,7 @@ const Layout = ({ children }) => {
         <div className="content">
           <Header siteTitle={data.site.siteMetadata.title} />
           <main className="content-layer">
-            <div className="content-container">{children}</div>
+            <PageContentContainer>{children}</PageContentContainer>
           </main>
         </div>
         <Footer />

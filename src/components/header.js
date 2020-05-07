@@ -9,9 +9,10 @@ import {
   reversedTextColor,
   reversedLinkColor,
 } from '../design/theme';
+import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
-import { mainWidthRem, regularMarginRem } from '../utilities/sizes';
 import Cluster from './cluster';
+import PageContentContainer from './pageContentContainer';
 import ThemeToggleButton from './themeToggle';
 
 const StyledHeader = styled.header`
@@ -22,11 +23,6 @@ const StyledHeader = styled.header`
 
   a {
     color: ${reversedLinkColor};
-  }
-
-  .header-container {
-    margin: 0 auto;
-    max-width: ${mainWidthRem}rem;
   }
 `;
 
@@ -45,7 +41,7 @@ const NavList = styled.ul`
 
 const Header = () => (
   <StyledHeader>
-    <div className="header-container">
+    <PageContentContainer>
       <Cluster justifyContent="space-between">
         <div>
           {/* Logo */}
@@ -73,7 +69,7 @@ const Header = () => (
           </div>
         </div>
       </Cluster>
-    </div>
+    </PageContentContainer>
   </StyledHeader>
 );
 

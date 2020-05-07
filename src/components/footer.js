@@ -3,12 +3,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { mainWidthRem, mediumMarginRem } from '../utilities/sizes';
 import {
   reversedBackgroundColor,
   reversedTextColor,
   reversedLinkColor,
 } from '../design/theme';
+import { mediumMarginRem } from '../design/spacing';
+import PageContentContainer from './pageContentContainer';
 
 const StyledFooter = styled.footer`
   background: ${reversedBackgroundColor};
@@ -19,21 +20,16 @@ const StyledFooter = styled.footer`
   a {
     color: ${reversedLinkColor};
   }
-
-  .footer-container {
-    margin: 0 auto;
-    max-width: ${mainWidthRem}rem;
-  }
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <div className="footer-container">
+    <PageContentContainer>
       <p>
         © {new Date().getFullYear()} Association of Universities for Research in
         Astronomy (AURA), Inc.
       </p>
-    </div>
+    </PageContentContainer>
   </StyledFooter>
 );
 
