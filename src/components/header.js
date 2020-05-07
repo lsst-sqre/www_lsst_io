@@ -4,15 +4,24 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
+import {
+  reversedBackgroundColor,
+  reversedTextColor,
+  reversedLinkColor,
+} from '../design/theme';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import { mainWidthRem, regularMarginRem } from '../utilities/sizes';
 import ThemeToggleButton from './themeToggle';
 
 const StyledHeader = styled.header`
-  background: #222222;
-  color: #ffffff;
+  background: ${reversedBackgroundColor};
+  color: ${reversedTextColor};
   padding-top: ${regularMarginRem}rem;
   padding-bottom: ${regularMarginRem}rem;
+
+  a {
+    color: ${reversedLinkColor};
+  }
 
   .header-container {
     margin: 0 auto;

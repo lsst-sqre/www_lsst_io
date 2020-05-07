@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { normalize } from 'polished';
 
+import { backgroundColor, textColor, linkColor } from '../design/theme';
 import { fontFamily } from '../design/type';
 
 /*
@@ -49,6 +50,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     ${fontFamily.sans}
     line-height: 1.5;
+    color: ${textColor};
+    background-color: ${backgroundColor};
+  }
+
+  a {
+    color: ${linkColor}
   }
 `;
 

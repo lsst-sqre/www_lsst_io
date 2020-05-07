@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
 
+import { linkColor } from '../design/theme';
+
 const DocumentHitContainer = styled.div`
   h2 {
     line-height: 1.1;
@@ -61,7 +63,7 @@ const StyledDetails = styled.details`
   summary {
     text-transform: uppercase;
     letter-spacing: 0.01em;
-    color: #1d00f8; // default link color
+    color: ${linkColor};
     cursor: pointer;
     font-size: 0.9rem;
     list-style: none;
