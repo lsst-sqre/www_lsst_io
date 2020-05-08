@@ -49,3 +49,22 @@ export const reversedBackgroundColor = theme('scheme', {
   light: neutral['900'],
   dark: black,
 });
+
+/* Count tag background color
+ *
+ * Mostly used in Algolia search widgets.
+ */
+export const countTagBackgroundColor = theme('scheme', {
+  light: neutral['100'],
+  dark: neutral['700'],
+});
+
+/*
+ * Count tag text color
+ *
+ * Mostly used in Algolia search widgets.
+ */
+export const countTagTextColor = theme('scheme', {
+  light: neutral['700'],
+  dark: neutral['100'],
+});

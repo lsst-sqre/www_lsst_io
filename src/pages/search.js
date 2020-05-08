@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
-import {
-  InstantSearch,
-  Configure,
-  HierarchicalMenu,
-} from 'react-instantsearch-dom';
+import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'qs';
 
 import useDebounce from '../hooks/useDebounce';
@@ -23,6 +19,7 @@ import {
 } from '../components/searchLayout';
 import PoweredBy from '../components/instantsearch/poweredBy';
 import RefinementList from '../components/instantsearch/refinementList';
+import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
 import { StyledHits } from '../components/hits';
 import { StyledDetailsToggleButton } from '../components/detailsToggle';
 

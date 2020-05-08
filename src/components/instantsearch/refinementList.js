@@ -5,11 +5,13 @@
  */
 
 import styled from 'styled-components';
-import theme from 'styled-theming';
 import { RefinementList as BaseRefinementList } from 'react-instantsearch-dom';
 
-import { textColor } from '../../design/theme';
-import { neutral } from '../../design/color';
+import {
+  textColor,
+  countTagTextColor,
+  countTagBackgroundColor,
+} from '../../design/theme';
 
 const RefinementList = styled(BaseRefinementList)`
   .ais-RefinementList-labelText {
@@ -18,11 +20,8 @@ const RefinementList = styled(BaseRefinementList)`
   }
 
   .ais-RefinementList-count {
-    background: ${theme('scheme', {
-      light: neutral['100'],
-      dark: neutral['700'],
-    })};
-    color: ${theme('scheme', { light: neutral['700'], dark: neutral['100'] })};
+    background: ${countTagBackgroundColor};
+    color: ${countTagTextColor};
   }
 `;
 
