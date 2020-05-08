@@ -20,9 +20,9 @@ import {
   SearchBoxArea,
   SearchRefinementsArea,
   StyledSearchBox,
-  StyledPoweredBy,
   SearchRefinementSection,
 } from '../components/searchLayout';
+import PoweredBy from '../components/instantsearch/poweredBy';
 import { StyledHits } from '../components/hits';
 import { StyledDetailsToggleButton } from '../components/detailsToggle';
 
@@ -109,7 +109,7 @@ const AdvancedSearchPage = ({ location }) => {
         <SearchLayout>
           <SearchBoxArea>
             <StyledSearchBox autoFocus />
-            <StyledPoweredBy />
+            <PoweredBy />
           </SearchBoxArea>
 
           <SearchRefinementsArea>
