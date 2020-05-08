@@ -4,32 +4,23 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const DetailsToggleButton = ({
-  hitCardsExpanded,
-  setHitCardsExpanded,
-  className = '',
-}) => {
+import Button from './buttons';
+
+const DetailsToggleButton = ({ hitCardsExpanded, setHitCardsExpanded }) => {
   const toggle = () => setHitCardsExpanded(expanded => !expanded);
 
   return (
-    <button type="button" className={className} onClick={toggle}>
+    <Button type="button" onClick={toggle}>
       {hitCardsExpanded ? 'Hide details' : 'Show details'}
-    </button>
+    </Button>
   );
 };
 
 DetailsToggleButton.propTypes = {
   hitCardsExpanded: PropTypes.bool.isRequired,
   setHitCardsExpanded: PropTypes.func.isRequired,
-  className: PropTypes.string,
 };
 
-export const StyledDetailsToggleButton = styled(DetailsToggleButton)`
-  border: 1px solid #c4c8d8;
-  border-radius: 4px;
-  background: #ffffff;
-  margin-bottom: 1rem;
-`;
+export default DetailsToggleButton;

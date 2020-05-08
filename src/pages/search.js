@@ -21,7 +21,8 @@ import PoweredBy from '../components/instantsearch/poweredBy';
 import RefinementList from '../components/instantsearch/refinementList';
 import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
 import { StyledHits } from '../components/hits';
-import { StyledDetailsToggleButton } from '../components/detailsToggle';
+import DetailsToggleButton from '../components/detailsToggle';
+import SearchSettingsCluster from '../components/searchSettingsCluster';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -127,10 +128,14 @@ const AdvancedSearchPage = ({ location }) => {
           </SearchRefinementsArea>
 
           <SearchResultsArea>
-            <StyledDetailsToggleButton
-              hitCardsExpanded={hitCardsExpanded}
-              setHitCardsExpanded={setHitCardsExpanded}
-            />
+            <SearchSettingsCluster>
+              <div>
+                <DetailsToggleButton
+                  hitCardsExpanded={hitCardsExpanded}
+                  setHitCardsExpanded={setHitCardsExpanded}
+                />
+              </div>
+            </SearchSettingsCluster>
             <StyledHits
               hitComponent={DocumentHit}
               hitCardsExpanded={hitCardsExpanded}
