@@ -4,7 +4,6 @@ import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
   Configure,
-  RefinementList,
   HierarchicalMenu,
 } from 'react-instantsearch-dom';
 import qs from 'qs';
@@ -23,6 +22,7 @@ import {
   SearchRefinementSection,
 } from '../components/searchLayout';
 import PoweredBy from '../components/instantsearch/poweredBy';
+import RefinementList from '../components/instantsearch/refinementList';
 import { StyledHits } from '../components/hits';
 import { StyledDetailsToggleButton } from '../components/detailsToggle';
 
