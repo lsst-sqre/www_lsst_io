@@ -36,12 +36,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /* Reinforce that we're respecting the user's ability to set a default
-  * font size. Nominally this is 16 px; but we'll be doing everything in ems
-  * anyways.
-  * Flexible Typesetting, Tim Brown, ch 2.
+  * font size. The rem unit now becomes relative to this.
+  * Flexible Typesetting, Tim Brown, ch 2 and 4
   */
   :root {
-    font-size: 100%;
+    font-size: 1.1rem;
   }
 
   /* System font stacks (for now).
@@ -49,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
   */
   body {
     ${fontFamily.sans}
-    line-height: 1.5;
+    line-height: 1.45;
     color: ${textColor};
     background-color: ${backgroundColor};
   }
