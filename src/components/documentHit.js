@@ -221,27 +221,39 @@ const DocumentHit = ({ hit, expanded }) => (
       </Summary>
 
       <dl>
-        <IconDataListTerm>
-          <StyledUserCoupleIcon />
-          <VisuallyHidden>Authored by</VisuallyHidden>
-        </IconDataListTerm>
-        <IconDataListContent>
-          <StyledPersonList names={hit.authorNames} />
-        </IconDataListContent>
+        {hit.authorNames && (
+          <>
+            <IconDataListTerm>
+              <StyledUserCoupleIcon />
+              <VisuallyHidden>Authored by</VisuallyHidden>
+            </IconDataListTerm>
+            <IconDataListContent>
+              <StyledPersonList names={hit.authorNames} />
+            </IconDataListContent>
+          </>
+        )}
 
-        <IconDataListTerm>
-          <StyledCodeIcon />
-          <VisuallyHidden>Source repository</VisuallyHidden>
-        </IconDataListTerm>
-        <IconDataListContent>
-          <a href={hit.githubRepoUrl}>{hit.githubRepoUrl}</a>
-        </IconDataListContent>
+        {hit.githubRepoUrl && (
+          <>
+            <IconDataListTerm>
+              <StyledCodeIcon />
+              <VisuallyHidden>Source repository</VisuallyHidden>
+            </IconDataListTerm>
+            <IconDataListContent>
+              <a href={hit.githubRepoUrl}>{hit.githubRepoUrl}</a>
+            </IconDataListContent>
+          </>
+        )}
 
-        <IconDataListTerm>
-          <StyledTimeIcon />
-          <VisuallyHidden>Updated on</VisuallyHidden>
-        </IconDataListTerm>
-        <IconDataListContent>{hit.sourceUpdateTime}</IconDataListContent>
+        {hit.sourceUpdateTime && (
+          <>
+            <IconDataListTerm>
+              <StyledTimeIcon />
+              <VisuallyHidden>Updated on</VisuallyHidden>
+            </IconDataListTerm>
+            <IconDataListContent>{hit.sourceUpdateTime}</IconDataListContent>
+          </>
+        )}
       </dl>
     </StyledDetails>
   </DocumentHitContainer>
