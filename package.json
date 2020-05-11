@@ -18,6 +18,7 @@
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
     "instantsearch.css": "^7.4.2",
+    "moment": "^2.25.3",
     "polished": "^3.6.1",
     "prop-types": "^15.7.2",
     "qs": "^6.9.3",
