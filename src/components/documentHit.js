@@ -7,9 +7,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import theme from 'styled-theming';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
 
 import { linkColor } from '../design/theme';
+import { primary, neutral } from '../design/color';
+import { IconDataListTerm, IconDataListContent } from './iconDataList';
+import UserCoupleIcon from '../icons/user-couple.svg';
+import TimeIcon from '../icons/time.svg';
+import CodeIcon from '../icons/code.svg';
+import VisuallyHidden from './basics/visuallyHidden';
 
 const DocumentHitContainer = styled.div`
   h2 {
@@ -80,6 +87,10 @@ const StyledHighlight = styled(Highlight)`
   }
 `;
 
+const Summary = styled.div`
+  margin: 1em 0 1em 0;
+`;
+
 const PersonList = ({ className, names }) => (
   <ol className={className}>
     {names.map(name => (
@@ -100,7 +111,6 @@ PersonList.propTypes = {
  * and add the Oxford comma.
  */
 const StyledPersonList = styled(PersonList)`
-  margin-top: 1rem;
   list-style: none;
   padding-left: 0;
 
@@ -125,6 +135,61 @@ const StyledPersonList = styled(PersonList)`
   }
 `;
 
+const secondaryIconFill = theme('scheme', {
+  light: primary['800'],
+  dark: neutral['100'],
+});
+
+const primaryIconFill = theme('scheme', {
+  light: neutral['200'],
+  dark: primary['800'],
+});
+
+const StyledUserCoupleIcon = styled(UserCoupleIcon)`
+  width: 0.85em;
+  width: 1cap;
+  height: 0.85em;
+  height: 1cap;
+
+  .primary {
+    fill: ${primaryIconFill};
+  }
+
+  .secondary {
+    fill: ${secondaryIconFill};
+  }
+`;
+
+const StyledTimeIcon = styled(TimeIcon)`
+  width: 0.85em;
+  width: 1cap;
+  height: 0.85em;
+  height: 1cap;
+
+  .primary {
+    fill: ${primaryIconFill};
+  }
+
+  .secondary {
+    fill: ${secondaryIconFill};
+  }
+`;
+
+const StyledCodeIcon = styled(CodeIcon)`
+  width: 0.85em;
+  width: 1cap;
+  height: 0.85em;
+  height: 1cap;
+
+  .primary {
+    fill: ${primaryIconFill};
+  }
+
+  .secondary {
+    fill: ${secondaryIconFill};
+  }
+`;
+
 const DocumentHit = ({ hit, expanded }) => (
   <DocumentHitContainer>
     <ContentTypeBanner>
@@ -145,17 +210,39 @@ const DocumentHit = ({ hit, expanded }) => (
     )}
     <StyledDetails open={expanded}>
       <summary>Details</summary>
-      <StyledHighlight
-        hit={hit}
-        attribute="content"
-        tagName="mark"
-        nonHighlightedTagName="span"
-      />
-      <StyledPersonList names={hit.authorNames} />
-      <p>
-        Source: <a href={hit.githubRepoUrl}>{hit.githubRepoUrl}</a>
-      </p>
-      <p>Updated: {hit.sourceUpdateTime}</p>
+
+      <Summary>
+        <StyledHighlight
+          hit={hit}
+          attribute="content"
+          tagName="mark"
+          nonHighlightedTagName="span"
+        />
+      </Summary>
+
+      <dl>
+        <IconDataListTerm>
+          <StyledUserCoupleIcon />
+          <VisuallyHidden>Authored by</VisuallyHidden>
+        </IconDataListTerm>
+        <IconDataListContent>
+          <StyledPersonList names={hit.authorNames} />
+        </IconDataListContent>
+
+        <IconDataListTerm>
+          <StyledCodeIcon />
+          <VisuallyHidden>Source repository</VisuallyHidden>
+        </IconDataListTerm>
+        <IconDataListContent>
+          <a href={hit.githubRepoUrl}>{hit.githubRepoUrl}</a>
+        </IconDataListContent>
+
+        <IconDataListTerm>
+          <StyledTimeIcon />
+          <VisuallyHidden>Updated on</VisuallyHidden>
+        </IconDataListTerm>
+        <IconDataListContent>{hit.sourceUpdateTime}</IconDataListContent>
+      </dl>
     </StyledDetails>
   </DocumentHitContainer>
 );
