@@ -46,13 +46,28 @@ const ContentTypeBanner = styled.div`
   padding-right: 1rem;
 `;
 
+const snippetBackground = theme('scheme', {
+  light: neutral['100'],
+  dark: neutral['700'],
+});
+
+const snippetBorderColor = theme('scheme', {
+  light: primary['800'],
+  dark: primary['700'],
+});
+
 const StyledSnippetBlock = styled.blockquote`
-  padding-left: 2rem;
-  padding-right: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   margin-left: 0;
   margin-right: 0;
-  border-left: 4px solid #aaaaaa;
-  background: #eeeeee;
+  border-left: 4px solid ${snippetBorderColor};
+  background: ${snippetBackground};
+
+  &::after,
+  &::before {
+    content: '[…]';
+    opacity: 0.5;
+  }
 `;
 
 const StyledSnippet = styled(Snippet)`
