@@ -35,15 +35,15 @@ const DocumentHitContainer = styled.div`
   }
 `;
 
-const ContentTypeBanner = styled.div`
-  background: #222222;
-  color: #ffffff;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  margin-bottom: 0.5rem;
-  margin-top: -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+const contentTypeColor = theme('scheme', {
+  light: neutral['600'],
+  dark: neutral['400'],
+});
+
+const ContentTypeSpan = styled.span`
+  color: ${contentTypeColor};
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
 `;
 
 const snippetBackground = theme('scheme', {
@@ -218,9 +218,7 @@ const humanizeAge = timestamp => {
 
 const DocumentHit = ({ hit, expanded }) => (
   <DocumentHitContainer>
-    <ContentTypeBanner>
-      <span>{hit.handle}</span>
-    </ContentTypeBanner>
+    <ContentTypeSpan>{hit.handle}</ContentTypeSpan>
     <a href={hit.url}>
       <h2>{hit.h1}</h2>
     </a>
