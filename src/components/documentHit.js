@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
+import moment from 'moment';
 
 import { linkColor } from '../design/theme';
 import { primary, neutral } from '../design/color';
@@ -190,6 +191,16 @@ const StyledCodeIcon = styled(CodeIcon)`
   }
 `;
 
+const humanizeAge = timestamp => {
+  const t = moment(timestamp);
+  const age = moment.duration(t.diff(moment()));
+  return (
+    <time dateTime={timestamp}>{`${age.humanize(true)} (${t.format(
+      'YYYY-MM-DD'
+    )})`}</time>
+  );
+};
+
 const DocumentHit = ({ hit, expanded }) => (
   <DocumentHitContainer>
     <ContentTypeBanner>
@@ -251,7 +262,9 @@ const DocumentHit = ({ hit, expanded }) => (
               <StyledTimeIcon />
               <VisuallyHidden>Updated on</VisuallyHidden>
             </IconDataListTerm>
-            <IconDataListContent>{hit.sourceUpdateTime}</IconDataListContent>
+            <IconDataListContent>
+              {humanizeAge(hit.sourceUpdateTime)}
+            </IconDataListContent>
           </>
         )}
       </dl>
