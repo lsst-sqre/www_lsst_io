@@ -8,6 +8,7 @@
     "algoliasearch": "^4.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.45",
+    "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-offline": "^3.0.41",
