@@ -6,6 +6,8 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 
+import Button from './buttons';
+
 const Form = styled.form`
   display: flex;
   font-size: 2rem;
@@ -19,7 +21,7 @@ const SearchBox = styled.div`
   }
 `;
 
-const SubmitInput = styled.input`
+const SubmitInput = styled(Button)`
   margin-left: 1rem;
 `;
 
@@ -56,7 +58,7 @@ export default function HeroSearchForm() {
           <VisuallyHiddenSpan>Search</VisuallyHiddenSpan>
         </label>
       </SearchBox>
-      <SubmitInput type="submit" value="Search" />
+      <SubmitInput as="input" type="submit" value="Search" />
     </Form>
   );
 }
