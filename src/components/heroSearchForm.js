@@ -44,6 +44,8 @@ export default function HeroSearchForm() {
             name="search"
             value={query}
             onChange={e => setQuery(e.target.value)}
+            // eslint-disable-next-line jsx-a11y/no-autofocus
+            autoFocus
           />
           <VisuallyHidden>Search</VisuallyHidden>
         </label>
