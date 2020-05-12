@@ -26,7 +26,7 @@ const Button = styled.button`
   ${variations}
   padding: 5px 20px;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1em;
   border: none;
   transition: 0.3s ease box-shadow;
   ${elevations[1]};
