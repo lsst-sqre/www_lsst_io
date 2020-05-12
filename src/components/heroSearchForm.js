@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 
+import VisuallyHidden from './basics/visuallyHidden';
 import Button from './buttons';
 
 const Form = styled.form`
@@ -23,17 +24,6 @@ const SearchBox = styled.div`
 
 const SubmitInput = styled(Button)`
   margin-left: 1rem;
-`;
-
-const VisuallyHiddenSpan = styled.span`
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 `;
 
 export default function HeroSearchForm() {
@@ -55,7 +45,7 @@ export default function HeroSearchForm() {
             value={query}
             onChange={e => setQuery(e.target.value)}
           />
-          <VisuallyHiddenSpan>Search</VisuallyHiddenSpan>
+          <VisuallyHidden>Search</VisuallyHidden>
         </label>
       </SearchBox>
       <SubmitInput as="input" type="submit" value="Search" />
