@@ -238,7 +238,7 @@ const DocumentHit = ({ hit, expanded }) => (
       <Summary>
         <StyledHighlight
           hit={hit}
-          attribute="content"
+          attribute="description"
           tagName="mark"
           nonHighlightedTagName="span"
         />
