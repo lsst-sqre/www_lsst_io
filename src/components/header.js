@@ -13,7 +13,7 @@ import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import Cluster from './cluster';
 import PageContentContainer from './pageContentContainer';
-import ThemeToggleButton from './themeToggle';
+// import ThemeToggleButton from './themeToggle';
 
 const StyledHeader = styled.header`
   background: ${reversedBackgroundColor};
@@ -64,9 +64,6 @@ const Header = () => (
             </Cluster>
           </nav>
           {/* Settings / non-navigation items */}
-          <div>
-            <ThemeToggleButton />
-          </div>
         </div>
       </Cluster>
     </PageContentContainer>
