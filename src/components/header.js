@@ -53,9 +53,7 @@ const Header = () => (
                 <li>
                   <Link to="/search/">Advanced search</Link>
                 </li>
-                <li>
-                  <Link to="/search/">Documents</Link>
-                </li>
+                {/* Add links for more categories/pages */}
               </NavList>
             </Cluster>
           </nav>
