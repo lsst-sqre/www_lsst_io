@@ -4,11 +4,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  reversedBackgroundColor,
-  reversedTextColor,
-  reversedLinkColor,
-} from '../design/theme';
+import { neutral, blue } from '../design/color';
 import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import Cluster from './cluster';
@@ -16,13 +12,13 @@ import PageContentContainer from './pageContentContainer';
 // import ThemeToggleButton from './themeToggle';
 
 const StyledHeader = styled.header`
-  background: ${reversedBackgroundColor};
-  color: ${reversedTextColor};
+  background: ${neutral['900']};
+  color: ${neutral['100']};
   padding-top: ${regularMarginRem}rem;
   padding-bottom: ${regularMarginRem}rem;
 
   a {
-    color: ${reversedLinkColor};
+    color: ${blue['100']};
   }
 `;
 

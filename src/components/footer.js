@@ -3,22 +3,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  reversedBackgroundColor,
-  reversedTextColor,
-  reversedLinkColor,
-} from '../design/theme';
+import { neutral, blue } from '../design/color';
 import { mediumMarginRem } from '../design/spacing';
 import PageContentContainer from './pageContentContainer';
 
 const StyledFooter = styled.footer`
-  background: ${reversedBackgroundColor};
-  color: ${reversedTextColor};
+  background: ${neutral['900']};
+  color: ${neutral['100']};
   flex-shrink: 0;
   margin-top: ${mediumMarginRem}rem;
 
   a {
-    color: ${reversedLinkColor};
+    color: ${blue['100']};
   }
 `;
 
