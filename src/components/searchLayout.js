@@ -1,14 +1,15 @@
 /* Layout for the Algolia search UI. */
 
 import styled from 'styled-components';
-import { PoweredBy, SearchBox } from 'react-instantsearch-dom';
+import { SearchBox } from 'react-instantsearch-dom';
 
 export const SearchLayout = styled.div`
   display: grid;
-  grid-template-columns: 22rem 1fr;
+  grid-template-columns: 16rem 1fr;
   grid-template-rows: auto auto;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
+  margin-top: 2rem;
 `;
 
 export const SearchBoxArea = styled.div`
@@ -22,13 +23,6 @@ export const SearchBoxArea = styled.div`
  */
 export const StyledSearchBox = styled(SearchBox)`
   flex: 1 1 0;
-`;
-
-/* PoweredBy Algolia InstantSearch widget that's styled.
- * https://www.algolia.com/doc/api-reference/widgets/powered-by/react/
- */
-export const StyledPoweredBy = styled(PoweredBy)`
-  margin-left: 1rem;
 `;
 
 export const SearchRefinementsArea = styled.div`

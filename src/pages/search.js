@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
-import {
-  InstantSearch,
-  Configure,
-  RefinementList,
-  HierarchicalMenu,
-} from 'react-instantsearch-dom';
+import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'qs';
+
+import useDebounce from '../hooks/useDebounce';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -18,11 +15,15 @@ import {
   SearchBoxArea,
   SearchRefinementsArea,
   StyledSearchBox,
-  StyledPoweredBy,
   SearchRefinementSection,
 } from '../components/searchLayout';
+import PoweredBy from '../components/instantsearch/poweredBy';
+import RefinementList from '../components/instantsearch/refinementList';
+import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
+import ClearRefinements from '../components/instantsearch/clearRefinements';
 import { StyledHits } from '../components/hits';
-import { StyledDetailsToggleButton } from '../components/detailsToggle';
+import DetailsToggleButton from '../components/detailsToggle';
+import SearchSettingsCluster from '../components/searchSettingsCluster';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -50,35 +51,6 @@ const urlToSearchState = ({ search }) => qs.parse(search.slice(1));
  * (milliseconds).
  */
 const DEBOUNCE_TIME = 800;
-
-/**
- * Debounce hook
- *
- * https://usehooks.com/useDebounce/
- */
-function useDebounce(value, delay) {
-  // State and setters for debounced value
-  const [debouncedValue, setDebouncedValue] = React.useState(value);
-
-  React.useEffect(
-    () => {
-      // Update debounced value after delay
-      const handler = setTimeout(() => {
-        setDebouncedValue(value);
-      }, delay);
-
-      // Cancel the timeout if value changes (also on delay change or unmount)
-      // This is how we prevent debounced value from updating if value is
-      // changed within the delay period. Timeout gets cleared and restarted.
-      return () => {
-        clearTimeout(handler);
-      };
-    },
-    [value, delay] // Only re-call effect if value or delay changes
-  );
-
-  return debouncedValue;
-}
 
 const AdvancedSearchPage = ({ location }) => {
   const [hitCardsExpanded, setHitCardsExpanded] = React.useState(false);
@@ -136,7 +108,7 @@ const AdvancedSearchPage = ({ location }) => {
         <SearchLayout>
           <SearchBoxArea>
             <StyledSearchBox autoFocus />
-            <StyledPoweredBy />
+            <PoweredBy />
           </SearchBoxArea>
 
           <SearchRefinementsArea>
@@ -157,10 +129,15 @@ const AdvancedSearchPage = ({ location }) => {
           </SearchRefinementsArea>
 
           <SearchResultsArea>
-            <StyledDetailsToggleButton
-              hitCardsExpanded={hitCardsExpanded}
-              setHitCardsExpanded={setHitCardsExpanded}
-            />
+            <SearchSettingsCluster>
+              <div>
+                <ClearRefinements />
+                <DetailsToggleButton
+                  hitCardsExpanded={hitCardsExpanded}
+                  setHitCardsExpanded={setHitCardsExpanded}
+                />
+              </div>
+            </SearchSettingsCluster>
             <StyledHits
               hitComponent={DocumentHit}
               hitCardsExpanded={hitCardsExpanded}

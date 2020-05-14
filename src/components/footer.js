@@ -3,28 +3,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { mainWidthRem, mediumMarginRem } from '../utilities/sizes';
+import { neutral, blue } from '../design/color';
+import { mediumMarginRem } from '../design/spacing';
+import PageContentContainer from './pageContentContainer';
 
 const StyledFooter = styled.footer`
-  background: #222222;
-  color: #ffffff;
+  background: ${neutral['900']};
+  color: ${neutral['100']};
   flex-shrink: 0;
   margin-top: ${mediumMarginRem}rem;
 
-  .footer-container {
-    margin: 0 auto;
-    max-width: ${mainWidthRem}rem;
+  a {
+    color: ${blue['100']};
   }
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <div className="footer-container">
+    <PageContentContainer>
       <p>
         © {new Date().getFullYear()} Association of Universities for Research in
-        Astronomy (AURA), Inc..
+        Astronomy (AURA), Inc.
       </p>
-    </div>
+    </PageContentContainer>
   </StyledFooter>
 );
 

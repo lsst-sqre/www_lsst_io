@@ -6,6 +6,9 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 
+import VisuallyHidden from './basics/visuallyHidden';
+import Button from './buttons';
+
 const Form = styled.form`
   display: flex;
   font-size: 2rem;
@@ -19,19 +22,8 @@ const SearchBox = styled.div`
   }
 `;
 
-const SubmitInput = styled.input`
+const SubmitInput = styled(Button)`
   margin-left: 1rem;
-`;
-
-const VisuallyHiddenSpan = styled.span`
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 `;
 
 export default function HeroSearchForm() {
@@ -52,11 +44,13 @@ export default function HeroSearchForm() {
             name="search"
             value={query}
             onChange={e => setQuery(e.target.value)}
+            // eslint-disable-next-line jsx-a11y/no-autofocus
+            autoFocus
           />
-          <VisuallyHiddenSpan>Search</VisuallyHiddenSpan>
+          <VisuallyHidden>Search</VisuallyHidden>
         </label>
       </SearchBox>
-      <SubmitInput type="submit" value="Search" />
+      <SubmitInput as="input" type="submit" value="Search" />
     </Form>
   );
 }
