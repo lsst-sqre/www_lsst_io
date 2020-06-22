@@ -31,7 +31,7 @@ export default function HeroSearchForm() {
 
   const handleSubmit = e => {
     e.preventDefault(); // don't reload page on submission
-    navigate(`/search?query=${query}`, { replace: false });
+    navigate(`/search/?query=${query}`, { replace: false });
   };
 
   return (
