@@ -5,7 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Configure, SortBy } from 'react-instantsearch-dom';
+import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'qs';
 
 import useDebounce from '../hooks/useDebounce';
@@ -27,6 +27,7 @@ import ClearRefinements from '../components/instantsearch/clearRefinements';
 import { StyledHits } from '../components/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
+import SortBy from '../components/instantsearch/sortBy';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
