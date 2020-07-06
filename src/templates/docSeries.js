@@ -5,7 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Configure } from 'react-instantsearch-dom';
+import { InstantSearch, Configure, SortBy } from 'react-instantsearch-dom';
 import qs from 'qs';
 
 import useDebounce from '../hooks/useDebounce';
@@ -95,7 +95,7 @@ export default function DocSeriesTemplate({
 
       <InstantSearch
         searchClient={searchClient}
-        indexName="document_dev"
+        indexName="document_dev_handle_desc"
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
         createUrl={createUrlParams}
@@ -128,6 +128,13 @@ export default function DocSeriesTemplate({
                 <DetailsToggleButton
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
+                />
+                <SortBy
+                  defaultRefinement="document_dev_handle_desc"
+                  items={[
+                    { value: 'document_dev', label: 'Relevance' },
+                    { value: 'document_dev_handle_desc', label: 'ID' },
+                  ]}
                 />
               </div>
             </SearchSettingsCluster>
