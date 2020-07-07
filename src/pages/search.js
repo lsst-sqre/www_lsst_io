@@ -131,11 +131,11 @@ const AdvancedSearchPage = ({ location }) => {
           <SearchResultsArea>
             <SearchSettingsCluster>
               <div>
-                <ClearRefinements />
                 <DetailsToggleButton
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
                 />
+                <ClearRefinements />
               </div>
             </SearchSettingsCluster>
             <StyledHits
