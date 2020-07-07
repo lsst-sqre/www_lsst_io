@@ -13,14 +13,22 @@ const StyledCluster = styled(Cluster)`
   overflow: visible; // so the box-shadow isn't being cut off
 `;
 
-const SearchSettingsCluster = ({ children }) => (
-  <StyledCluster space="1rem" justifyContent="flex-end">
+const SearchSettingsCluster = ({ children, justifyContent = 'flex-start' }) => (
+  <StyledCluster space="1rem" justifyContent={`${justifyContent}`}>
     {children}
   </StyledCluster>
 );
 
 SearchSettingsCluster.propTypes = {
   children: PropTypes.node.isRequired,
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+    'space-evenly',
+  ]),
 };
 
 export default SearchSettingsCluster;
