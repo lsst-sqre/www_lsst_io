@@ -21,7 +21,7 @@ import PoweredBy from '../components/instantsearch/poweredBy';
 import RefinementList from '../components/instantsearch/refinementList';
 import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
 import ClearRefinements from '../components/instantsearch/clearRefinements';
-import { StyledHits } from '../components/hits';
+import NonEmptyHits from '../components/instantsearch/nonEmptyHits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
 
@@ -138,7 +138,7 @@ const AdvancedSearchPage = ({ location }) => {
                 <ClearRefinements />
               </div>
             </SearchSettingsCluster>
-            <StyledHits
+            <NonEmptyHits
               hitComponent={DocumentHit}
               hitCardsExpanded={hitCardsExpanded}
             />
