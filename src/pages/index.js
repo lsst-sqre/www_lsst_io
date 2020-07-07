@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery, Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 
@@ -97,6 +97,24 @@ const IndexPage = () => (
         </div>
       </StyledSearchContainer>
     </StyledBackgroundSection>
+    <section>
+      <h2>Documents</h2>
+
+      <p>
+        <Link to="/search/?hierarchicalMenu[contentCategories.lvl0]=Documents">
+          Search in all Rubin Observatory documents,
+        </Link>{' '}
+        or browse by series:
+      </p>
+
+      <ul>
+        <li>
+          <Link to="/sqr/">
+            <strong>SQR</strong> &mdash; SQuaRE Technical Notes
+          </Link>
+        </li>
+      </ul>
+    </section>
   </Layout>
 );
 
