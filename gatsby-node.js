@@ -20,7 +20,7 @@ exports.createPages = ({ actions }) => {
 
   allDocSeries.forEach(docSeries => {
     createPage({
-      path: `/${docSeries.key.toLowerCase()}`,
+      path: `/${docSeries.key.toLowerCase()}/`,
       component: require.resolve(`./src/templates/docSeries.js`),
       context: { docSeries },
     });
