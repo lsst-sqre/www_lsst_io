@@ -27,7 +27,7 @@ import ClearRefinements from '../components/instantsearch/clearRefinements';
 import { StyledHits } from '../components/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
-import SortBy from '../components/instantsearch/sortBy';
+import AutoSortBy from '../components/instantsearch/autoSortBy';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -125,8 +125,9 @@ export default function DocSeriesTemplate({
           <SearchResultsArea>
             <SearchSettingsCluster>
               <div>
-                <SortBy
+                <AutoSortBy
                   defaultRefinement="document_dev_handle_desc"
+                  relevanceRefinement="document_dev"
                   items={[
                     { value: 'document_dev', label: 'Relevance' },
                     { value: 'document_dev_handle_desc', label: 'ID' },
