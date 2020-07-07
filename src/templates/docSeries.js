@@ -125,11 +125,6 @@ export default function DocSeriesTemplate({
           <SearchResultsArea>
             <SearchSettingsCluster>
               <div>
-                <ClearRefinements />
-                <DetailsToggleButton
-                  hitCardsExpanded={hitCardsExpanded}
-                  setHitCardsExpanded={setHitCardsExpanded}
-                />
                 <SortBy
                   defaultRefinement="document_dev_handle_desc"
                   items={[
@@ -137,8 +132,14 @@ export default function DocSeriesTemplate({
                     { value: 'document_dev_handle_desc', label: 'ID' },
                   ]}
                 />
+                <DetailsToggleButton
+                  hitCardsExpanded={hitCardsExpanded}
+                  setHitCardsExpanded={setHitCardsExpanded}
+                />
+                <ClearRefinements />
               </div>
             </SearchSettingsCluster>
+
             <StyledHits
               hitComponent={DocumentHit}
               hitCardsExpanded={hitCardsExpanded}
