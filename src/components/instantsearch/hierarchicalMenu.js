@@ -8,11 +8,6 @@ import styled from 'styled-components';
 import theme from 'styled-theming';
 import { HierarchicalMenu as BaseHierarchicalMenu } from 'react-instantsearch-dom';
 
-import {
-  linkColor,
-  countTagTextColor,
-  countTagBackgroundColor,
-} from '../../design/theme';
 import { neutral } from '../../design/color';
 
 /*
@@ -31,12 +26,12 @@ const themedCaretImage = theme('scheme', {
 
 const HierarchicalMenu = styled(BaseHierarchicalMenu)`
   .ais-HierarchicalMenu-label {
-    color: ${linkColor};
+    color: var(--c-link));
   }
 
   .ais-HierarchicalMenu-count {
-    background: ${countTagBackgroundColor};
-    color: ${countTagTextColor};
+    background: var(--c-tag-background);
+    color: var(--c-tag-text);
   }
 
   .ais-HierarchicalMenu-link::after {

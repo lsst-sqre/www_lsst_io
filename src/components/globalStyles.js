@@ -128,14 +128,24 @@ const GlobalStyle = createGlobalStyle`
     /*
      * Semantic colours in default (light) theme
      */
+    --c-primary: var(--c-cyan-800);
     --c-text: var(--c-neutral-900);
     --c-background: var(--c-neutral-050);
     --c-link: var(--c-blue-600);
+    --c-highlight-background: var(--c-yellow-300);
     --c-reversed-text: var(--c-neutral-100);
     --c-reversed-background: var(--c-neutral-900);
     --c-reversed-link: var(--c-blue-100);
     --c-tag-text: var(--c-neutral-700);
     --c-tag-background: var(--c-neutral-100);
+    --c-button-background: var(--c-primary);
+    --c-button-text: var(--c-reversed-text);
+    --c-faded-text: var(--c-neutral-600);
+    --c-snippet-background: var(--c-neutral-100);
+    --c-snippet-border: var(--c-primary-800);
+    --c-icon-primary: var(--c-neutral-200);
+    --c-icon-secondary: var(--c-primary);
+    --c-algolia-text: #182359;
 
     /*
      * System font stacks (for now).
@@ -152,10 +162,16 @@ const GlobalStyle = createGlobalStyle`
     --c-background: var(--c-neutral-900);
     --c-link: var(--c-blue-100);
     --c-reversed-text: var(--c-neutral-100);
-    --c-reversed-background: var(#000000);
+    --c-reversed-background: #000000;
     --c-reversed-link: var(--c-blue-100);
-    --c-tag-text: var(--c-neutral-100);
+    --c-tag-text: var(--c-neutral-200);
     --c-tag-background: var(--c-neutral-700);
+    --c-faded-text: var(--c-neutral-400);
+    --c-snippet-background: var(--c-neutral-700);
+    --c-snippet-border: var(--c-primary-700);
+    --c-icon-primary: var(--c-primary);
+    --c-icon-secondary: var(--c-neutral-100);
+    --c-algolia-text: var(--c-text);
   }
 
   a {

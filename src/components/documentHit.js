@@ -7,12 +7,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import theme from 'styled-theming';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
 import moment from 'moment';
 
-import { linkColor } from '../design/theme';
-import { primary, neutral } from '../design/color';
 import { IconDataListTerm, IconDataListContent } from './iconDataList';
 import UserCoupleIcon from '../icons/user-couple.svg';
 import TimeIcon from '../icons/time.svg';
@@ -35,33 +32,18 @@ const DocumentHitContainer = styled.div`
   }
 `;
 
-const contentTypeColor = theme('scheme', {
-  light: neutral['600'],
-  dark: neutral['400'],
-});
-
 const ContentTypeSpan = styled.span`
-  color: ${contentTypeColor};
+  color: var(--c-faded-text);
   font-size: 0.9rem;
   letter-spacing: 0.01em;
 `;
-
-const snippetBackground = theme('scheme', {
-  light: neutral['100'],
-  dark: neutral['700'],
-});
-
-const snippetBorderColor = theme('scheme', {
-  light: primary['800'],
-  dark: primary['700'],
-});
 
 const StyledSnippetBlock = styled.blockquote`
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-left: 0;
   margin-right: 0;
-  border-left: 4px solid ${snippetBorderColor};
-  background: ${snippetBackground};
+  border-left: 4px solid var(--c-snippet-border);
+  background: var(--c-snippet-background);
 
   &::after,
   &::before {
@@ -78,7 +60,7 @@ const StyledSnippet = styled(Snippet)`
   }
 
   ${({ tagName }) => tagName} {
-    background: yellow;
+    background: var(--c-highlight-background);
   }
 `;
 
@@ -86,7 +68,7 @@ const StyledDetails = styled.details`
   summary {
     text-transform: uppercase;
     letter-spacing: 0.01em;
-    color: ${linkColor};
+    color: var(--c-link);
     cursor: pointer;
     font-size: 0.9rem;
     list-style: none;
@@ -99,7 +81,7 @@ const StyledDetails = styled.details`
 
 const StyledHighlight = styled(Highlight)`
   ${({ tagName }) => tagName} {
-    background: yellow;
+    background: var(--c-highlight-background);
   }
 `;
 
@@ -151,16 +133,6 @@ const StyledPersonList = styled(PersonList)`
   }
 `;
 
-const secondaryIconFill = theme('scheme', {
-  light: primary['800'],
-  dark: neutral['100'],
-});
-
-const primaryIconFill = theme('scheme', {
-  light: neutral['200'],
-  dark: primary['800'],
-});
-
 const StyledUserCoupleIcon = styled(UserCoupleIcon)`
   width: 0.85em;
   width: 1cap;
@@ -168,11 +140,11 @@ const StyledUserCoupleIcon = styled(UserCoupleIcon)`
   height: 1cap;
 
   .primary {
-    fill: ${primaryIconFill};
+    fill: var(--c-icon-primary);
   }
 
   .secondary {
-    fill: ${secondaryIconFill};
+    fill: var(--c-icon-secondary);
   }
 `;
 
@@ -182,12 +154,13 @@ const StyledTimeIcon = styled(TimeIcon)`
   height: 0.85em;
   height: 1cap;
 
-  .primary {
-    fill: ${primaryIconFill};
+  /* secondary and primary look better reversed */
+  .secondary {
+    fill: var(--c-icon-primary);
   }
 
-  .secondary {
-    fill: ${secondaryIconFill};
+  .primary {
+    fill: var(--c-icon-secondary);
   }
 `;
 
@@ -197,12 +170,13 @@ const StyledCodeIcon = styled(CodeIcon)`
   height: 0.85em;
   height: 1cap;
 
-  .primary {
-    fill: ${primaryIconFill};
+  /* secondary and primary look better reversed */
+  .secondary {
+    fill: var(--c-icon-primary);
   }
 
-  .secondary {
-    fill: ${secondaryIconFill};
+  .primary {
+    fill: var(--c-icon-secondary);
   }
 `;
 

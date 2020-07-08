@@ -5,16 +5,7 @@
  */
 
 import styled from 'styled-components';
-import theme from 'styled-theming';
 import { PoweredBy as BasePoweredBy } from 'react-instantsearch-dom';
-
-import { textColor } from '../../design/theme';
-import { neutral } from '../../design/color';
-
-const algoliaLogoFill = theme('scheme', {
-  light: '#182359', // regular Algolia logo colour
-  dark: neutral['100'],
-});
 
 /* PoweredBy Algolia InstantSearch widget that's styled.
  *
@@ -24,11 +15,11 @@ const PoweredBy = styled(BasePoweredBy)`
   margin-left: 1rem;
 
   .ais-PoweredBy-text {
-    color: ${textColor};
+    color: var(--c-text);
   }
 
   .ais-PoweredBy-logo path:last-of-type {
-    fill: ${algoliaLogoFill};
+    fill: var(--c-algolia-text);
   }
 `;
 
