@@ -1,3 +1,7 @@
+/**
+ * Template for a browsable listing of documents within a document series.
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import algoliasearch from 'algoliasearch/lite';
@@ -19,11 +23,11 @@ import {
 } from '../components/searchLayout';
 import PoweredBy from '../components/instantsearch/poweredBy';
 import RefinementList from '../components/instantsearch/refinementList';
-import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
 import ClearRefinements from '../components/instantsearch/clearRefinements';
-import NonEmptyHits from '../components/instantsearch/nonEmptyHits';
+import { StyledHits } from '../components/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
+import AutoSortBy from '../components/instantsearch/autoSortBy';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -52,7 +56,10 @@ const urlToSearchState = ({ search }) => qs.parse(search.slice(1));
  */
 const DEBOUNCE_TIME = 800;
 
-const AdvancedSearchPage = ({ location }) => {
+export default function DocSeriesTemplate({
+  pageContext: { docSeries },
+  location,
+}) {
   const [hitCardsExpanded, setHitCardsExpanded] = React.useState(false);
   const [searchState, setSearchState] = React.useState(
     urlToSearchState(location)
@@ -84,25 +91,22 @@ const AdvancedSearchPage = ({ location }) => {
 
   return (
     <Layout>
-      <SEO title="Advanced search" />
-      <h1>Advanced search</h1>
-
-      <p>
-        Search the entire universe of Rubin Observatory documentation and open
-        source projects.
-      </p>
+      <SEO title={docSeries.name} />
+      <h1>{docSeries.name}</h1>
 
       <InstantSearch
         searchClient={searchClient}
-        indexName="document_dev"
+        indexName="document_dev_handle_desc"
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
         createUrl={createUrlParams}
       >
         <Configure
           distinct
-          facetingAfterDistinct="true"
+          facetingAfterDistinct
           attributesToSnippet={['content:20']}
+          filters={`series:${docSeries.key}`}
+          hitsPerPage={1000}
         />
 
         <SearchLayout>
@@ -113,16 +117,6 @@ const AdvancedSearchPage = ({ location }) => {
 
           <SearchRefinementsArea>
             <SearchRefinementSection>
-              <h2>Content types</h2>
-              <HierarchicalMenu
-                attributes={[
-                  'contentCategories.lvl0',
-                  'contentCategories.lvl1',
-                ]}
-              />
-            </SearchRefinementSection>
-
-            <SearchRefinementSection>
               <h2>Contributors</h2>
               <RefinementList attribute="authorNames" />
             </SearchRefinementSection>
@@ -131,6 +125,14 @@ const AdvancedSearchPage = ({ location }) => {
           <SearchResultsArea>
             <SearchSettingsCluster>
               <div>
+                <AutoSortBy
+                  defaultRefinement="document_dev_handle_desc"
+                  relevanceRefinement="document_dev"
+                  items={[
+                    { value: 'document_dev', label: 'Relevance' },
+                    { value: 'document_dev_handle_desc', label: 'ID' },
+                  ]}
+                />
                 <DetailsToggleButton
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
@@ -138,7 +140,8 @@ const AdvancedSearchPage = ({ location }) => {
                 <ClearRefinements />
               </div>
             </SearchSettingsCluster>
-            <NonEmptyHits
+
+            <StyledHits
               hitComponent={DocumentHit}
               hitCardsExpanded={hitCardsExpanded}
             />
@@ -147,10 +150,9 @@ const AdvancedSearchPage = ({ location }) => {
       </InstantSearch>
     </Layout>
   );
-};
+}
 
-AdvancedSearchPage.propTypes = {
+DocSeriesTemplate.propTypes = {
+  pageContext: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
-
-export default AdvancedSearchPage;

@@ -1,3 +1,6 @@
+.. image:: https://github.com/lsst-sqre/www_lsst_io/workflows/CI/badge.svg
+   :target: https://github.com/lsst-sqre/www_lsst_io/actions?query=workflow%3ACI
+
 ###########
 www.lsst.io
 ###########
@@ -5,10 +8,15 @@ www.lsst.io
 https://www.lsst.io is a portal for `Rubin Observatory`_ documentation.
 It's designed to help Rubin Observatory staff and the astronomy community discover documentation, software, and other bits of information produced by the Rubin Observatory and LSST.
 
-This site is built with Gatsby_ and React_.
-The search experience is powered by Algolia_.
-It's deployed on `LSST the Docs <https://sqr-006.lsst.io>`__.
-Searchable content is curated and ingested by Ook_, the Rubin Observatory librarian service.
+Technical stack
+===============
+
+- This site is built with Gatsby_ and React_.
+- The search experience is powered by Algolia_ and react-instantsearch_
+- Styling is done through styled-components_.
+- It's deployed on `LSST the Docs <https://sqr-006.lsst.io>`__.
+- Searchable content is curated and ingested by Ook_, the Rubin Observatory librarian service.
+  Ook ingests URLs/documents on-demand through a Kafka message queue on Roundtable_.
 
 Development workflow primer
 ===========================
@@ -141,6 +149,9 @@ Here are the important files and directories:
 .. _Gatsby: https://www.gatsbyjs.org
 .. _React: https://reactjs.org
 .. _Algolia: https://www.algolia.com
+.. _react-instantsearch: https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react/
+.. _styled-components: https://styled-components.com
 .. _Ook: https://github.com/lsst-sqre/ook
 .. _Prettier: https://prettier.io/
 .. _pre-commit: https://pre-commit.com/
+.. _Roundtable: https://roundtable.lsst.io

@@ -6,7 +6,7 @@ import { SearchBox } from 'react-instantsearch-dom';
 export const SearchLayout = styled.div`
   display: grid;
   grid-template-columns: 16rem 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   margin-top: 2rem;
