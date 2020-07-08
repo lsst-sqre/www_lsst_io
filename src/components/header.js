@@ -3,12 +3,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
 import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import Cluster from './cluster';
 import PageContentContainer from './pageContentContainer';
-// import ThemeToggleButton from './themeToggle';
 
 const StyledHeader = styled.header`
   background: var(--c-reversed-background);
@@ -34,6 +34,35 @@ const NavList = styled.ul`
   list-style: None;
 `;
 
+/* eslint-disable */
+class CustomThemeToggle extends React.Component {
+  render() {
+    return (
+      <ThemeToggler>
+        {({ theme, toggleTheme }) => {
+          // Don't render anything at compile time. Deferring rendering until we
+          // know which theme to use on the client avoids incorrect initial
+          // state being displayed.
+          if (theme == null) {
+            return null;
+          }
+          return (
+            <label>
+              <input
+                type="checkbox"
+                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                checked={theme === 'dark'}
+              />{' '}
+              Dark mode
+            </label>
+          );
+        }}
+      </ThemeToggler>
+    );
+  }
+}
+/* eslint-enable */
+
 const Header = () => (
   <StyledHeader>
     <PageContentContainer>
@@ -57,6 +86,7 @@ const Header = () => (
             </Cluster>
           </nav>
           {/* Settings / non-navigation items */}
+          <CustomThemeToggle />
         </div>
       </Cluster>
     </PageContentContainer>
