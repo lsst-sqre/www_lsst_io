@@ -134,7 +134,7 @@ Here are the important files and directories:
     This file is where we customize the build process using `Gatsby Node APIs <https://www.gatsbyjs.org/docs/node-apis/>`__.
 
 ``gatsby-ssr.js``
-    This file is where we customize Gatsby's server-side rendering with the `Gatsby SSR APIs <https://www.gatsbyjs.org/docs/ssr-apis/`__.
+    This file is where we customize Gatsby's server-side rendering with the `Gatsby SSR APIs <https://www.gatsbyjs.org/docs/ssr-apis/>`__.
 
 ``LICENSE``
     This project is licensed under MIT, along with the sub-licenses listed in ``licenses/``.
