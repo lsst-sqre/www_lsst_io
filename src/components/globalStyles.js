@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
 import { fontFamily } from '../design/type';
+import { primary, neutral, blue, red, yellow, teal } from '../design/color';
 
 /*
  * Global styles for the entire application via createGlobalStyle.
@@ -54,76 +55,76 @@ const GlobalStyle = createGlobalStyle`
      */
 
     /* Neutrals */
-    --c-neutral-050: #FAF9F7;
-    --c-neutral-100: #E8E6E1;
-    --c-neutral-200: #D3CEC4;
-    --c-neutral-300: #B8B2A7;
-    --c-neutral-400: #A39E93;
-    --c-neutral-500: #857F72;
-    --c-neutral-600: #625D52;
-    --c-neutral-700: #504A40;
-    --c-neutral-800: #423D33;
-    --c-neutral-900: #27241D;
+    --c-neutral-050: ${neutral['050']};
+    --c-neutral-100: ${neutral['100']};
+    --c-neutral-200: ${neutral['200']};
+    --c-neutral-300: ${neutral['300']};
+    --c-neutral-400: ${neutral['400']};
+    --c-neutral-500: ${neutral['500']};
+    --c-neutral-600: ${neutral['600']};
+    --c-neutral-700: ${neutral['700']};
+    --c-neutral-800: ${neutral['800']};
+    --c-neutral-900: ${neutral['900']};
 
     /* Primary cyan */
-    --c-cyan-050: #E0FCFF;
-    --c-cyan-100: #BEF8FD;
-    --c-cyan-200: #87EAF2;
-    --c-cyan-300: #54D1DB;
-    --c-cyan-400: #38BEC9;
-    --c-cyan-500: #2CB1BC;
-    --c-cyan-600: #14919B;
-    --c-cyan-700: #0E7C86;
-    --c-cyan-800: #0A6C74;
-    --c-cyan-900: #044E54;
+    --c-cyan-050: ${primary['050']};
+    --c-cyan-100: ${primary['100']};
+    --c-cyan-200: ${primary['200']};
+    --c-cyan-300: ${primary['300']};
+    --c-cyan-400: ${primary['400']};
+    --c-cyan-500: ${primary['500']};
+    --c-cyan-600: ${primary['600']};
+    --c-cyan-700: ${primary['700']};
+    --c-cyan-800: ${primary['800']};
+    --c-cyan-900: ${primary['900']};
 
     /* Blue */
-    --c-blue-050: #DCEEFB;
-    --c-blue-100: #B6E0FE;
-    --c-blue-200: #84C5F4;
-    --c-blue-300: #62B0E8;
-    --c-blue-400: #4098D7;
-    --c-blue-500: #2680C2;
-    --c-blue-600: #186FAF;
-    --c-blue-700: #0F609B;
-    --c-blue-800: #0A558C;
-    --c-blue-900: #003E6B;
+    --c-blue-050: ${blue['050']};
+    --c-blue-100: ${blue['100']};
+    --c-blue-200: ${blue['200']};
+    --c-blue-300: ${blue['300']};
+    --c-blue-400: ${blue['400']};
+    --c-blue-500: ${blue['500']};
+    --c-blue-600: ${blue['600']};
+    --c-blue-700: ${blue['700']};
+    --c-blue-800: ${blue['800']};
+    --c-blue-900: ${blue['900']};
 
     /* Red */
-    --c-red-050: #FFEEEE;
-    --c-red-100: #FACDCD;
-    --c-red-200: #F29B9B;
-    --c-red-300: #E66A6A;
-    --c-red-400: #D64545;
-    --c-red-500: #BA2525;
-    --c-red-600: #A61B1B;
-    --c-red-700: #911111;
-    --c-red-800: #780A0A;
-    --c-red-900: #610404;
+    --c-red-050: ${red['050']};
+    --c-red-100: ${red['100']};
+    --c-red-200: ${red['200']};
+    --c-red-300: ${red['300']};
+    --c-red-400: ${red['400']};
+    --c-red-500: ${red['500']};
+    --c-red-600: ${red['600']};
+    --c-red-700: ${red['700']};
+    --c-red-800: ${red['800']};
+    --c-red-900: ${red['900']};
 
     /* Yellow */
-    --c-yellow-050: #FFFAEB;
-    --c-yellow-100: #FCEFC7;
-    --c-yellow-200: #F8E3A3;
-    --c-yellow-300: #F9DA8B;
-    --c-yellow-400: #F7D070;
-    --c-yellow-500: #E9B949;
-    --c-yellow-600: #C99A2E;
-    --c-yellow-700: #A27C1A;
-    --c-yellow-800: #7C5E10;
-    --c-yellow-900: #513C06;
+    --c-yellow-050: ${yellow['050']};
+    --c-yellow-100: ${yellow['100']};
+    --c-yellow-200: ${yellow['200']};
+    --c-yellow-300: ${yellow['300']};
+    --c-yellow-400: ${yellow['400']};
+    --c-yellow-500: ${yellow['500']};
+    --c-yellow-600: ${yellow['600']};
+    --c-yellow-700: ${yellow['700']};
+    --c-yellow-800: ${yellow['800']};
+    --c-yellow-900: ${yellow['900']};
 
     /* Teal */
-    --c-teal-050: #EFFCF6;
-    --c-teal-100: #C6F7E2;
-    --c-teal-200: #8EEDC7;
-    --c-teal-300: #65D6AD;
-    --c-teal-400: #3EBD93;
-    --c-teal-500: #27AB83;
-    --c-teal-600: #199473;
-    --c-teal-700: #147D64;
-    --c-teal-800: #0C6B58;
-    --c-teal-900: #014D40;
+    --c-teal-050: ${teal['050']};
+    --c-teal-100: ${teal['100']};
+    --c-teal-200: ${teal['200']};
+    --c-teal-300: ${teal['300']};
+    --c-teal-400: ${teal['400']};
+    --c-teal-500: ${teal['500']};
+    --c-teal-600: ${teal['600']};
+    --c-teal-700: ${teal['700']};
+    --c-teal-800: ${teal['800']};
+    --c-teal-900: ${teal['900']};
 
     /*
      * Semantic colours in default (light) theme

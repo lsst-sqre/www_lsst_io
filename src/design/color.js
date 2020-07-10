@@ -2,15 +2,6 @@
  * Color-related design tokens.
  */
 
-/* Pure white */
-export const white = '#ffffff';
-
-/* Pure black */
-export const black = '#000000';
-
-/* Rubin Observatory primary brand color */
-export const brandPrimary = '#048b8c';
-
 /*
  * Primary colors from Refactoring UI Palette 7.
  *
