@@ -19,6 +19,8 @@ const SearchBox = styled.div`
 
   input {
     width: 100%;
+    box-shadow: var(--elevation-md);
+    border-radius: var(--border-radius-1);
   }
 `;
 

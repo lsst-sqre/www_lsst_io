@@ -146,7 +146,34 @@ const GlobalStyle = createGlobalStyle`
     --c-snippet-border: var(--c-primary);
     --c-icon-primary: var(--c-neutral-200);
     --c-icon-secondary: var(--c-primary);
+    --c-hit-card-background: inherit;
     --c-algolia-text: #182359;
+
+    /*
+     * Elevations
+     *
+     * Are box-shadow properties.
+     *
+     * We're using the Tailwind CSS box shadows here:
+     * https://tailwindcss.com/docs/box-shadow/
+     */
+    --elevation-0: none;
+    --elevation-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --elevation-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --elevation-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --elevation-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --elevation-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --elevation-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --elevation-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --elevation-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --elevation-outline: 0 0 0 3px rgba(66, 153, 225, 0.5);
+
+    /*
+     * Border radius
+     */
+    --border-radius-0: 0px;
+    --border-radius-1: 4px;
+    --border-radius-2: 7px;
 
     /*
      * System font stacks (for now).
@@ -169,6 +196,8 @@ const GlobalStyle = createGlobalStyle`
     --c-tag-background: var(--c-neutral-700);
     --c-faded-text: var(--c-neutral-400);
     --c-snippet-background: var(--c-neutral-700);
+    --c-hit-card-background: var(--c-neutral-900);
+    --c-hit-card-border: var(--c-neutral-700);
     --c-icon-primary: var(--c-primary);
     --c-icon-secondary: var(--c-neutral-100);
     --c-algolia-text: var(--c-text);

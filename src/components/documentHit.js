@@ -44,9 +44,14 @@ const StyledSnippetBlock = styled.blockquote`
   margin-right: 0;
   border-left: 4px solid var(--c-snippet-border);
   background: var(--c-snippet-background);
+  border-radius: var(--border-radius-1);
 
-  &::after,
   &::before {
+    content: '[…] ';
+    opacity: 0.5;
+  }
+
+  &::after {
     content: '[…]';
     opacity: 0.5;
   }

@@ -5,20 +5,18 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import elevations from '../design/elevations';
-
 const Button = styled.button`
   background-color: var(--c-button-background);
   color: var(--c-button-text);
   padding: 5px 20px;
-  border-radius: 4px;
+  border-radius: var(--border-radius-1);
   font-size: 1em;
   border: none;
   transition: 0.3s ease box-shadow;
-  ${elevations[1]};
+  box-shadow: var(--elevation-base);
 
   &:hover {
-    ${elevations[2]}
+    box-shadow: var(--elevation-lg);
   }
 `;
 
