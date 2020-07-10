@@ -9,8 +9,6 @@ import SEO from '../components/seo';
 import HeroSearchForm from '../components/heroSearchForm';
 import PageContentContainer from '../components/pageContentContainer';
 
-import { neutral } from '../design/color';
-
 const BackgroundSection = ({ className, children }) => (
   <StaticQuery
     query={graphql`
@@ -32,7 +30,7 @@ const BackgroundSection = ({ className, children }) => (
           Tag="section"
           className={className}
           fluid={imageData}
-          backgroundColor={neutral['900']}
+          backgroundColor="var(--c-reversed-background)"
         >
           {children}
         </BackgroundImage>
@@ -61,7 +59,7 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   background-size: cover;
 
   // Effectively a "reversed" block; doesn't change based on theme
-  color: ${neutral['100']};
+  color: var(--c-reversed-text);
 `;
 
 /*

@@ -3,19 +3,28 @@
 import styled from 'styled-components';
 import { SearchBox } from 'react-instantsearch-dom';
 
+import bp from '../design/breakpoints';
+
 export const SearchLayout = styled.div`
-  display: grid;
   grid-template-columns: 16rem 1fr;
   grid-template-rows: auto 1fr;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   margin-top: 2rem;
+
+  /*
+   * Create a linear search layout on mobile, but inject grid layout on
+   * bigger screens.
+   */
+  @media only screen and (min-width: ${bp.phone}) {
+    display: grid;
+  }
 `;
 
 export const SearchBoxArea = styled.div`
+  display: flex; /* Lay out box+powered by in line */
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  display: flex; /* Lay out box+powered by in line */
 `;
 
 /* SearchBox Algolia InstantSearch widget that's styled.
@@ -28,6 +37,11 @@ export const StyledSearchBox = styled(SearchBox)`
 export const SearchRefinementsArea = styled.div`
   grid-column: 1 / 2;
   grid-row: 1 / 3;
+
+  margin-top: 1rem;
+  @media only screen and (min-width: ${bp.phone}) {
+    margin-top: 0;
+  }
 `;
 
 /* Styled component div around a refinement widget.

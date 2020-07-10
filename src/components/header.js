@@ -4,21 +4,20 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import { neutral, blue } from '../design/color';
 import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import Cluster from './cluster';
 import PageContentContainer from './pageContentContainer';
-// import ThemeToggleButton from './themeToggle';
+import ThemeToggle from './themeToggle';
 
 const StyledHeader = styled.header`
-  background: ${neutral['900']};
-  color: ${neutral['100']};
+  background: var(--c-reversed-background);
+  color: var(--c-reversed-text);
   padding-top: ${regularMarginRem}rem;
   padding-bottom: ${regularMarginRem}rem;
 
   a {
-    color: ${blue['100']};
+    color: var(--c-reversed-link);
   }
 `;
 
@@ -58,6 +57,7 @@ const Header = () => (
             </Cluster>
           </nav>
           {/* Settings / non-navigation items */}
+          <ThemeToggle />
         </div>
       </Cluster>
     </PageContentContainer>

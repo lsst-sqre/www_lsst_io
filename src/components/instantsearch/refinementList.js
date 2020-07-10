@@ -7,21 +7,15 @@
 import styled from 'styled-components';
 import { RefinementList as BaseRefinementList } from 'react-instantsearch-dom';
 
-import {
-  textColor,
-  countTagTextColor,
-  countTagBackgroundColor,
-} from '../../design/theme';
-
 const RefinementList = styled(BaseRefinementList)`
   .ais-RefinementList-labelText {
     margin-left: 0.25rem;
-    color: ${textColor};
+    color: var(--c-text);
   }
 
   .ais-RefinementList-count {
-    background: ${countTagBackgroundColor};
-    color: ${countTagTextColor};
+    background: var(--c-tag-background);
+    color: var(--c-tag-text);
   }
 `;
 

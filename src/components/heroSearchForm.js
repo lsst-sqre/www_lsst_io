@@ -6,12 +6,20 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 
+import bp from '../design/breakpoints';
+
 import VisuallyHidden from './basics/visuallyHidden';
 import Button from './buttons';
 
 const Form = styled.form`
   display: flex;
+  flex-direction: column;
   font-size: 2rem;
+
+  /* Search box and button are displayed horizontally on bigger screens. */
+  @media only screen and (min-width: ${bp.phone}) {
+    flex-direction: row;
+  }
 `;
 
 const SearchBox = styled.div`
@@ -19,11 +27,18 @@ const SearchBox = styled.div`
 
   input {
     width: 100%;
+    box-shadow: var(--elevation-md);
+    border-radius: var(--border-radius-1);
   }
 `;
 
 const SubmitInput = styled(Button)`
-  margin-left: 1rem;
+  margin-top: 0.5rem;
+
+  @media only screen and (min-width: ${bp.phone}) {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
 `;
 
 export default function HeroSearchForm() {

@@ -60,7 +60,9 @@ export const StyledHits = styled(ConnectedHits)`
     width: 100%;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid #c4c8d8;
-    box-shadow: 0 2px 5px 0px #e3e5ec;
+    box-shadow: var(--elevation-lg);
+    background-color: var(--c-hit-card-background);
+    border: 1px solid var(--c-hit-card-border);
+    border-radius: var(--border-radius-1);
   }
 `;

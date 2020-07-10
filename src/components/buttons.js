@@ -3,36 +3,20 @@
  */
 
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
-
-import { primary, neutral } from '../design/color';
-import elevations from '../design/elevations';
-
-const variations = theme.variants('scheme', 'kind', {
-  default: {
-    light: css`
-      color: ${neutral['100']};
-      background: ${primary['800']};
-    `,
-    dark: css`
-      color: ${neutral['100']};
-      background: ${primary['800']};
-    `,
-  },
-});
+import styled from 'styled-components';
 
 const Button = styled.button`
-  ${variations}
+  background-color: var(--c-button-background);
+  color: var(--c-button-text);
   padding: 5px 20px;
-  border-radius: 4px;
+  border-radius: var(--border-radius-1);
   font-size: 1em;
   border: none;
   transition: 0.3s ease box-shadow;
-  ${elevations[1]};
+  box-shadow: var(--elevation-base);
 
   &:hover {
-    ${elevations[2]}
+    box-shadow: var(--elevation-lg);
   }
 `;
 
