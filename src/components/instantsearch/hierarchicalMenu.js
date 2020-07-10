@@ -5,24 +5,9 @@
  */
 
 import styled from 'styled-components';
-import theme from 'styled-theming';
 import { HierarchicalMenu as BaseHierarchicalMenu } from 'react-instantsearch-dom';
 
-import { neutral } from '../../design/color';
-
-/*
- * NOTE: styled-theming/components can't successfully replace the background
- * image here. We'll have to find another way to insert/style the disclosue
- * icon.
- */
-const themedCaretImage = theme('scheme', {
-  light: `url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M7.3 24l-2.8-2.8 9.3-9.2-9.3-9.2 2.8-2.8 12.2 12z%27 fill%3D%22%${neutral[
-    '900'
-  ].replace(/^#/, '')}%22 /%3E%3C/svg%3E')`,
-  dark: `url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M7.3 24l-2.8-2.8 9.3-9.2-9.3-9.2 2.8-2.8 12.2 12z%27 fill%3D%22%${neutral[
-    '100'
-  ].replace(/^#/, '')}%22 /%3E%3C/svg%3E')`,
-});
+import chevronDown from '../../css-icons/icon-cheveron-down.svg';
 
 const HierarchicalMenu = styled(BaseHierarchicalMenu)`
   .ais-HierarchicalMenu-label {
@@ -34,8 +19,20 @@ const HierarchicalMenu = styled(BaseHierarchicalMenu)`
     color: var(--c-tag-text);
   }
 
+  /*
+   * Mask technique lets us effectively theme an icon embedded in CSS
+   * by setting the icon colour through the background-color. See
+   * https://medium.com/@mwichary/dark-theme-in-a-day-3518dde2955a
+   */
   .ais-HierarchicalMenu-link::after {
-    background-image: ${themedCaretImage};
+    transform: none;  // undo ais default
+    background-image: none;  // undo ais default
+    background-color: var(--c-text);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 1.1em;
+    mask-image: url('${chevronDown}');
   }
 `;
 
