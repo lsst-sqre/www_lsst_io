@@ -143,7 +143,7 @@ const GlobalStyle = createGlobalStyle`
     --c-button-text: var(--c-reversed-text);
     --c-faded-text: var(--c-neutral-600);
     --c-snippet-background: var(--c-neutral-100);
-    --c-snippet-border: var(--c-primary-800);
+    --c-snippet-border: var(--c-primary);
     --c-icon-primary: var(--c-neutral-200);
     --c-icon-secondary: var(--c-primary);
     --c-algolia-text: #182359;
@@ -169,7 +169,6 @@ const GlobalStyle = createGlobalStyle`
     --c-tag-background: var(--c-neutral-700);
     --c-faded-text: var(--c-neutral-400);
     --c-snippet-background: var(--c-neutral-700);
-    --c-snippet-border: var(--c-primary-700);
     --c-icon-primary: var(--c-primary);
     --c-icon-secondary: var(--c-neutral-100);
     --c-algolia-text: var(--c-text);
