@@ -70,7 +70,12 @@ exports.createPages = ({ actions }) => {
     createPage({
       path: `/${docSeries.key.toLowerCase()}/`,
       component: require.resolve(`./src/templates/docSeries.js`),
-      context: { docSeries },
+      context: {
+        docSeries: {
+          ...docSeries,
+          description: `Browse and search Rubin Observatory ${docSeries.key} documents.`,
+        },
+      },
     });
   });
 };
