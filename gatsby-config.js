@@ -37,5 +37,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-dark-mode`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.lsst.io`,
+        stripQueryString: true,
+      },
+    },
   ],
 };
