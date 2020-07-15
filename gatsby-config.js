@@ -3,6 +3,7 @@ module.exports = {
     title: `Vera Rubin Observatory Documentation`,
     description: `Find Vera Rubin Observatory documentation and open source projects.`,
     author: `@VRubinObs`,
+    siteUrl: `https://www.lsst.io`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -44,5 +45,6 @@ module.exports = {
         stripQueryString: true,
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 };
