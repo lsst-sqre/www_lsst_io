@@ -91,7 +91,7 @@ export default function DocSeriesTemplate({
 
   return (
     <Layout>
-      <SEO title={docSeries.name} />
+      <SEO title={docSeries.name} description={docSeries.description} />
       <h1>{docSeries.name}</h1>
 
       <InstantSearch
