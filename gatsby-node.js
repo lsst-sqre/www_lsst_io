@@ -15,6 +15,10 @@ exports.createPages = ({ actions }) => {
     {
       key: 'DMTR',
       name: 'Data Management Test Reports',
+      notice: {
+        __html:
+          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+      },
     },
     {
       key: 'ITTN',
@@ -27,14 +31,26 @@ exports.createPages = ({ actions }) => {
     {
       key: 'LDM',
       name: 'LSST Data Management',
+      notice: {
+        __html:
+          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+      },
     },
     {
       key: 'LPM',
       name: 'LSST Project Management',
+      notice: {
+        __html:
+          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+      },
     },
     {
       key: 'LSE',
       name: 'LSST Systems Engineering',
+      notice: {
+        __html:
+          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+      },
     },
     {
       key: 'OPSTN',

@@ -115,6 +115,7 @@ const IndexPage = () => (
           <Link to="/dmtr/">
             <strong>DMTR</strong> &mdash; Data Management Test Reports
           </Link>
+          <sup>*</sup>
         </li>
         <li>
           <Link to="/ittn/">
@@ -125,16 +126,19 @@ const IndexPage = () => (
           <Link to="/ldm/">
             <strong>LDM</strong> &mdash; LSST Data Management
           </Link>
+          <sup>*</sup>
         </li>
         <li>
           <Link to="/lpm/">
             <strong>LPM</strong> &mdash; LSST Project Management
           </Link>
+          <sup>*</sup>
         </li>
         <li>
           <Link to="/lse/">
             <strong>LSE</strong> &mdash; LSST Systems Engineering
           </Link>
+          <sup>*</sup>
         </li>
         <li>
           <Link to="/opstn/">
@@ -173,6 +177,16 @@ const IndexPage = () => (
           </Link>
         </li>
       </ul>
+
+      <p>
+        <small>
+          <sup>*</sup> Documents held only in{' '}
+          <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
+            DocuShare
+          </a>{' '}
+          are not yet part of the search results.
+        </small>
+      </p>
     </section>
   </Layout>
 );
