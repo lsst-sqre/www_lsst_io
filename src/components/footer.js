@@ -51,6 +51,26 @@ const Footer = () => (
         </ul>
       </FeedbackContainer>
       <p>
+        Vera C. Rubin Observatory is a Federal project jointly funded by the
+        National Science Foundation (NSF) and the Department of Energy (DOE)
+        Office of Science, with early construction funding received from private
+        donations through the LSST Corporation. The NSF-funded LSST (now Rubin
+        Observatory) Project Office for construction was established as an
+        operating center under the management of the Association of Universities
+        for Research in Astronomy (AURA). The DOE-funded effort to build the
+        Rubin Observatory LSST Camera (LSSTCam) is managed by SLAC National
+        Accelerator Laboratory (SLAC).
+      </p>
+      <p>
+        NSF and DOE will continue to support Rubin Observatory in its operations
+        phase to carry out the Legacy Survey of Space and Time. They will also
+        provide support for scientific research with the data. During
+        operations, NSF funding is managed by the Association of Universities
+        for Research in Astronomy (AURA) under a cooperative agreement with NSF,
+        and DOE funding is managed by SLAC under contract by DOE. Rubin
+        Observatory is operated by NSF's NOIRLab and SLAC.
+      </p>
+      <p>
         © {new Date().getFullYear()} Association of Universities for Research in
         Astronomy (AURA), Inc.
       </p>
