@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from './buttons';
+import Button from './basics/buttons';
 
 const DetailsToggleButton = ({ hitCardsExpanded, setHitCardsExpanded }) => {
   const toggle = () => setHitCardsExpanded(expanded => !expanded);

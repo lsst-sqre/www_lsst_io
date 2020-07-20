@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import bp from '../design/breakpoints';
 
 import VisuallyHidden from './basics/visuallyHidden';
-import Button from './buttons';
+import Button from './basics/buttons';
 
 const Form = styled.form`
   display: flex;
