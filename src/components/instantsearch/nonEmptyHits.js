@@ -8,10 +8,8 @@ import PropTypes from 'prop-types';
 import { connectStateResults } from 'react-instantsearch-dom';
 import { StyledHits } from './hits';
 
-const NonEmptyHitsCore = ({ searchState, hitComponent, hitCardsExpanded }) => {
-  console.log(`NonEmptyHitsCore ${searchState.query}`);
-
-  return searchState && searchState.query ? (
+const NonEmptyHitsCore = ({ searchState, hitComponent, hitCardsExpanded }) =>
+  searchState && searchState.query ? (
     <StyledHits
       hitComponent={hitComponent}
       hitCardsExpanded={hitCardsExpanded}
@@ -21,7 +19,6 @@ const NonEmptyHitsCore = ({ searchState, hitComponent, hitCardsExpanded }) => {
       <p>Type in a search term&hellip;</p>
     </div>
   );
-};
 
 NonEmptyHitsCore.propTypes = {
   searchState: PropTypes.object,
