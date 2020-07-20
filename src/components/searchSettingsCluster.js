@@ -6,7 +6,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Cluster from './cluster';
+import Cluster from './basics/cluster';
 
 const StyledCluster = styled(Cluster)`
   margin-bottom: 1rem;

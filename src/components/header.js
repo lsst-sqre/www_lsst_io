@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
-import Cluster from './cluster';
+import Cluster from './basics/cluster';
 import PageContentContainer from './pageContentContainer';
 import ThemeToggle from './themeToggle';
 
