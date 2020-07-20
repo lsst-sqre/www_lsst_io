@@ -6,7 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connectStateResults } from 'react-instantsearch-dom';
-import { StyledHits } from '../hits';
+import { StyledHits } from './hits';
 
 const NonEmptyHitsCore = ({ searchState, hitComponent, hitCardsExpanded }) => {
   console.log(`NonEmptyHitsCore ${searchState.query}`);
