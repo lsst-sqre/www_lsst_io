@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
 import moment from 'moment';
 
-import { IconDataListTerm, IconDataListContent } from './iconDataList';
+import { IconDataListTerm, IconDataListContent } from './basics/iconDataList';
 import UserCoupleIcon from '../icons/user-couple.svg';
 import TimeIcon from '../icons/time.svg';
 import CodeIcon from '../icons/code.svg';
