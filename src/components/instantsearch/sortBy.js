@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { connectSortBy } from 'react-instantsearch-dom';
 
-import elevations from '../../design/elevations';
 import chevronDownLight from '../../css-icons/icon-cheveron-down-light.svg';
 
 const Label = styled.span`
@@ -33,14 +32,16 @@ const Select = styled.select`
   background-image: url('${chevronDownLight}'), linear-gradient(to bottom, var(--c-button-background) 100%, var(--c-button-background) 100%);
   background-repeat: no-repeat, repeat;
   background-position: right 0.5em top 50%, 0 0;
-  background-size: 2em auto, 100%;
+  background-size: var(--space-md) auto, 100%;
   appearance: none;
-  padding: 5px 20px;
-  padding-right: 2em;
-  border-radius: 4px;
-  font-size: 1em;
+  padding: var(--space-xxxs) var(--space-lg) var(--space-xxxs) var(--space-unit);
+  border-radius: var(--border-radius-1);
   border: none;
-  ${elevations[1]};
+  box-shadow: var(--elevation-md);
+
+  &:hover {
+    box-shadow: var(--elevation-lg);
+  }
 `;
 
 /* eslint-disable */

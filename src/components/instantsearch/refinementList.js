@@ -9,7 +9,7 @@ import { RefinementList as BaseRefinementList } from 'react-instantsearch-dom';
 
 const RefinementList = styled(BaseRefinementList)`
   .ais-RefinementList-labelText {
-    margin-left: 0.25rem;
+    margin-left: var(--space-xxs);
     color: var(--c-text);
   }
 

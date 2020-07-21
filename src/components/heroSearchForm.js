@@ -33,11 +33,12 @@ const SearchBox = styled.div`
 `;
 
 const SubmitInput = styled(Button)`
-  margin-top: 0.5rem;
+  margin-top: var(--space-xxxs);
+  font-size: 1.2rem;
 
   @media only screen and (min-width: ${bp.phone}) {
     margin-top: 0;
-    margin-left: 1rem;
+    margin-left: var(--space-xxs);
   }
 `;
 

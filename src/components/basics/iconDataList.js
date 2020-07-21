@@ -8,9 +8,9 @@ import styled from 'styled-components';
 export const IconDataListTerm = styled.dt`
   clear: left;
   float: left;
-  width: 1.5em;
+  width: var(--space-md);
 `;
 
 export const IconDataListContent = styled.dd`
-  margin-left: 1.5em;
+  margin-left: var(--space-md);
 `;

@@ -58,8 +58,8 @@ export const StyledHits = styled(ConnectedHits)`
 
   .hits-item {
     width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin-bottom: var(--space-unit);
+    padding: var(--space-unit);
     box-shadow: var(--elevation-lg);
     background-color: var(--c-hit-card-background);
     border: 1px solid var(--c-hit-card-border);

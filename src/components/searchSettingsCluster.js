@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import Cluster from './basics/cluster';
 
 const StyledCluster = styled(Cluster)`
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-unit);
   overflow: visible; // so the box-shadow isn't being cut off
 `;
 

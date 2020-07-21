@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import { regularMarginRem } from '../design/spacing';
 import rubinLogoDark from '../images/rubin-logo-dark.svg';
 import Cluster from './basics/cluster';
 import PageContentContainer from './pageContentContainer';
@@ -13,8 +12,7 @@ import ThemeToggle from './themeToggle';
 const StyledHeader = styled.header`
   background: var(--c-reversed-background);
   color: var(--c-reversed-text);
-  padding-top: ${regularMarginRem}rem;
-  padding-bottom: ${regularMarginRem}rem;
+  padding: var(--space-unit) 0;
 
   a {
     color: var(--c-reversed-link);
