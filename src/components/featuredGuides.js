@@ -2,6 +2,9 @@ import React from 'react';
 
 import { useStaticQuery, graphql } from 'gatsby';
 
+import Grid from './basics/grid';
+import GuideCard from './guideCard';
+
 const FeaturedGuides = () => {
   const data = useStaticQuery(graphql`
     query FeaturedGuides {
@@ -21,11 +24,17 @@ const FeaturedGuides = () => {
     }
   `);
   return (
-    <ul>
+    <Grid gridGap="1em" minWidth="18em">
       {data.allGuidesYaml.edges.map(({ node }) => (
-        <li key={node.slug}>{node.title}</li>
+        <GuideCard
+          key={node.slug}
+          slug={node.slug}
+          title={node.title}
+          description={node.description}
+          github={node.github}
+        />
       ))}
-    </ul>
+    </Grid>
   );
 };
 
