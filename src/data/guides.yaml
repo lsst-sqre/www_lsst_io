@@ -1,0 +1,31 @@
+- slug: developer
+  title: Data Management Developer Guide
+  github: lsst-dm/dm_dev_guide
+  tags:
+    - org/dm
+    - users/dm
+  description: >
+    This is an internal guide for Rubin Observatory / LSST DM staff. It’s also openly available so that others can understand how we’re building the LSST’s data management subsystem.
+
+
+- slug: nb
+  title: Rubin Science Platform Notebook Aspect User Guide
+  github: lsst-dm/nb_lsst_io
+  tags:
+    - org/dm
+    - users/science
+    - editorial/featured
+  description: >
+    The Notebook Aspect enables you to do your science at the LSST Data Facility, with the LSST Science Pipelines, a full suite of development tools, and your own Python code. The Notebook Aspect is powered by the JupyterLab project.
+
+
+- slug: pipelines
+  title: LSST Science Pipelines
+  github: lsst/pipelines_lsst_io
+  tags:
+    - org/dm
+    - users/science
+    - editorial/featured
+  description: >
+    The LSST Science Pipelines are designed to enable optical and near-infrared astronomy in the “big data” era. While they are being developed to process the data for the Rubin Observatory Legacy Survey of Space and Time (Rubin’s LSST), our command line and programming interfaces can be extended to address any optical or near-infrared dataset.
+

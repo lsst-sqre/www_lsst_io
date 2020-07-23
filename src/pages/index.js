@@ -8,6 +8,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import HeroSearchForm from '../components/heroSearchForm';
 import PageContentContainer from '../components/pageContentContainer';
+import FeaturedGuides from '../components/featuredGuides';
 
 const BackgroundSection = ({ className, children }) => (
   <StaticQuery
@@ -95,6 +96,10 @@ const IndexPage = () => (
         </div>
       </StyledSearchContainer>
     </StyledBackgroundSection>
+    <section>
+      <h2>Featured guides</h2>
+      <FeaturedGuides />
+    </section>
     <section>
       <h2>Documents</h2>
 
