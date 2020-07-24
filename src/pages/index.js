@@ -1,200 +1,113 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, StaticQuery, Link } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
-import styled from 'styled-components';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import {
+  StyledBackgroundSection,
+  StyledSearchContainer,
+} from '../components/index/backgroundSection';
 import HeroSearchForm from '../components/heroSearchForm';
-import PageContentContainer from '../components/pageContentContainer';
 import FeaturedGuides from '../components/featuredGuides';
+import NavGrid from '../components/navGrid';
 
-const BackgroundSection = ({ className, children }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        desktop: file(relativePath: { eq: "lsst-stills-0014.jpg" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+export const query = graphql`
+  query {
+    allDocSeriesYaml(sort: { fields: key, order: ASC }) {
+      edges {
+        node {
+          key
+          name
         }
       }
-    `}
-    render={data => {
-      const imageData = data.desktop.childImageSharp.fluid;
+    }
+    allGuideCollectionsYaml(sort: { fields: title, order: ASC }) {
+      edges {
+        node {
+          slug
+          title
+          description
+        }
+      }
+    }
+  }
+`;
 
-      return (
-        <BackgroundImage
-          Tag="section"
-          className={className}
-          fluid={imageData}
-          backgroundColor="var(--c-reversed-background)"
-        >
-          {children}
-        </BackgroundImage>
-      );
-    }}
-  />
-);
+const IndexPage = ({ data }) => {
+  const { allDocSeriesYaml, allGuideCollectionsYaml } = data;
 
-BackgroundSection.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
+  // Adapt the shape of GraphQL to the NavGrid props
+  const docSeriesData = allDocSeriesYaml.edges.map(({ node }) => ({
+    slug: node.key.toLowerCase(),
+    title: node.key,
+    description: node.name,
+  }));
+
+  const guideCollectionsData = allGuideCollectionsYaml.edges.map(
+    ({ node }) => ({
+      slug: node.slug,
+      title: node.title,
+      description: node.description,
+    })
+  );
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+
+      <StyledBackgroundSection>
+        <StyledSearchContainer>
+          <div className="wrapper">
+            <div className="principal">
+              <h1>Find Rubin Observatory technical docs and software.</h1>
+
+              <HeroSearchForm role="search" />
+            </div>
+          </div>
+        </StyledSearchContainer>
+      </StyledBackgroundSection>
+
+      <section>
+        <h2>Featured guides</h2>
+        <FeaturedGuides />
+      </section>
+
+      <section>
+        <h2>Documents</h2>
+
+        <p>
+          <Link to="/search/?hierarchicalMenu[contentCategories.lvl0]=Documents">
+            Search in Rubin Observatory technical documents,
+          </Link>{' '}
+          or browse by series:
+        </p>
+
+        <NavGrid links={docSeriesData} />
+
+        <p>
+          <small>
+            <sup>*</sup> Documents held only in{' '}
+            <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
+              DocuShare
+            </a>{' '}
+            are not yet part of the search results.{' '}
+            <Link to="/about/">Learn more.</Link>
+          </small>
+        </p>
+      </section>
+
+      <section>
+        <h2>Guides</h2>
+
+        <NavGrid links={guideCollectionsData} />
+      </section>
+    </Layout>
+  );
 };
 
-const StyledBackgroundSection = styled(BackgroundSection)`
-  // Full-width in a contrained parent
-  // https://css-tricks.com/full-width-containers-limited-width-parents/
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-
-  // Background image
-  background-position: bottom center;
-  background-size: cover;
-
-  // Effectively a "reversed" block; doesn't change based on theme
-  color: var(--c-reversed-text);
-`;
-
-/*
- * Container for content within the BackgroundSection.
- *
- * Using flexbox to center the hero content.
- */
-const StyledSearchContainer = styled(PageContentContainer)`
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 70vh; // Give a peak of content down the page
-  }
-
-  .principal {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-`;
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-
-    <StyledBackgroundSection>
-      <StyledSearchContainer>
-        <div className="wrapper">
-          <div className="principal">
-            <h1>Find Rubin Observatory technical docs and software.</h1>
-
-            <HeroSearchForm role="search" />
-          </div>
-        </div>
-      </StyledSearchContainer>
-    </StyledBackgroundSection>
-    <section>
-      <h2>Featured guides</h2>
-      <FeaturedGuides />
-    </section>
-    <section>
-      <h2>Documents</h2>
-
-      <p>
-        <Link to="/search/?hierarchicalMenu[contentCategories.lvl0]=Documents">
-          Search in Rubin Observatory technical documents,
-        </Link>{' '}
-        or browse by series:
-      </p>
-
-      <ul>
-        <li>
-          <Link to="/dmtn/">
-            <strong>DMTN</strong> &mdash; Data Management Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/dmtr/">
-            <strong>DMTR</strong> &mdash; Data Management Test Reports
-          </Link>
-          <sup>*</sup>
-        </li>
-        <li>
-          <Link to="/ittn/">
-            <strong>ITTN</strong> &mdash; IT Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/ldm/">
-            <strong>LDM</strong> &mdash; LSST Data Management
-          </Link>
-          <sup>*</sup>
-        </li>
-        <li>
-          <Link to="/lpm/">
-            <strong>LPM</strong> &mdash; LSST Project Management
-          </Link>
-          <sup>*</sup>
-        </li>
-        <li>
-          <Link to="/lse/">
-            <strong>LSE</strong> &mdash; LSST Systems Engineering
-          </Link>
-          <sup>*</sup>
-        </li>
-        <li>
-          <Link to="/opstn/">
-            <strong>OPSTN</strong> &mdash; Operations Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/pstn/">
-            <strong>PSTN</strong> &mdash; Project Science Team Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/rtn/">
-            <strong>RTN</strong> &mdash; Rubin Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/smtn/">
-            <strong>SMTN</strong> &mdash; Simulations Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/sitcomtn/">
-            <strong>SITCOMTN</strong> &mdash; Systems Integration, Testing, and
-            Commissioning Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/sqr/">
-            <strong>SQR</strong> &mdash; SQuaRE Technotes
-          </Link>
-        </li>
-        <li>
-          <Link to="/tstn/">
-            <strong>TSTN</strong> &mdash; Telescope &amp; Site Technotes
-          </Link>
-        </li>
-      </ul>
-
-      <p>
-        <small>
-          <sup>*</sup> Documents held only in{' '}
-          <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
-            DocuShare
-          </a>{' '}
-          are not yet part of the search results.{' '}
-          <Link to="/about/">Learn more.</Link>
-        </small>
-      </p>
-    </section>
-  </Layout>
-);
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default IndexPage;
