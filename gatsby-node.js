@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-exports.createPages = ({ actions }) => {
+exports.createPages = async function({ actions, graphql }) {
   const { createPage } = actions;
 
   const docSeriesCategories = [
@@ -91,6 +91,33 @@ exports.createPages = ({ actions }) => {
           ...docSeries,
           description: `Browse and search Rubin Observatory ${docSeries.key} documents.`,
         },
+      },
+    });
+  });
+
+  const { data: userGuideCollectionsData } = await graphql(`
+    query UserGuideCollections {
+      allGuideCollectionsYaml {
+        edges {
+          node {
+            slug
+            title
+            tag
+            description
+          }
+        }
+      }
+    }
+  `);
+  userGuideCollectionsData.allGuideCollectionsYaml.edges.forEach(({ node }) => {
+    const { slug, title, tag, description } = node;
+    actions.createPage({
+      path: `/${slug}/`,
+      component: require.resolve(`./src/templates/guideCollection.js`),
+      context: {
+        title,
+        tag,
+        description,
       },
     });
   });

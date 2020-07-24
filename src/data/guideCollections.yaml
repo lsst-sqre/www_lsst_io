@@ -1,0 +1,35 @@
+# User guide collections
+#
+# Each item is transformed into a page via the createPage function in
+# gatsby-node.js.
+#
+# The "tag" field selects collects of user guides with the corresponding tag
+# in the src/data/guides.yaml file.
+
+- title: Guides for scientists
+  slug: guides-for-scientists
+  tag: users/science
+  description: >
+    Learn how to use the Science Pipelines and Science Platform with these guides.
+
+
+- title: Guides for Data Management
+  slug: guides-for-dm
+  tag: users/dm
+  description: >
+    Documentation for Data Management's internal tooling and procedures.
+
+
+- title: Science Platform infrastructure documentation
+  slug: science-platform-infrastructure-guides
+  tag: system/science-platform
+  description: >
+    Developer and operational documentation for the Science Platform.
+
+
+- title: Roundtable infrastructure documentation
+  slug: roundtable-guides
+  tag: system/roundtable
+  description: >
+    Developer and operational documentation for the Roundtable platform, and services that run on Roundtable.
+
