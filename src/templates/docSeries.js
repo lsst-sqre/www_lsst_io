@@ -94,8 +94,11 @@ export default function DocSeriesTemplate({
       <SEO title={docSeries.name} description={docSeries.description} />
       <h1>{docSeries.name}</h1>
 
-      {/* eslint-disable-next-line react/no-danger */}
-      {docSeries.notice && <p dangerouslySetInnerHTML={docSeries.notice} />}
+      {/* eslint-disable react/no-danger */}
+      {docSeries.notice && (
+        <p dangerouslySetInnerHTML={{ __html: docSeries.notice }} />
+      )}
+      {/* eslint-enable react/no-danger */}
 
       <InstantSearch
         searchClient={searchClient}

@@ -1,0 +1,55 @@
+# Document series
+#
+# Each item is transformed into a category search page for that document
+# series in gatsby-node.js
+
+- key: DMTN
+  name: Data Management Technotes
+
+- key: DMTR
+  name: Data Management Test Reports
+  notice: >
+    Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.
+
+
+- key: ITTN
+  name: IT Technotes
+
+- key: LDM
+  name: LSST Data Management
+  notice: >
+    Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.
+
+
+- key: LPM
+  name: LSST Project Management
+  notice: >
+    Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.
+
+
+- key: LSE
+  name: LSST Systems Engineering
+  notice: >
+    Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.
+
+
+- key: OPSTN
+  name: Operations Technotes
+
+- key: PSTN
+  name: Project Science Team Technotes
+
+- key: RTN
+  name: Rubin Technotes
+
+- key: SMTN
+  name: Simulations Technotes
+
+- key: SITCOMTN
+  name: Systems Integration, Testing, and Commissioning Technotes
+
+- key: SQR
+  name: SQuaRE Technotes
+
+- key: TSTN
+  name: Telescope & Site Technotes
