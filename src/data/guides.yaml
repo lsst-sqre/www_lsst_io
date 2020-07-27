@@ -1,3 +1,42 @@
+# User guides
+#
+# Tagging
+# org # organization that owns a project
+#   dm # Data Management
+#   ts # Telescope & Site
+#   se # Systems Engineering
+# users # user-oriented collections
+#   science # Science user oriented
+#   dm # Data Management internall tooling
+# system # system-themed collections
+#   pipelines # Science Pipelines
+#   roundtable # Roundtable services and libraries
+#   sims # Simulations software
+#   observatory # Observatory software
+#   efd # Engineering facility database
+#   science-platform # back-end infrastructure for the science platform and data facility
+
+- slug: astro-metadata-translator
+  title: astro_metadata_translator
+  github: lsst/astro_metadata_translator
+  tags:
+    - org/dm
+    - users/science
+    - system/pipelines
+  description: >
+    The astro_metadata_translator package provides generalized infrastructure for handling metadata extraction for astronomical instrumentation.
+
+
+- slug: cbp
+  title: cbp
+  github: lsst/cbp
+  tags:
+    - org/dm
+    - system/pipelines
+  description: >
+    The cbp package provides code for the LSST collimated beam projector (CBP).
+
+
 - slug: developer
   title: Data Management Developer Guide
   github: lsst-dm/dm_dev_guide
@@ -8,6 +47,139 @@
     This is an internal guide for Rubin Observatory / LSST DM staff. It’s also openly available so that others can understand how we’re building the LSST’s data management subsystem.
 
 
+- slug: display-firefly
+  title: lsst.display.firefly
+  github: lsst/display_firefly
+  tags:
+    - org/dm
+    - users/science
+    - system/pipelines
+  description: >
+    lsst.display.firefly is a backend for the lsst.afw.display interface, allowing the Firefly visualization framework to be used for displaying data objects from the LSST Science Pipelines.
+
+
+- slug: documenteer
+  title: Documenteer
+  github: lsst-sqre/documenteer
+  tags:
+    - org/dm
+    - users/dm
+  description: >
+    Sphinx extensions, configurations, and tooling for LSST Data Management documentation projects.
+
+
+- slug: efd-client
+  title: lsst-efd-client
+  github: lsst-sqre/lsst-efd-client
+  tags:
+    - org/dm
+    - users/dm
+    - system/efd
+  description: >
+    The LSST EFD Client helps you access the LSST Engineering Facility Database (EFD), which is backed by InfluxDB.
+
+
+- slug: felis
+  title: Felis
+  github: lsst-dm/felis
+  tags:
+    - org/dm
+    - system/pipelines
+  description: >
+    Felis is a way of describing database catalogs, scientific and otherwise, in a language and DBMS agnostic way. It’s built on concepts from JSON-LD/RDF and CSVW, but intended to provide a comprehensive way to describe tabular data, using annotations on tables, columns, and schemas, to document scientifically useful metadata as well as implementation-specific metadata for database management systems, file formats, and application data models.
+
+
+- slug: firefly
+  title: Firefly
+  github: Caltech-IPAC/firefly
+  tags:
+    - org/dm
+    - system/science-platform
+  description: >
+    JavaScript Firefly Tools API.
+
+
+- slug: firefly-client
+  title: firefly_client
+  github: https://github.com/Caltech-IPAC/firefly_client
+  tags:
+    - org/dm
+    - system/science-platform
+  description: >
+    Python API for Firefly, IPAC's Advanced Astronomy Web UI Framework.
+
+
+- slug: gafaelfawr
+  title: Gafaelfawr
+  github: lsst-sqre/gafaelfawr
+  tags:
+    - org/dm
+    - system/science-platform
+  description: >
+    Gafaelfawr is the authentication and authorization front-end for the Vera C. Rubin Observatory Science Platform.
+
+
+- slug: kafka-aggregator
+  title: kafka_aggregator
+  github: lsst-sqre/kafka-aggregator
+  tags:
+    - org/dm
+    - system/efd
+  description: >
+    A Kafka aggregator based on the Faust Python Stream Processing library.
+
+
+- slug: kafka-connect-manager
+  title: Kafka Connect Manager
+  github: lsst-sqre/kafka-connect-manager
+  tags:
+    - org/dm
+    - system/efd
+  description: >
+    Python client for managing the Confluent Kafka connect REST Interface on Kubernetes.
+
+
+- slug: kafkit
+  title: Kafkit
+  github: lsst-sqre/kafkit
+  tags:
+    - org/dm
+    - system/efd
+    - system/roundtable
+  description: >
+    Kafkit helps you write Kafka producers and consumers in Python with asyncio.
+
+
+- slug: lsst-texmf
+  title: lsst-texmf
+  github: lsst/lsst-texmf
+  tags:
+    - org/dm
+    - users/dm
+  description: >
+    The LSST lsst-texmf package contains LaTeX document classes, style files, and bibliographies that can be used to help you write LSST documentation in LaTeX to match the project style.
+
+
+- slug: ltd-conveyor
+  title: LTD Conveyor
+  github: lsst-sqre/ltd-conveyor
+  tags:
+    - org/dm
+    - users/dm
+  description: >
+    The command-line client for LSST the Docs, the documentation hosting platform.
+
+
+- slug: ltd-keeper
+  title: LTD Keeper
+  github: lsst-sqre/ltd-keeper
+  tags:
+    - org/dm
+    - system/roundtable
+  description: >
+    LTD Keeper is the backend database and application that runs LSST the Docs. You can interact with the Keeper through its RESTful HTTP API.
+
+
 - slug: nb
   title: Rubin Science Platform Notebook Aspect User Guide
   github: lsst-dm/nb_lsst_io
@@ -15,8 +187,60 @@
     - org/dm
     - users/science
     - editorial/featured
+    - system/science-platform
   description: >
     The Notebook Aspect enables you to do your science at the LSST Data Facility, with the LSST Science Pipelines, a full suite of development tools, and your own Python code. The Notebook Aspect is powered by the JupyterLab project.
+
+
+- slug: nbreport
+  title: nbreport
+  github: lsst-sqre/nbreport
+  tags:
+    - org/dm
+    - users/dm
+  description: >
+    nbreport is a client for creating and publishing LSST’s notebook-based reports. Notebook-based reports are generated from template repositories, computed, and published with LSST the Docs.
+
+
+- slug: neophile
+  title: Neophile
+  github: lsst-sqre/neophile
+  tags:
+    - org/dm
+    - users/dm
+    - system/roundtable
+  description: >
+    neophile is a dependency scanner. It looks through a repository for declared dependencies, attempts to determine if those dependencies are out of date, and generates a report.
+
+
+- slug: obs-controls
+  title: Rubin Observatory Controls Documentation
+  github: lsst-ts/observatory-controls-docs
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    The LSST Control Software contains the overall control aspects of the survey and the telescope including the computers, network, communication and software infrastructure.
+
+
+- slug: obs-ops
+  title: Rubin Observatory Operations Documentation
+  github: https://github.com/lsst-ts/observatory-controls-docs
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    This documentation focuses on the resources needed for observers, commissioning personnel, and support staff to facilitate night-time operations.
+
+
+- slug: phalanx
+  title: Phalanx
+  github: lsst-sqre/lsp-deploy
+  tags:
+    - org/dm
+    - system/science-platform
+  description: >
+    This documentation contains operational notes of interest to administrators of the Science Platform but not of interest to users.
 
 
 - slug: pipelines
@@ -25,7 +249,359 @@
   tags:
     - org/dm
     - users/science
+    - system/pipelines
     - editorial/featured
   description: >
     The LSST Science Pipelines are designed to enable optical and near-infrared astronomy in the “big data” era. While they are being developed to process the data for the Rubin Observatory Legacy Survey of Space and Time (Rubin’s LSST), our command line and programming interfaces can be extended to address any optical or near-infrared dataset.
+
+
+- slug: qserv
+  title: Qserv
+  github: lsst/qserv
+  tags:
+    - org/dm
+    - system/science-platform
+  description: >
+    LSST Query Services (Qserv) provides access to the LSST Database Catalogs.
+
+
+- slug: qserv-operator
+  title: Qserv-operator
+  github: lsst/qserv-operator
+  tags:
+    - org/dm
+    - system/science-platform
+  description: >
+    A qserv operator for Kubernetes based on operator-framework.
+
+
+- slug: roundtable
+  title: Roundtable
+  github: lsst-sqre/roundtable
+  tags:
+    - org/dm
+    - system/roundtable
+  description: >
+    Roundtable is a Kubernetes cluster for microservices, managed by the SQuaRE team.
+
+
+- slug: safir
+  title: Safir
+  github: lsst-sqre/safir
+  tags:
+    - org/dm
+    - system/roundtable
+  description: Safir is a Python package that lets you develop Roundtable bots, based on the aiohttp.web asyncio web framework.
+
+- slug: services
+  title: Rubin Observatory services directory
+  github: lsst-sqre/services
+  tags:
+    - org/dm
+    - system/roundtable
+  description: >
+    A directory of services operated by the SQuaRE team.
+
+
+- slug: sims-maf
+  title: Simulations Metric Analysis Framework (MAF)
+  github: lsst/sims_maf
+  tags:
+    - org/se
+    - system/sims
+  description: >
+    The Metrics Analysis Framework (MAF) is a software package intended to make it easier to write code to analyze telescope pointing histories; in particular, the primary use case is to analyze simulated surveys generated by the LSST Operations Simulator (OpSim).
+
+
+- slug: sims-movingobjects
+  title: sims_movingObjects
+  github: lsst/sims_movingObjects
+  tags:
+    - org/se
+    - system/sims
+  description: >
+    The sims_movingObjects package generates observations of moving objects as ‘seen’ in a simulated pointing history.
+
+
+- slug: sims-survey-fields
+  title: lsst.sims.survey.fields
+  github: lsst/sims_survey_fields
+  tags:
+    - org/se
+    - system/sims
+  description: >
+    This package contains the sky field information that is used by the Operations Simulator.
+
+
+- slug: templatekit
+  title: Templatekit
+  github: lsst-sqre/templatekit
+  tags:
+    - org/dm
+    - users/dm
+    - system/roundtable
+  description: >
+    Templatekit is a command-line app and Python library for using and maintaining a centralized repository of project and file templates that are built with Cookiecutter and Jinja.
+
+
+- slug: ts-atdome
+  title: lsst.ts.ATDome
+  github: lsst-ts/ts_ATDome
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Controller for the LSST auxiliary telescope dome.
+
+
+- slug: ts-atdometrajectory
+  title: lsst.ts.ATDomeTrajectory
+  github: lsst-ts/ts_ATDomeTrajectory
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    ATDomeTrajectory CSC commands the dome to follow the telescope.
+
+
+- slug: ts-athexapod
+  title: lsst.ts.ATHexapod
+  github: lsst-ts/ts_ATHexapod
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    The ATHexapod is a python package that implements the CSC that controls a PI H-824 hexapod that holds the secondary mirror on the Auxiliary Telescope. The hexapod allows precise positioning of the mirror, which is key to performing optical collimation of the telescope as well as focus adjustments.
+
+
+- slug: ts-atmcssimulator
+  title: lsst.ts.ATMCSSimulator
+  github: lsst-ts/ts_ATMCSSimulator
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    A simulator for the auxiliary telescope motor control system (ATMCS CSC).
+
+
+- slug: ts-atpneumaticssimulator
+  title: lsst.ts.ATPneumaticsSimulator
+  github: lsst-ts/ts_ATPneumaticsSimulator
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    A simulator for the auxiliary telescope pneumatics control system (ATPneumatics CSC).
+
+
+- slug: ts-authorization
+  title: lsst.ts.authorize
+  github: lsst-ts/ts_authorize
+  tags:
+    - org/ts
+    - system/efd
+  description: >
+    Handle authorization requests for SAL users.
+
+
+- slug: ts-dome
+  title: lsst.ts.dome
+  github: lsst-ts/ts_dome
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Controller for the Simonyi Survey Telescope dome at Vera C. Rubin Observatory.
+
+
+- slug: ts-externalscripts
+  title: ts_externalscripts
+  github: lsst-ts/ts_externalscripts
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Non-supported SAL scripts for operating the LSST via the lsst.ts.scriptqueue.ScriptQueue.
+
+
+- slug: ts-fiberspectrograph
+  title: lsst.ts.FiberSpectrograph
+  github: lsst-ts/ts_FiberSpectrograph
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Commandable SAL Component (CSC) to control the fiber spectrographs that are used to determine the wavelengths of the LSST calibration lamps and lasers.
+
+
+- slug: ts-hexapod
+  title: lsst.ts.hexapod
+  github: lsst-ts/ts_hexapod
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Python Commandable SAL Component (CSC) for the camera and M2 hexapods on the Simonyi Survey Telescope.
+
+
+- slug: ts-hexrotcomm
+  title: lsst.ts.hexrotcomm
+  github: lsst-ts/ts_hexrotcomm
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    - Python code to communicate with the main telescope camera rotator and hexapod low level controllers (code running in PXI computers).
+
+
+- slug: ts-mtaos
+  title: MTAOS
+  github: lsst-ts/ts_MTAOS
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    The main telescope active optical system (MTAOS) is responsible for making the closed-loop optical system. It calculates the wavefront error based on defocal images, estimates the optical state, and sends the correction of bending modes and rigid body positions to mirrors and hexapods.
+
+
+- slug: ts-mtdometrajectory
+  title: lsst.ts.MTDomeTrajectory
+  github: lsst-ts/ts_MTDomeTrajectory
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    ts_MTDomeTrajectory contains the MTDomeTrajectory CSC and support code.
+
+
+- slug: ts-mtmount
+  title: lsst.ts.MTMount
+  github: lsst-ts/ts_MTMount
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    A CSC that controls the Simonyi Survey Telescope main axes and related components.
+
+
+- slug: ts-observatory-control
+  title: lsst.ts.observatory.control
+  github: lsst-ts/ts_observatory_control
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Observatory control software.
+
+
+- slug: ts-rotator
+  title: lsst.ts.rotator
+  github: lsst-ts/ts_rotator
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Python Commandable SAL Component (CSC) for the LSST main telescope rotator.
+
+
+- slug: ts-sal
+  title: lsst.ts.sal
+  github: lsst-ts/ts_sal
+  tags:
+    - org/ts
+    - system/observatory
+    - system/efd
+  description: >
+    Service Abstraction Layer (SAL) is LSST’s communications middleware. Built on top of Object Management Group’s Data Distribution Service (OMG DDS) standard.
+
+
+- slug: ts-salkafka
+  title: lsst.ts.salkafka
+  github: lsst-ts/ts_salkafka
+  tags:
+    - org/ts
+    - system/observatory
+    - system/efd
+  description: >
+    Forward DDS samples from one or more SAL components to a Kafka broker, to populate databases.
+
+
+- slug: ts-salobj
+  title: lsst.ts.salobj
+  github: lsst-ts/ts_salobj
+  tags:
+    - org/ts
+    - system/observatory
+    - system/efd
+  description: >
+    Object-oriented Python interface to Service Abstraction Layer (SAL) components that uses asyncio for asynchronous communication.
+
+
+- slug: ts-scriptqueue
+  title: lsst.ts.scriptqueue
+  github: lsst-ts/ts_scriptqueue
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    lsst.ts.scriptqueue
+
+
+- slug: ts-simactuators
+  title: lsst.ts.simactuators
+  github: lsst-ts/ts_simactuators
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Python actuator simulators intended for the simulations in Commandable SAL Components (CSCs).
+
+
+- slug: ts-standardscripts
+  title: lsst.ts.standardscripts
+  github: lsst-ts/ts_standardscripts
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    SAL scripts for operating the Vera Rubin Observatory.
+
+
+- slug: ts-tma
+  title: Telescope Mount Assembly Documentation
+  github: lsst-ts/
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Telescope Mount Assembly Documentation provided by the vendor.
+
+
+- slug: ts-watcher
+  title: lsst.ts.watcher
+  github: lsst-ts/ts_watcher
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    A CSC which monitors other SAL components and uses the data to generate alarms for display by LOVE.
+
+
+- slug: ts-xml
+  title: ts_xml
+  github: lsst-ts/ts_xml
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    The ts_xml package defines the data objects for all Commandable SAL Components (CSC).
+
+
+- slug: tssw-developer
+  title: TSSW Developer Guide
+  github: lsst-ts/tssw_developer_guide
+  tags:
+    - org/ts
+  description: >
+    The TSSW developer guide as ported from Confluence.
 
