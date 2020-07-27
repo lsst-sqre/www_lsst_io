@@ -24,7 +24,7 @@
   slug: science-platform-infrastructure-guides
   tag: system/science-platform
   description: >
-    Developer and operational documentation for the Science Platform.
+    Developer and operational documentation for the Science Platform and Data Facility.
 
 
 - title: Roundtable infrastructure documentation
@@ -32,4 +32,32 @@
   tag: system/roundtable
   description: >
     Developer and operational documentation for the Roundtable platform, and services that run on Roundtable.
+
+
+- title: Simulations documentation
+  slug: simulations-guides
+  tag: system/sims
+  description: >
+    Documentation for the LSST Simulations software packages.
+
+
+- title: Observatory documentation
+  slug: observatory-guides
+  tag: system/observatory
+  description: >
+    Rubin Observatory software components and operational documentation.
+
+
+- title: Science Pipelines documentation
+  slug: pipelines-guides
+  tag: system/pipelines
+  description: >
+    Documentation for the LSST Science Pipelines and related software.
+
+
+- title: Engineering Facility Database documentation
+  slug: efd-guides
+  tag: system/efd
+  description: >
+    Documentation for the Engineering Facility Database (EFD) software components.
 
