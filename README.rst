@@ -5,8 +5,8 @@
 www.lsst.io
 ###########
 
-https://www.lsst.io is a portal for `Rubin Observatory`_ documentation.
-It's designed to help Rubin Observatory staff and the astronomy community discover documentation, software, and other bits of information produced by the Rubin Observatory and LSST.
+https://www.lsst.io is a portal for `Rubin Observatory`_ technical documentation.
+It's designed to help Rubin Observatory staff and the astronomy community discover documentation, software, and other bits of technical information produced by the Rubin Observatory and LSST.
 
 Technical stack
 ===============
@@ -21,10 +21,23 @@ Technical stack
 Development workflow primer
 ===========================
 
+Node version
+------------
+
+The Node.js version used
+This project is intended to be built with a Node.js version that's encoded in the `.nvmrc <./.nvmrc>`__ file.
+To adopt this node version, we recommend `installing and using the node version manager <https://github.com/nvm-sh/nvm>`__.
+
+Then you can use the preferred node version by running ``nvm`` from the project root:
+
+.. code-block:: bash
+
+   nvm use
+
 Install locally
 ---------------
 
-Clone this repository then install the JavaScript packages:
+Install the JavaScript packages:
 
 .. code-block:: bash
 
