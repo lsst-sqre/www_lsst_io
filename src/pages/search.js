@@ -87,10 +87,7 @@ const AdvancedSearchPage = ({ location }) => {
       <SEO title="Advanced search" />
       <h1>Advanced search</h1>
 
-      <p>
-        Search the entire universe of Rubin Observatory documentation and open
-        source projects.
-      </p>
+      <p>Search in Rubin Observatory technical documentation.</p>
 
       <InstantSearch
         searchClient={searchClient}
