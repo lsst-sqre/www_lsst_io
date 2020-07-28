@@ -31,7 +31,7 @@ const HierarchicalMenu = styled(BaseHierarchicalMenu)`
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    mask-size: 1.1em;
+    mask-size: var(--space-md);
     mask-image: url('${chevronDown}');
   }
 `;

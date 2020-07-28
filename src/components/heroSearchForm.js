@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import bp from '../design/breakpoints';
 
 import VisuallyHidden from './basics/visuallyHidden';
-import Button from './buttons';
+import Button from './basics/buttons';
 
 const Form = styled.form`
   display: flex;
@@ -33,11 +33,12 @@ const SearchBox = styled.div`
 `;
 
 const SubmitInput = styled(Button)`
-  margin-top: 0.5rem;
+  margin-top: var(--space-xxxs);
+  font-size: 1.2rem;
 
   @media only screen and (min-width: ${bp.phone}) {
     margin-top: 0;
-    margin-left: 1rem;
+    margin-left: var(--space-xxs);
   }
 `;
 

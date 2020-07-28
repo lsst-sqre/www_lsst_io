@@ -24,7 +24,7 @@ import {
 import PoweredBy from '../components/instantsearch/poweredBy';
 import RefinementList from '../components/instantsearch/refinementList';
 import ClearRefinements from '../components/instantsearch/clearRefinements';
-import { StyledHits } from '../components/hits';
+import { StyledHits } from '../components/instantsearch/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
 import AutoSortBy from '../components/instantsearch/autoSortBy';

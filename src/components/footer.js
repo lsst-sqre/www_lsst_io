@@ -3,14 +3,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { mediumMarginRem } from '../design/spacing';
 import PageContentContainer from './pageContentContainer';
 
 const StyledFooter = styled.footer`
   background: var(--c-reversed-background);
   color: var(--c-reversed-text);
   flex-shrink: 0;
-  margin-top: ${mediumMarginRem}rem;
+  margin-top: var(--space-lg);
 
   a {
     color: var(--c-reversed-link);
@@ -18,7 +17,7 @@ const StyledFooter = styled.footer`
 `;
 
 const FeedbackContainer = styled.section`
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-xl);
 
   h2 {
     font-size: 1rem;

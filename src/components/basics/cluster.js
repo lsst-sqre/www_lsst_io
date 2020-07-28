@@ -18,11 +18,11 @@ const Cluster = styled.div`
     flex-wrap: wrap;
     justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
     align-items: ${({ alignItems }) => alignItems || 'center'};
-    margin: calc(${({ space }) => space || '1rem'} / 2 * -1);
+    margin: calc(${({ space }) => space || 'var(--space-unit)'} / 2 * -1);
   }
 
   > * > * {
-    margin: calc(${({ space }) => space || '1rem'} / 2);
+    margin: calc(${({ space }) => space || 'var(--space-unit)'} / 2);
   }
 `;
 

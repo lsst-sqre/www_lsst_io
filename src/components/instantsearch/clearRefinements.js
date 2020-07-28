@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connectCurrentRefinements } from 'react-instantsearch-dom';
 
-import Button from '../buttons';
+import Button from '../basics/buttons';
 
 const ClearRefinementsCore = ({ items, refine }) => (
   <Button onClick={() => refine(items)} disabled={!items.length}>

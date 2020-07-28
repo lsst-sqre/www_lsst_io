@@ -12,7 +12,7 @@ import { PoweredBy as BasePoweredBy } from 'react-instantsearch-dom';
  * https://www.algolia.com/doc/api-reference/widgets/powered-by/react/
  */
 const PoweredBy = styled(BasePoweredBy)`
-  margin-left: 1rem;
+  margin-left: var(--space-unit);
 
   .ais-PoweredBy-text {
     color: var(--c-text);

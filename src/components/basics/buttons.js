@@ -8,12 +8,12 @@ import styled from 'styled-components';
 const Button = styled.button`
   background-color: var(--c-button-background);
   color: var(--c-button-text);
-  padding: 5px 20px;
+  padding: var(--space-xxxs) var(--space-unit);
   border-radius: var(--border-radius-1);
-  font-size: 1em;
   border: none;
   transition: 0.3s ease box-shadow;
-  box-shadow: var(--elevation-base);
+  box-shadow: var(--elevation-md);
+  cursor: pointer;
 
   &:hover {
     box-shadow: var(--elevation-lg);

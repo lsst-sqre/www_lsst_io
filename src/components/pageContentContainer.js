@@ -8,11 +8,9 @@
 
 import styled from 'styled-components';
 
-import { mainWidth } from '../design/spacing';
-
 const PageContentContainer = styled.div`
   margin: 0 auto;
-  max-width: ${mainWidth};
+  max-width: 60em;
   padding: 0 10px 0 10px;
 `;
 

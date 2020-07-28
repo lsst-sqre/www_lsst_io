@@ -142,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
     --c-button-background: var(--c-primary);
     --c-button-text: var(--c-reversed-text);
     --c-faded-text: var(--c-neutral-600);
-    --c-snippet-background: var(--c-neutral-100);
+    --c-snippet-background: var(--c-neutral-050);
     --c-snippet-border: var(--c-primary);
     --c-icon-primary: var(--c-neutral-200);
     --c-icon-secondary: var(--c-primary);
@@ -175,6 +175,35 @@ const GlobalStyle = createGlobalStyle`
     --border-radius-0: 0px;
     --border-radius-1: 4px;
     --border-radius-2: 7px;
+
+    /*
+     * Spacing values in em units
+     */
+    --space-unit: 1em;
+    --space-xxxs: calc(0.25 * var(--space-unit));
+    --space-xxs: calc(0.375 * var(--space-unit));
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: calc(0.75 * var(--space-unit));
+    --space-md: calc(1.25 * var(--space-unit));
+    --space-lg: calc(2 * var(--space-unit));
+    --space-xl: calc(3.25 * var(--space-unit));
+    --space-xxl: calc(5.25 * var(--space-unit));
+    --space-xxxl: calc(8.5 * var(--space-unit));
+
+    /*
+     * Fixed spacing
+     * These aren't affected by --space-unit or the root font size
+     */
+    --space-unit-fixed: 1rem;
+    --space-xxxs-fixed: calc(0.25 * var(--space-unit-fixed));
+    --space-xxs-fixed: calc(0.375 * var(--space-unit-fixed));
+    --space-xs-fixed: calc(0.5 * var(--space-unit-fixed));
+    --space-sm-fixed: calc(0.75 * var(--space-unit-fixed));
+    --space-md-fixed: calc(1.25 * var(--space-unit-fixed));
+    --space-lg-fixed: calc(2 * var(--space-unit-fixed));
+    --space-xl-fixed: calc(3.25 * var(--space-unit-fixed));
+    --space-xxl-fixed: calc(5.25 * var(--space-unit-fixed));
+    --space-xxxl-fixed: calc(8.5 * var(--space-unit-fixed));
 
     /*
      * System font stacks (for now).

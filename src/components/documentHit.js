@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
 import moment from 'moment';
 
-import { IconDataListTerm, IconDataListContent } from './iconDataList';
+import { IconDataListTerm, IconDataListContent } from './basics/iconDataList';
 import UserCoupleIcon from '../icons/user-couple.svg';
 import TimeIcon from '../icons/time.svg';
 import CodeIcon from '../icons/code.svg';
@@ -39,12 +39,13 @@ const ContentTypeSpan = styled.span`
 `;
 
 const StyledSnippetBlock = styled.blockquote`
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: var(--space-xs) var(--space-unit);
   margin-left: 0;
   margin-right: 0;
   border-left: 4px solid var(--c-snippet-border);
   background: var(--c-snippet-background);
   border-radius: var(--border-radius-1);
+  box-shadow: var(--elevation-base);
 
   &::before {
     content: '[…] ';
@@ -91,7 +92,7 @@ const StyledHighlight = styled(Highlight)`
 `;
 
 const Summary = styled.div`
-  margin: 1em 0 1em 0;
+  margin: var(--space-unit) 0;
 `;
 
 const PersonList = ({ className, names }) => (
