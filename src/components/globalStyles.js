@@ -149,6 +149,8 @@ const GlobalStyle = createGlobalStyle`
     --c-hit-card-background: #FFFFFF;
     --c-hit-card-border: none;
     --c-algolia-text: #182359;
+    --c-table-border: var(--c-primary);
+    --c-table-row-highlight: var(--c-neutral-100);
 
     /*
      * Elevations
@@ -231,6 +233,8 @@ const GlobalStyle = createGlobalStyle`
     --c-icon-primary: var(--c-primary);
     --c-icon-secondary: var(--c-neutral-100);
     --c-algolia-text: var(--c-text);
+    --c-table-row-highlight: var(--c-cyan-900);
+    --c-table-border: var(--c-text);
   }
 
   a {
