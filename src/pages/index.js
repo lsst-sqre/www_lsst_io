@@ -184,7 +184,8 @@ const IndexPage = () => (
           <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
             DocuShare
           </a>{' '}
-          are not yet part of the search results.
+          are not yet part of the search results.{' '}
+          <Link to="/about/">Learn more.</Link>
         </small>
       </p>
     </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'qs';
@@ -87,7 +88,11 @@ const AdvancedSearchPage = ({ location }) => {
       <SEO title="Advanced search" />
       <h1>Advanced search</h1>
 
-      <p>Search in Rubin Observatory technical documentation.</p>
+      <p>
+        Search in Rubin Observatory technical documentation.{' '}
+        <Link to="/about">Learn more</Link> about what content is currently
+        available.
+      </p>
 
       <InstantSearch
         searchClient={searchClient}
