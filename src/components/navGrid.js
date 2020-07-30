@@ -9,7 +9,9 @@ const NavCardContainer = styled.div`
   padding: var(--space-unit);
   margin: 0;
   box-shadow: var(--elevation-base);
-  background-color: #ffffff;
+  background-color: var(--c-card-background);
+  border: 1px solid var(--c-card-border);
+  border-radius: var(--border-radius-1);
 
   h3 {
     line-height: 1.1;

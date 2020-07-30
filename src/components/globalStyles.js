@@ -146,8 +146,8 @@ const GlobalStyle = createGlobalStyle`
     --c-snippet-border: var(--c-primary);
     --c-icon-primary: var(--c-neutral-200);
     --c-icon-secondary: var(--c-primary);
-    --c-hit-card-background: #FFFFFF;
-    --c-hit-card-border: none;
+    --c-card-background: #FFFFFF;
+    --c-card-border: none;
     --c-algolia-text: #182359;
     --c-table-border: var(--c-primary);
     --c-table-row-highlight: var(--c-neutral-100);
@@ -228,8 +228,8 @@ const GlobalStyle = createGlobalStyle`
     --c-tag-background: var(--c-neutral-700);
     --c-faded-text: var(--c-neutral-400);
     --c-snippet-background: var(--c-neutral-700);
-    --c-hit-card-background: var(--c-neutral-900);
-    --c-hit-card-border: var(--c-neutral-700);
+    --c-card-background: var(--c-neutral-900);
+    --c-card-border: var(--c-neutral-700);
     --c-icon-primary: var(--c-primary);
     --c-icon-secondary: var(--c-neutral-100);
     --c-algolia-text: var(--c-text);
