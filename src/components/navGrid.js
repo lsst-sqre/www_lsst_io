@@ -1,16 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 import Grid from './basics/grid';
 
+const NavCardContainer = styled.div`
+  padding: var(--space-unit);
+  margin: 0;
+  box-shadow: var(--elevation-base);
+  background-color: #ffffff;
+
+  h3 {
+    line-height: 1.1;
+    margin: 0 0 1rem 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &: hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* Knock out default margins to keep cards tidy. Cards always end in a
+  * paragraph.
+  */
+  p:last-child {
+    margin-bottom: 0;
+  }
+`;
+
 const NavCard = ({ slug, title, description }) => (
-  <div>
+  <NavCardContainer>
     <Link to={slug}>
       <h3>{title}</h3>
     </Link>
     <p>{description}</p>
-  </div>
+  </NavCardContainer>
 );
 
 NavCard.propTypes = {
@@ -20,7 +48,7 @@ NavCard.propTypes = {
 };
 
 const NavGrid = ({ links }) => (
-  <Grid gridGap="1em" minWidth="18em">
+  <Grid gridGap="1em" minWidth="12em">
     {links.map(({ slug, title, description }) => (
       <NavCard key={slug} slug={slug} title={title} description={description} />
     ))}

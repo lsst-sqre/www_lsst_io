@@ -40,6 +40,11 @@ const CardContainer = styled.div`
       text-decoration: underline;
     }
   }
+
+  /* The dl (IconDataList) always appears at the bottom of the card. */
+  dl {
+    margin-bottom: 0;
+  }
 `;
 
 const GuideCard = ({ slug, github, description, title }) => {
