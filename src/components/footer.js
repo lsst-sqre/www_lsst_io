@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
   background: var(--c-reversed-background);
   color: var(--c-reversed-text);
   flex-shrink: 0;
-  margin-top: var(--space-lg);
+  margin-top: 0;
 
   a {
     color: var(--c-reversed-link);

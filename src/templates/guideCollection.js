@@ -9,6 +9,8 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import GuideGrid from '../components/guideGrid';
+import PageLayer from '../components/pageLayer';
+import PageContentContainer from '../components/pageContentContainer';
 
 export const query = graphql`
   query UserGuideCollection($tag: String!) {
@@ -38,7 +40,11 @@ const GuideCollectionTemplate = ({ pageContext, data }) => {
 
       <p>{description}</p>
 
-      <GuideGrid guides={data.allGuidesYaml.edges} />
+      <PageLayer>
+        <PageContentContainer>
+          <GuideGrid guides={data.allGuidesYaml.edges} />
+        </PageContentContainer>
+      </PageLayer>
     </Layout>
   );
 };
