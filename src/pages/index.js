@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import PageContentContainer from '../components/pageContentContainer';
 import SEO from '../components/seo';
 import {
   StyledBackgroundSection,
   StyledSearchContainer,
 } from '../components/index/backgroundSection';
+import PageLayer from '../components/pageLayer';
 import HeroSearchForm from '../components/heroSearchForm';
 import FeaturedGuides from '../components/featuredGuides';
 import NavGrid from '../components/navGrid';
@@ -68,40 +70,46 @@ const IndexPage = ({ data }) => {
         </StyledSearchContainer>
       </StyledBackgroundSection>
 
-      <section>
-        <h2>Featured guides</h2>
-        <FeaturedGuides />
-      </section>
+      <PageLayer brand>
+        <PageContentContainer>
+          <h2>Featured guides</h2>
+          <FeaturedGuides />
+        </PageContentContainer>
+      </PageLayer>
 
-      <section>
-        <h2>Documents</h2>
+      <PageLayer>
+        <PageContentContainer>
+          <h2>Documents</h2>
 
-        <p>
-          <Link to="/search/?hierarchicalMenu[contentCategories.lvl0]=Documents">
-            Search in Rubin Observatory technical documents,
-          </Link>{' '}
-          or browse by series:
-        </p>
+          <p>
+            <Link to="/search/?hierarchicalMenu[contentCategories.lvl0]=Documents">
+              Search in Rubin Observatory technical documents,
+            </Link>{' '}
+            or browse by series:
+          </p>
 
-        <NavGrid links={docSeriesData} />
+          <NavGrid links={docSeriesData} />
 
-        <p>
-          <small>
-            <sup>*</sup> Documents held only in{' '}
-            <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
-              DocuShare
-            </a>{' '}
-            are not yet part of the search results.{' '}
-            <Link to="/about/">Learn more.</Link>
-          </small>
-        </p>
-      </section>
+          <p>
+            <small>
+              <sup>*</sup> Documents held only in{' '}
+              <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
+                DocuShare
+              </a>{' '}
+              are not yet part of the search results.{' '}
+              <Link to="/about/">Learn more.</Link>
+            </small>
+          </p>
+        </PageContentContainer>
+      </PageLayer>
 
-      <section>
-        <h2>Guides</h2>
+      <PageLayer alternate>
+        <PageContentContainer>
+          <h2>Guides</h2>
 
-        <NavGrid links={guideCollectionsData} />
-      </section>
+          <NavGrid links={guideCollectionsData} />
+        </PageContentContainer>
+      </PageLayer>
     </Layout>
   );
 };
