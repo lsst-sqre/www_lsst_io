@@ -69,6 +69,7 @@ export const StyledSearchContainer = styled(PageContentContainer)`
     display: flex;
     flex-direction: column;
     height: 70vh; // Give a peak of content down the page
+    max-height: 28em;
   }
 
   .principal {
