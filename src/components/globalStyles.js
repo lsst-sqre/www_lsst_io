@@ -146,6 +146,8 @@ const GlobalStyle = createGlobalStyle`
     --c-snippet-border: var(--c-primary);
     --c-icon-primary: var(--c-neutral-200);
     --c-icon-secondary: var(--c-primary);
+    --c-card-text: var(--c-text);
+    --c-card-link: var(--c-link);
     --c-card-background: #FFFFFF;
     --c-card-border: none;
     --c-algolia-text: #182359;

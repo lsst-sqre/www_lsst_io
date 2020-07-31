@@ -12,6 +12,7 @@ const NavCardContainer = styled.div`
   background-color: var(--c-card-background);
   border: 1px solid var(--c-card-border);
   border-radius: var(--border-radius-1);
+  color: var(--c-card-text);
 
   h3 {
     line-height: 1.1;
@@ -19,6 +20,7 @@ const NavCardContainer = styled.div`
   }
 
   a {
+    color: var(--c-card-link);
     text-decoration: none;
 
     &: hover {

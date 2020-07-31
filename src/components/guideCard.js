@@ -14,11 +14,11 @@ const StyledCodeIcon = styled(CodeIcon)`
 
   /* secondary and primary look better reversed */
   .secondary {
-    fill: var(--c-icon-primary);
+    fill: var(--c-card-text);
   }
 
   .primary {
-    fill: var(--c-icon-secondary);
+    fill: var(--c-card-background);
   }
 `;
 
@@ -29,6 +29,7 @@ const CardContainer = styled.div`
   background-color: var(--c-card-background);
   border: 1px solid var(--c-card-border);
   border-radius: var(--border-radius-1);
+  color: var(--c-card-text);
 
   h3 {
     line-height: 1.1;
@@ -36,6 +37,7 @@ const CardContainer = styled.div`
   }
 
   a {
+    color: var(--c-card-link);
     text-decoration: none;
 
     &: hover {
