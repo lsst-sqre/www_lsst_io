@@ -205,7 +205,7 @@ const AboutPage = () => (
               </th>
               <td>Sphinx-based guides &mdash; lsst.io</td>
               <td></td>
-              <td></td>
+              <td>Yes</td>
             </tr>
             <tr>
               <th className="category" scope="row" rowSpan="2">
