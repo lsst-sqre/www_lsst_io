@@ -17,7 +17,6 @@ const PageLayer = styled.section`
   margin-top: 0;
   margin-bottom: 0;
   padding: var(--space-lg) 0;
-  box-shadow: var(--elevation-lg);
 
   h1,
   h2,
