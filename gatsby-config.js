@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Vera Rubin Observatory Documentation`,
-    description: `Find Vera Rubin Observatory documentation and open source projects.`,
+    title: `Vera Rubin Observatory Technical Documentation`,
+    description: `Find Vera Rubin Observatory technical documentation and software.`,
     author: `@VRubinObs`,
     siteUrl: `https://www.lsst.io`,
   },

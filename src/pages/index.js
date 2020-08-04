@@ -88,7 +88,7 @@ const IndexPage = () => (
       <StyledSearchContainer>
         <div className="wrapper">
           <div className="principal">
-            <h1>Find Rubin Observatory docs and open source</h1>
+            <h1>Find Rubin Observatory technical docs and software.</h1>
 
             <HeroSearchForm role="search" />
           </div>
@@ -100,7 +100,7 @@ const IndexPage = () => (
 
       <p>
         <Link to="/search/?hierarchicalMenu[contentCategories.lvl0]=Documents">
-          Search in all Rubin Observatory documents,
+          Search in Rubin Observatory technical documents,
         </Link>{' '}
         or browse by series:
       </p>
@@ -184,7 +184,8 @@ const IndexPage = () => (
           <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">
             DocuShare
           </a>{' '}
-          are not yet part of the search results.
+          are not yet part of the search results.{' '}
+          <Link to="/about/">Learn more.</Link>
         </small>
       </p>
     </section>

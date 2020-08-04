@@ -17,7 +17,7 @@ exports.createPages = ({ actions }) => {
       name: 'Data Management Test Reports',
       notice: {
         __html:
-          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
       },
     },
     {
@@ -33,7 +33,7 @@ exports.createPages = ({ actions }) => {
       name: 'LSST Data Management',
       notice: {
         __html:
-          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
       },
     },
     {
@@ -41,7 +41,7 @@ exports.createPages = ({ actions }) => {
       name: 'LSST Project Management',
       notice: {
         __html:
-          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
       },
     },
     {
@@ -49,7 +49,7 @@ exports.createPages = ({ actions }) => {
       name: 'LSST Systems Engineering',
       notice: {
         __html:
-          'These results do not contain documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a>.',
+          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
       },
     },
     {
