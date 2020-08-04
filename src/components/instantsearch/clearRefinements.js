@@ -10,11 +10,16 @@ import { connectCurrentRefinements } from 'react-instantsearch-dom';
 
 import Button from '../basics/buttons';
 
-const ClearRefinementsCore = ({ items, refine }) => (
-  <Button onClick={() => refine(items)} disabled={!items.length}>
-    Clear all refinements
-  </Button>
-);
+const ClearRefinementsCore = ({ items, refine }) => {
+  if (items.length) {
+    return (
+      <Button onClick={() => refine(items)} disabled={!items.length}>
+        Clear all refinements
+      </Button>
+    );
+  }
+  return null;
+};
 
 ClearRefinementsCore.propTypes = {
   items: PropTypes.array.isRequired,
