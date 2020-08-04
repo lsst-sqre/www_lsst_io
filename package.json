@@ -22,6 +22,7 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.20",
     "gatsby-transformer-sharp": "^2.5.11",
+    "gatsby-transformer-yaml": "^2.4.10",
     "instantsearch.css": "^7.4.2",
     "moment": "^2.27.0",
     "polished": "^3.6.5",

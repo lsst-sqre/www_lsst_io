@@ -61,8 +61,8 @@ export const StyledHits = styled(ConnectedHits)`
     margin-bottom: var(--space-unit);
     padding: var(--space-unit);
     box-shadow: var(--elevation-lg);
-    background-color: var(--c-hit-card-background);
-    border: 1px solid var(--c-hit-card-border);
+    background-color: var(--c-card-background);
+    border: 1px solid var(--c-card-border);
     border-radius: var(--border-radius-1);
   }
 `;

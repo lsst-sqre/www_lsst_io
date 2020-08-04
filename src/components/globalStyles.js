@@ -146,11 +146,19 @@ const GlobalStyle = createGlobalStyle`
     --c-snippet-border: var(--c-primary);
     --c-icon-primary: var(--c-neutral-200);
     --c-icon-secondary: var(--c-primary);
-    --c-hit-card-background: #FFFFFF;
-    --c-hit-card-border: none;
+    --c-card-text: var(--c-text);
+    --c-card-link: var(--c-link);
+    --c-card-background: #FFFFFF;
+    --c-card-border: none;
     --c-algolia-text: #182359;
     --c-table-border: var(--c-primary);
     --c-table-row-highlight: var(--c-neutral-100);
+    --c-brand-layer-background: var(--c-primary);
+    --c-brand-layer-text: var(--c-reversed-text);
+    --c-brand-layer-link: var(--c-reversed-link);
+    --c-alternate-layer-background: var(--c-neutral-800);
+    --c-alternate-layer-text: var(--c-reversed-text);
+    --c-alternate-layer-link: var(--c-reversed-link);
 
     /*
      * Elevations
@@ -228,8 +236,8 @@ const GlobalStyle = createGlobalStyle`
     --c-tag-background: var(--c-neutral-700);
     --c-faded-text: var(--c-neutral-400);
     --c-snippet-background: var(--c-neutral-700);
-    --c-hit-card-background: var(--c-neutral-900);
-    --c-hit-card-border: var(--c-neutral-700);
+    --c-card-background: var(--c-neutral-900);
+    --c-card-border: var(--c-neutral-700);
     --c-icon-primary: var(--c-primary);
     --c-icon-secondary: var(--c-neutral-100);
     --c-algolia-text: var(--c-text);

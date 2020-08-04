@@ -4,93 +4,59 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-exports.createPages = ({ actions }) => {
+exports.createPages = async function({ actions, graphql }) {
   const { createPage } = actions;
 
-  const docSeriesCategories = [
-    {
-      key: 'DMTN',
-      name: 'Data Management Technotes',
-    },
-    {
-      key: 'DMTR',
-      name: 'Data Management Test Reports',
-      notice: {
-        __html:
-          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
-      },
-    },
-    {
-      key: 'ITTN',
-      name: 'IT Technotes',
-    },
-    {
-      key: 'ITTN',
-      name: 'IT Technotes',
-    },
-    {
-      key: 'LDM',
-      name: 'LSST Data Management',
-      notice: {
-        __html:
-          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
-      },
-    },
-    {
-      key: 'LPM',
-      name: 'LSST Project Management',
-      notice: {
-        __html:
-          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
-      },
-    },
-    {
-      key: 'LSE',
-      name: 'LSST Systems Engineering',
-      notice: {
-        __html:
-          'Documents held only in <a href="https://docushare.lsstcorp.org/docushare/dsweb/HomePage">DocuShare</a> are not yet included in these results. <a href="/about/">Learn more</a>.',
-      },
-    },
-    {
-      key: 'OPSTN',
-      name: 'Operations Technotes',
-    },
-    {
-      key: 'PSTN',
-      name: 'Project Science Team Technotes',
-    },
-    {
-      key: 'RTN',
-      name: 'Rubin Technotes',
-    },
-    {
-      key: 'SMTN',
-      name: 'Simulations Technotes',
-    },
-    {
-      key: 'SITCOMTN',
-      name: 'Systems Integration, Testing, and Commissioning Technotes',
-    },
-    {
-      key: 'SQR',
-      name: 'SQuaRE Technotes',
-    },
-    {
-      key: 'TSTN',
-      name: 'Telescope & Site Technotes',
-    },
-  ];
+  const { data: docSeriesCategories } = await graphql(`
+    query DocSeries {
+      allDocSeriesYaml(sort: { fields: key, order: ASC }) {
+        edges {
+          node {
+            key
+            name
+            notice
+          }
+        }
+      }
+    }
+  `);
 
-  docSeriesCategories.forEach(docSeries => {
+  docSeriesCategories.allDocSeriesYaml.edges.forEach(({ node }) => {
     createPage({
-      path: `/${docSeries.key.toLowerCase()}/`,
+      path: `/${node.key.toLowerCase()}/`,
       component: require.resolve(`./src/templates/docSeries.js`),
       context: {
         docSeries: {
-          ...docSeries,
-          description: `Browse and search Rubin Observatory ${docSeries.key} documents.`,
+          ...node,
+          description: `Browse and search Rubin Observatory ${node.key} documents.`,
         },
+      },
+    });
+  });
+
+  const { data: userGuideCollectionsData } = await graphql(`
+    query UserGuideCollections {
+      allGuideCollectionsYaml {
+        edges {
+          node {
+            slug
+            title
+            tag
+            description
+          }
+        }
+      }
+    }
+  `);
+  userGuideCollectionsData.allGuideCollectionsYaml.edges.forEach(({ node }) => {
+    const { slug, title, tag, description } = node;
+    actions.createPage({
+      path: `/${slug}/`,
+      component: require.resolve(`./src/templates/guideCollection.js`),
+      context: {
+        title,
+        tag,
+        description,
       },
     });
   });
