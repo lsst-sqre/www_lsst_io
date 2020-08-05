@@ -20,7 +20,6 @@ import {
 import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
 import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
-import ClearRefinements from '../components/instantsearch/clearRefinements';
 import CurrentRefinements from '../components/instantsearch/currentRefinements';
 import NonEmptyHits from '../components/instantsearch/nonEmptyHits';
 import DetailsToggleButton from '../components/detailsToggle';
@@ -137,7 +136,6 @@ const AdvancedSearchPage = ({ location }) => {
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
                 />
-                <ClearRefinements />
               </div>
             </SearchSettingsCluster>
             <NonEmptyHits

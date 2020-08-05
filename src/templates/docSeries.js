@@ -22,7 +22,6 @@ import {
 } from '../components/searchLayout';
 import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
-import ClearRefinements from '../components/instantsearch/clearRefinements';
 import CurrentRefinements from '../components/instantsearch/currentRefinements';
 import { StyledHits } from '../components/instantsearch/hits';
 import DetailsToggleButton from '../components/detailsToggle';
@@ -143,7 +142,6 @@ export default function DocSeriesTemplate({
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
                 />
-                <ClearRefinements />
               </div>
             </SearchSettingsCluster>
 
