@@ -15,10 +15,9 @@ import {
   SearchResultsArea,
   SearchBoxArea,
   SearchRefinementsArea,
-  StyledSearchBox,
   SearchRefinementSection,
 } from '../components/searchLayout';
-import PoweredBy from '../components/instantsearch/poweredBy';
+import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
 import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
 import ClearRefinements from '../components/instantsearch/clearRefinements';
@@ -109,8 +108,7 @@ const AdvancedSearchPage = ({ location }) => {
 
         <SearchLayout>
           <SearchBoxArea>
-            <StyledSearchBox autoFocus />
-            <PoweredBy />
+            <SearchBox />
           </SearchBoxArea>
 
           <SearchRefinementsArea>

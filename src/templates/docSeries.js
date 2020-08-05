@@ -18,10 +18,9 @@ import {
   SearchResultsArea,
   SearchBoxArea,
   SearchRefinementsArea,
-  StyledSearchBox,
   SearchRefinementSection,
 } from '../components/searchLayout';
-import PoweredBy from '../components/instantsearch/poweredBy';
+import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
 import ClearRefinements from '../components/instantsearch/clearRefinements';
 import { StyledHits } from '../components/instantsearch/hits';
@@ -117,8 +116,7 @@ export default function DocSeriesTemplate({
 
         <SearchLayout>
           <SearchBoxArea>
-            <StyledSearchBox autoFocus />
-            <PoweredBy />
+            <SearchBox />
           </SearchBoxArea>
 
           <SearchRefinementsArea>
