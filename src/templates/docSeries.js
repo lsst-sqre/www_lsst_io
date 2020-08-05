@@ -23,6 +23,7 @@ import {
 import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
 import ClearRefinements from '../components/instantsearch/clearRefinements';
+import CurrentRefinements from '../components/instantsearch/currentRefinements';
 import { StyledHits } from '../components/instantsearch/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
@@ -117,6 +118,7 @@ export default function DocSeriesTemplate({
         <SearchLayout>
           <SearchBoxArea>
             <SearchBox />
+            <CurrentRefinements />
           </SearchBoxArea>
 
           <SearchRefinementsArea>
