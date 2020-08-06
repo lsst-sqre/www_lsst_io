@@ -18,12 +18,11 @@ import {
   SearchResultsArea,
   SearchBoxArea,
   SearchRefinementsArea,
-  StyledSearchBox,
   SearchRefinementSection,
 } from '../components/searchLayout';
-import PoweredBy from '../components/instantsearch/poweredBy';
+import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
-import ClearRefinements from '../components/instantsearch/clearRefinements';
+import CurrentRefinements from '../components/instantsearch/currentRefinements';
 import { StyledHits } from '../components/instantsearch/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
@@ -117,8 +116,8 @@ export default function DocSeriesTemplate({
 
         <SearchLayout>
           <SearchBoxArea>
-            <StyledSearchBox autoFocus />
-            <PoweredBy />
+            <SearchBox />
+            <CurrentRefinements />
           </SearchBoxArea>
 
           <SearchRefinementsArea>
@@ -143,7 +142,6 @@ export default function DocSeriesTemplate({
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
                 />
-                <ClearRefinements />
               </div>
             </SearchSettingsCluster>
 

@@ -159,6 +159,7 @@ const GlobalStyle = createGlobalStyle`
     --c-alternate-layer-background: var(--c-neutral-800);
     --c-alternate-layer-text: var(--c-reversed-text);
     --c-alternate-layer-link: var(--c-reversed-link);
+    --c-delete: var(--c-red-500);
 
     /*
      * Elevations
@@ -243,6 +244,7 @@ const GlobalStyle = createGlobalStyle`
     --c-algolia-text: var(--c-text);
     --c-table-row-highlight: var(--c-cyan-900);
     --c-table-border: var(--c-text);
+    --c-delete: var(--c-red-300);
   }
 
   a {

@@ -15,13 +15,12 @@ import {
   SearchResultsArea,
   SearchBoxArea,
   SearchRefinementsArea,
-  StyledSearchBox,
   SearchRefinementSection,
 } from '../components/searchLayout';
-import PoweredBy from '../components/instantsearch/poweredBy';
+import SearchBox from '../components/instantsearch/searchBox';
 import RefinementList from '../components/instantsearch/refinementList';
 import HierarchicalMenu from '../components/instantsearch/hierarchicalMenu';
-import ClearRefinements from '../components/instantsearch/clearRefinements';
+import CurrentRefinements from '../components/instantsearch/currentRefinements';
 import NonEmptyHits from '../components/instantsearch/nonEmptyHits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
@@ -109,8 +108,8 @@ const AdvancedSearchPage = ({ location }) => {
 
         <SearchLayout>
           <SearchBoxArea>
-            <StyledSearchBox autoFocus />
-            <PoweredBy />
+            <SearchBox />
+            <CurrentRefinements />
           </SearchBoxArea>
 
           <SearchRefinementsArea>
@@ -137,7 +136,6 @@ const AdvancedSearchPage = ({ location }) => {
                   hitCardsExpanded={hitCardsExpanded}
                   setHitCardsExpanded={setHitCardsExpanded}
                 />
-                <ClearRefinements />
               </div>
             </SearchSettingsCluster>
             <NonEmptyHits
