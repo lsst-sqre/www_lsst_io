@@ -140,6 +140,8 @@ const GlobalStyle = createGlobalStyle`
     --c-tag-text: var(--c-neutral-700);
     --c-tag-background: var(--c-neutral-100);
     --c-button-background: var(--c-primary);
+    --c-button-background-hover: var(--c-cyan-700);
+    --c-button-background-active: var(--c-cyan-600);
     --c-button-text: var(--c-reversed-text);
     --c-faded-text: var(--c-neutral-600);
     --c-snippet-background: var(--c-neutral-050);
