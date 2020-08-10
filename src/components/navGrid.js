@@ -38,7 +38,7 @@ const NavCardContainer = styled.div`
 
 const NavCard = ({ slug, title, description }) => (
   <NavCardContainer>
-    <Link to={slug}>
+    <Link to={`/${slug}/`}>
       <h3>{title}</h3>
     </Link>
     <p>{description}</p>
