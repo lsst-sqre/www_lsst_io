@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Jonathan Sick <jsick@lsst.org>",
   "dependencies": {
-    "algoliasearch": "^4.3.1",
+    "algoliasearch": "^4.5.1",
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.7",
     "gatsby-background-image": "^1.1.2",
