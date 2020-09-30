@@ -42,6 +42,9 @@
 - key: RTN
   name: Rubin Technotes
 
+- key: SCTR
+  name: Systems Integration, Testing, and Commissioning Test Report
+
 - key: SMTN
   name: Simulations Technotes
 
