@@ -25,7 +25,7 @@
     "gatsby-transformer-yaml": "^2.4.14",
     "instantsearch.css": "^7.4.5",
     "moment": "^2.28.0",
-    "polished": "^3.6.5",
+    "polished": "^4.0.3",
     "prop-types": "^15.7.2",
     "qs": "^6.9.4",
     "react": "^16.13.1",
