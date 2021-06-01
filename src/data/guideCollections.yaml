@@ -20,6 +20,13 @@
     Documentation for Data Management's internal tooling and procedures.
 
 
+- title: Guides for Telescope and Site
+  slug: guides-for-ts
+  tag: org/ts
+  description: >
+    Documentation for Telescope and Site's software team.
+
+
 - title: Science Platform infrastructure documentation
   slug: science-platform-infrastructure-guides
   tag: system/science-platform
