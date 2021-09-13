@@ -27,6 +27,7 @@ import { StyledHits } from '../components/instantsearch/hits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
 import AutoSortBy from '../components/instantsearch/autoSortBy';
+import DateRangeInput from '../components/instantsearch/dateRangeInput';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -36,7 +37,7 @@ const searchClient = algoliasearch(
 /**
  * Create the URL parameters from the state.
  */
-const createUrlParams = state => `?${qs.stringify(state)}`;
+const createUrlParams = (state) => `?${qs.stringify(state)}`;
 
 /**
  * Create a full URL from the search state.
@@ -65,7 +66,7 @@ export default function DocSeriesTemplate({
   );
   const debouncedSearchState = useDebounce(searchState, DEBOUNCE_TIME);
 
-  const onSearchStateChange = updatedSearchState => {
+  const onSearchStateChange = (updatedSearchState) => {
     setSearchState(updatedSearchState);
   };
 
@@ -124,6 +125,14 @@ export default function DocSeriesTemplate({
             <SearchRefinementSection>
               <h2>Contributors</h2>
               <RefinementList attribute="authorNames" />
+            </SearchRefinementSection>
+            <SearchRefinementSection>
+              <h2>Date created</h2>
+              <DateRangeInput
+                attribute="sourceCreationTimestamp"
+                min={1420088400}
+                max={1672549199}
+              />
             </SearchRefinementSection>
           </SearchRefinementsArea>
 
