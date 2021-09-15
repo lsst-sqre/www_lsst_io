@@ -122,7 +122,7 @@ const AboutPage = () => (
           <caption>Status of content availability in this portal.</caption>
           <thead>
             <tr>
-              <th className="col-category"></th>
+              <th className="col-category" aria-label="Category" />
               <th className="col-type" scope="col">
                 Content type
               </th>
@@ -161,8 +161,8 @@ const AboutPage = () => (
             </tr>
             <tr>
               <td>DMTR &mdash; DocuShare (public)</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <td>LDM &mdash; lsst.io</td>
@@ -171,8 +171,8 @@ const AboutPage = () => (
             </tr>
             <tr>
               <td>LDM &mdash; DocuShare (public)</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <td>LPM &mdash; lsst.io</td>
@@ -181,8 +181,8 @@ const AboutPage = () => (
             </tr>
             <tr>
               <td>LPM &mdash; DocuShare (public)</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <td>LSE &mdash; lsst.io</td>
@@ -191,20 +191,20 @@ const AboutPage = () => (
             </tr>
             <tr>
               <td>LSE &mdash; DocuShare (public)</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <td>Zenodo &mdash; lsst-dm community</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <th className="category" scope="row">
                 Guides
               </th>
               <td>Sphinx-based guides &mdash; lsst.io</td>
-              <td></td>
+              <td />
               <td>Yes</td>
             </tr>
             <tr>
@@ -212,29 +212,29 @@ const AboutPage = () => (
                 Discussions
               </th>
               <td>Community forum (public)</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <td>DM RFC (public)</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <th className="category" scope="row">
                 Software
               </th>
               <td>GitHub repositories</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
             <tr>
               <th className="category" scope="row">
                 Misc.
               </th>
               <td>Glossary terms</td>
-              <td></td>
-              <td></td>
+              <td />
+              <td />
             </tr>
           </tbody>
           <tfoot>
