@@ -9,11 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
       - name: Read .nvmrc
         id: node_version
         run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
@@ -23,14 +18,8 @@ jobs:
         with:
           node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
 
-      - name: Install pre-commit
-        run: pip install pre-commit
-
       - name: Install npm packages
         run: npm install .
-
-      - name: Lint
-        run: pre-commit run --all-files
 
   build:
     runs-on: ubuntu-latest
