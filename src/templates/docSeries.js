@@ -90,7 +90,10 @@ export default function DocSeriesTemplate({
   );
 
   const startDate = new Date(2015, 0, 1);
-  const now = new Date();
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
 
   return (
     <Layout>
@@ -135,7 +138,7 @@ export default function DocSeriesTemplate({
               <DateRangeInput
                 attribute="sourceCreationTimestamp"
                 min={startDate.getTime() / 1000}
-                max={now.getTime() / 1000}
+                max={tomorrow.getTime() / 1000}
               />
             </SearchRefinementSection>
           </SearchRefinementsArea>
