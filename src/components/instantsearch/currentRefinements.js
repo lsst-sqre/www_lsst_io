@@ -7,6 +7,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CurrentRefinements as CurrentRefinementsCore } from 'react-instantsearch-dom';
+import moment from 'moment';
 
 /**
  * Custom prefixes for item labels.
@@ -31,6 +32,8 @@ const dateRangeAttributes = [
   'sourceUpdateTimestamp',
 ];
 
+const formatDate = (date) => moment(date).format('YYYY-MM-DD');
+
 /**
  * Transforms the label attribute of a refinement items to use a customized
  * label from labelPrefixes.
@@ -44,9 +47,9 @@ export const itemTransformer = (items) =>
       // Labels for date ranges
       const startDate = new Date(item.currentRefinement.min * 1000);
       const endDate = new Date(item.currentRefinement.max * 1000);
-      item.label = `${labelPrefixMap.get(
-        item.attribute
-      )}: ${startDate.toDateString()} to ${endDate.toDateString()}`;
+      item.label = `${labelPrefixMap.get(item.attribute)}: ${formatDate(
+        startDate
+      )} to ${formatDate(endDate)}`;
     } else {
       // Default case: labels for string refinements
       const labelParts = item.label.split(':', 2);
