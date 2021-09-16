@@ -89,6 +89,9 @@ export default function DocSeriesTemplate({
     [debouncedSearchState, location]
   );
 
+  const startDate = new Date(2015, 0, 1);
+  const now = new Date();
+
   return (
     <Layout>
       <SEO title={docSeries.name} description={docSeries.description} />
@@ -126,12 +129,13 @@ export default function DocSeriesTemplate({
               <h2>Contributors</h2>
               <RefinementList attribute="authorNames" />
             </SearchRefinementSection>
+
             <SearchRefinementSection>
               <h2>Date created</h2>
               <DateRangeInput
                 attribute="sourceCreationTimestamp"
-                min={1420088400}
-                max={1672549199}
+                min={startDate.getTime() / 1000}
+                max={now.getTime() / 1000}
               />
             </SearchRefinementSection>
           </SearchRefinementsArea>
