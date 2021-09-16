@@ -24,6 +24,7 @@ import CurrentRefinements from '../components/instantsearch/currentRefinements';
 import NonEmptyHits from '../components/instantsearch/nonEmptyHits';
 import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
+import DateRangeInput from '../components/instantsearch/dateRangeInput';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -33,7 +34,7 @@ const searchClient = algoliasearch(
 /**
  * Create the URL parameters from the state.
  */
-const createUrlParams = state => `?${qs.stringify(state)}`;
+const createUrlParams = (state) => `?${qs.stringify(state)}`;
 
 /**
  * Create a full URL from the search state.
@@ -59,7 +60,7 @@ const AdvancedSearchPage = ({ location }) => {
   );
   const debouncedSearchState = useDebounce(searchState, DEBOUNCE_TIME);
 
-  const onSearchStateChange = updatedSearchState => {
+  const onSearchStateChange = (updatedSearchState) => {
     setSearchState(updatedSearchState);
   };
 
@@ -81,6 +82,12 @@ const AdvancedSearchPage = ({ location }) => {
     },
     [debouncedSearchState, location]
   );
+
+  const startDate = new Date(2015, 0, 1);
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
 
   return (
     <Layout>
@@ -126,6 +133,24 @@ const AdvancedSearchPage = ({ location }) => {
             <SearchRefinementSection>
               <h2>Contributors</h2>
               <RefinementList attribute="authorNames" />
+            </SearchRefinementSection>
+
+            <SearchRefinementSection>
+              <h2>Date updated</h2>
+              <DateRangeInput
+                attribute="sourceUpdateTimestamp"
+                min={startDate.getTime() / 1000}
+                max={tomorrow.getTime() / 1000}
+              />
+            </SearchRefinementSection>
+
+            <SearchRefinementSection>
+              <h2>Date created</h2>
+              <DateRangeInput
+                attribute="sourceCreationTimestamp"
+                min={startDate.getTime() / 1000}
+                max={tomorrow.getTime() / 1000}
+              />
             </SearchRefinementSection>
           </SearchRefinementsArea>
 

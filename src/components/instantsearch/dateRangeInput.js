@@ -20,7 +20,7 @@ const StyledDateRangePicker = styled(DateRangePicker)`
     padding: 0 0.2rem;
   }
   .react-daterange-picker__inputGroup {
-    min-width: none;
+    min-width: auto;
   }
 `;
 
