@@ -4,11 +4,25 @@
  */
 
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connectRange } from 'react-instantsearch-dom';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 
 import useDebounce from '../../hooks/useDebounce';
+
+const StyledDateRangePicker = styled(DateRangePicker)`
+  .react-daterange-picker__wrapper {
+    border: 0px;
+    justify-content: space-between;
+  }
+  .react-daterange-picker__range-divider {
+    padding: 0 0.2rem;
+  }
+  .react-daterange-picker__inputGroup {
+    min-width: none;
+  }
+`;
 
 /**
  * Min/max date range selector component.
@@ -34,9 +48,9 @@ const DateRangeInputCore = ({ currentRefinement, refine, min, max }) => {
   };
 
   return (
-    <DateRangePicker
+    <StyledDateRangePicker
       disableCalendar
-      rangeDivider=" to "
+      rangeDivider="to"
       onChange={onChangeDateRange}
       value={[
         new Date(debouncedCurrentRefinement.min * 1000),
