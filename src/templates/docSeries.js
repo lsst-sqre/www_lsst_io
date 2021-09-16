@@ -134,6 +134,15 @@ export default function DocSeriesTemplate({
             </SearchRefinementSection>
 
             <SearchRefinementSection>
+              <h2>Date updated</h2>
+              <DateRangeInput
+                attribute="sourceUpdateTimestamp"
+                min={startDate.getTime() / 1000}
+                max={tomorrow.getTime() / 1000}
+              />
+            </SearchRefinementSection>
+
+            <SearchRefinementSection>
               <h2>Date created</h2>
               <DateRangeInput
                 attribute="sourceCreationTimestamp"
