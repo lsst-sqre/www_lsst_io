@@ -3,42 +3,40 @@
  * a range of dates.
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connectRange } from 'react-instantsearch-dom';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+
+import useDebounce from '../../hooks/useDebounce';
 
 /**
  * Min/max date range selector component.
  */
 const DateRangeInputCore = ({ currentRefinement, refine, min, max }) => {
-  const [dateRange, onChangeDateRange] = useState([
-    new Date(currentRefinement.min * 1000),
-    new Date(currentRefinement.max * 1000),
-  ]);
+  // Debouncing the current refinement ensures that the search results
+  // don't jump while trying to select dates.
+  const debouncedCurrentRefinement = useDebounce(currentRefinement, 1000);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onChangeDateRange = (newRange) => {
     refine({
-      min: dateRange[0].getTime() / 1000,
-      max: dateRange[1].getTime() / 1000,
+      min: newRange[0].getTime() / 1000,
+      max: newRange[1].getTime() / 1000,
     });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <DateRangePicker
-        disableCalendar
-        rangeDivider=" to "
-        onChange={onChangeDateRange}
-        value={dateRange}
-        minDate={new Date(min * 1000)}
-        maxDate={new Date(max * 1000)}
-      />
-      <button as="input" type="submit" aria-label="Filter">
-        Filter
-      </button>
-    </form>
+    <DateRangePicker
+      disableCalendar
+      rangeDivider=" to "
+      onChange={onChangeDateRange}
+      value={[
+        new Date(debouncedCurrentRefinement.min * 1000),
+        new Date(debouncedCurrentRefinement.max * 1000),
+      ]}
+      minDate={new Date(min * 1000)}
+      maxDate={new Date(max * 1000)}
+    />
   );
 };
 
