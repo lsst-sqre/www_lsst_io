@@ -19,10 +19,18 @@ const DateRangeInputCore = ({ currentRefinement, refine, min, max }) => {
   const debouncedCurrentRefinement = useDebounce(currentRefinement, 1000);
 
   const onChangeDateRange = (newRange) => {
-    refine({
-      min: newRange[0].getTime() / 1000,
-      max: newRange[1].getTime() / 1000,
-    });
+    if (newRange) {
+      refine({
+        min: newRange[0].getTime() / 1000,
+        max: newRange[1].getTime() / 1000,
+      });
+    } else {
+      // Reset to defaults when newRange is null
+      refine({
+        min,
+        max,
+      });
+    }
   };
 
   return (
