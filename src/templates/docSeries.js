@@ -28,6 +28,7 @@ import DetailsToggleButton from '../components/detailsToggle';
 import SearchSettingsCluster from '../components/searchSettingsCluster';
 import AutoSortBy from '../components/instantsearch/autoSortBy';
 import DateRangeInput from '../components/instantsearch/dateRangeInput';
+import RefinementOptIn from '../components/refinementOptIn';
 
 const searchClient = algoliasearch(
   '0OJETYIVL5',
@@ -135,20 +136,24 @@ export default function DocSeriesTemplate({
 
             <SearchRefinementSection>
               <h2>Date updated</h2>
-              <DateRangeInput
-                attribute="sourceUpdateTimestamp"
-                min={startDate.getTime() / 1000}
-                max={tomorrow.getTime() / 1000}
-              />
+              <RefinementOptIn>
+                <DateRangeInput
+                  attribute="sourceUpdateTimestamp"
+                  min={startDate.getTime() / 1000}
+                  max={tomorrow.getTime() / 1000}
+                />
+              </RefinementOptIn>
             </SearchRefinementSection>
 
             <SearchRefinementSection>
               <h2>Date created</h2>
-              <DateRangeInput
-                attribute="sourceCreationTimestamp"
-                min={startDate.getTime() / 1000}
-                max={tomorrow.getTime() / 1000}
-              />
+              <RefinementOptIn>
+                <DateRangeInput
+                  attribute="sourceCreationTimestamp"
+                  min={startDate.getTime() / 1000}
+                  max={tomorrow.getTime() / 1000}
+                />
+              </RefinementOptIn>
             </SearchRefinementSection>
           </SearchRefinementsArea>
 
