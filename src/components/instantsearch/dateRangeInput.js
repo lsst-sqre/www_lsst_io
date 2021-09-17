@@ -51,6 +51,7 @@ const DateRangeInputCore = ({ currentRefinement, refine, min, max }) => {
     <StyledDateRangePicker
       disableCalendar
       rangeDivider="to"
+      clearIcon={null}
       onChange={onChangeDateRange}
       value={[
         new Date(debouncedCurrentRefinement.min * 1000),
