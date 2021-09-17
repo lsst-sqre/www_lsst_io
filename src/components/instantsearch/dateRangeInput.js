@@ -22,6 +22,12 @@ const StyledDateRangePicker = styled(DateRangePicker)`
   .react-daterange-picker__inputGroup {
     min-width: auto;
   }
+  .react-daterange-picker__inputGroup input {
+    color: var(--c-text);
+  }
+  .react-daterange-picker__clear-button {
+    color: var(--c-text);
+  }
 `;
 
 /**
