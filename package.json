@@ -142,6 +142,7 @@
     }
   },
   "dependencies": {
+    "@wojtekmaj/react-daterange-picker": "^3.3.0",
     "algoliasearch": "^4.10.5",
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.13.0",

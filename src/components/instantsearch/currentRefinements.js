@@ -7,6 +7,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CurrentRefinements as CurrentRefinementsCore } from 'react-instantsearch-dom';
+import moment from 'moment';
 
 /**
  * Custom prefixes for item labels.
@@ -18,8 +19,20 @@ import { CurrentRefinements as CurrentRefinementsCore } from 'react-instantsearc
 const labelPrefixes = [
   ['authorNames', 'Contributors'],
   ['contentCategories.lvl0', 'Content type'],
+  ['sourceCreationTimestamp', 'Created'],
+  ['sourceUpdateTimestamp', 'Updated'],
 ];
 const labelPrefixMap = new Map(labelPrefixes);
+
+/**
+ * Attributes that use date-range based formatting
+ */
+const dateRangeAttributes = [
+  'sourceCreationTimestamp',
+  'sourceUpdateTimestamp',
+];
+
+const formatDate = (date) => moment(date).format('YYYY-MM-DD');
 
 /**
  * Transforms the label attribute of a refinement items to use a customized
@@ -28,12 +41,22 @@ const labelPrefixMap = new Map(labelPrefixes);
  * This function identifies refinements based on the prefix for the label,
  * which is the text before the ":".
  */
-export const itemTransformer = items =>
-  items.map(item => {
-    const labelParts = item.label.split(':', 2);
-    const suggestedPrefix = labelPrefixMap.get(labelParts[0]);
-    if (suggestedPrefix) {
-      item.label = `${suggestedPrefix}: ${labelParts[1]}`;
+export const itemTransformer = (items) =>
+  items.map((item) => {
+    if (dateRangeAttributes.includes(item.attribute)) {
+      // Labels for date ranges
+      const startDate = new Date(item.currentRefinement.min * 1000);
+      const endDate = new Date(item.currentRefinement.max * 1000);
+      item.label = `${labelPrefixMap.get(item.attribute)}: ${formatDate(
+        startDate
+      )} to ${formatDate(endDate)}`;
+    } else {
+      // Default case: labels for string refinements
+      const labelParts = item.label.split(':', 2);
+      const suggestedPrefix = labelPrefixMap.get(item.attribute);
+      if (suggestedPrefix) {
+        item.label = `${suggestedPrefix}: ${labelParts[1]}`;
+      }
     }
     return item;
   });

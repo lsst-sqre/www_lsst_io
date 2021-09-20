@@ -14,6 +14,7 @@ import { IconDataListTerm, IconDataListContent } from './basics/iconDataList';
 import UserCoupleIcon from '../icons/user-couple.svg';
 import TimeIcon from '../icons/time.svg';
 import CodeIcon from '../icons/code.svg';
+import HistoryIcon from '../icons/history.svg';
 import VisuallyHidden from './basics/visuallyHidden';
 
 const DocumentHitContainer = styled.div`
@@ -97,7 +98,7 @@ const Summary = styled.div`
 
 const PersonList = ({ className, names }) => (
   <ol className={className}>
-    {names.map(name => (
+    {names.map((name) => (
       <li key={name}>{name}</li>
     ))}
   </ol>
@@ -186,13 +187,30 @@ const StyledCodeIcon = styled(CodeIcon)`
   }
 `;
 
-const humanizeAge = timestamp => {
-  const t = moment(timestamp);
+const StyledHistoryIcon = styled(HistoryIcon)`
+  width: 0.85em;
+  width: 1cap;
+  height: 0.85em;
+  height: 1cap;
+
+  /* secondary and primary look better reversed */
+  .secondary {
+    fill: var(--c-icon-secondary);
+  }
+
+  .primary {
+    fill: var(--c-icon-secondary);
+  }
+`;
+
+const humanizeAge = (timestamp) => {
+  const t = moment.unix(timestamp).utc();
   const age = moment.duration(t.diff(moment()));
+  const formattedDate = t.format('YYYY-MM-DD');
   return (
-    <time dateTime={timestamp}>{`${age.humanize(true)} (${t.format(
-      'YYYY-MM-DD'
-    )})`}</time>
+    <time dateTime={formattedDate}>{`${age.humanize(
+      true
+    )} (${formattedDate})`}</time>
   );
 };
 
@@ -249,14 +267,26 @@ const DocumentHit = ({ hit, expanded }) => (
           </>
         )}
 
-        {hit.sourceUpdateTime && (
+        {hit.sourceUpdateTimestamp && (
           <>
             <IconDataListTerm>
               <StyledTimeIcon />
-              <VisuallyHidden>Updated on</VisuallyHidden>
+              <VisuallyHidden>Date updated</VisuallyHidden>
             </IconDataListTerm>
             <IconDataListContent>
-              {humanizeAge(hit.sourceUpdateTime)}
+              Updated {humanizeAge(hit.sourceUpdateTimestamp)}
+            </IconDataListContent>
+          </>
+        )}
+
+        {hit.sourceCreationTimestamp && (
+          <>
+            <IconDataListTerm>
+              <StyledHistoryIcon />
+              <VisuallyHidden>Date created</VisuallyHidden>
+            </IconDataListTerm>
+            <IconDataListContent>
+              Created {humanizeAge(hit.sourceCreationTimestamp)}
             </IconDataListContent>
           </>
         )}
