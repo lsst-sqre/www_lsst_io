@@ -364,6 +364,15 @@
     ATDomeTrajectory CSC commands the dome to follow the telescope.
 
 
+- slug: ts-atptg
+  title: ts_atptg
+  github: lsst-ts/ts_pointing_common
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+
+
 - slug: ts-athexapod
   title: lsst.ts.ATHexapod
   github: lsst-ts/ts_ATHexapod
@@ -404,15 +413,22 @@
     Handle authorization requests for SAL users.
 
 
-- slug: ts-dome
-  title: lsst.ts.dome
-  github: lsst-ts/ts_dome
+- slug: ts-cbp
+  title: ts_cbp
+  github: lsst-ts/ts_cbp
   tags:
     - org/ts
     - system/observatory
   description: >
-    Controller for the Simonyi Survey Telescope dome at Vera C. Rubin Observatory.
+    The Collimated Beam Projector (CBP) is a Commandable SAL Component that provides horizontal and vertical axis control of an integrating sphere in conjunction with a projecting light source for calibrating the Main Telescope.
 
+
+- slug: ts-dsm
+  title: ts_dsm
+  github: lsst-ts/ts_dsm
+  tags:
+    - orgs/ts
+    - system/observatory
 
 - slug: ts-externalscripts
   title: ts_externalscripts
@@ -454,6 +470,15 @@
     - Python code to communicate with the main telescope camera rotator and hexapod low level controllers (code running in PXI computers).
 
 
+- slug: ts-jenkins-shared-library
+  title: Jenkins Shared Library
+  github: lsst-ts/ts_jenkins_shared_library
+  tags:
+    - org/ts
+  description: >
+    The Jenkins Shared Library is designed to create standardized and reuseable Jenkins Pipelines. 
+
+
 - slug: ts-mtaos
   title: MTAOS
   github: lsst-ts/ts_MTAOS
@@ -462,6 +487,16 @@
     - system/observatory
   description: >
     The main telescope active optical system (MTAOS) is responsible for making the closed-loop optical system. It calculates the wavefront error based on defocal images, estimates the optical state, and sends the correction of bending modes and rigid body positions to mirrors and hexapods.
+
+
+- slug: ts-mtdome
+  title: ts_mtdome
+  github: lsst-ts/ts_dome
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Controller for the Simonyi Survey Telescope dome at Vera C. Rubin Observatory.
 
 
 - slug: ts-mtdometrajectory
@@ -484,6 +519,23 @@
     A CSC that controls the Simonyi Survey Telescope main axes and related components.
 
 
+- slug: ts-mtptg
+  title: ts_mtptg
+  github: lsst-ts/ts_pointing_common
+  tags:
+    - org/ts
+    - system/observatory
+
+- slug: ts-mtrotator
+  title: ts_mtrotator
+  github: lsst-ts/ts_mtrotator
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Python Commandable SAL Component (CSC) for the LSST main telescope rotator.
+
+
 - slug: ts-observatory-control
   title: lsst.ts.observatory.control
   github: lsst-ts/ts_observatory_control
@@ -492,16 +544,6 @@
     - system/observatory
   description: >
     Observatory control software.
-
-
-- slug: ts-rotator
-  title: lsst.ts.rotator
-  github: lsst-ts/ts_rotator
-  tags:
-    - org/ts
-    - system/observatory
-  description: >
-    Python Commandable SAL Component (CSC) for the LSST main telescope rotator.
 
 
 - slug: ts-sal
@@ -567,14 +609,34 @@
     SAL scripts for operating the Vera Rubin Observatory.
 
 
+- slug: ts-tcpip
+  title: ts_tcpip
+  github: lsst-ts/ts_tcpip
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    Python code to support TCP/IP communication using asyncio.
+
+
 - slug: ts-tma
   title: Telescope Mount Assembly Documentation
-  github: lsst-ts/
+  github: lsst-ts/ts_tma
   tags:
     - org/ts
     - system/observatory
   description: >
     Telescope Mount Assembly Documentation provided by the vendor.
+
+
+- slug: ts-tunablelaser
+  title: ts_tunablelaser
+  github: lsst-ts/ts_tunablelaser
+  tags:
+    - org/ts
+    - system/observatory
+  description: >
+    The Tunable Laser CSC is used to control an Ekspla NT-242 laser via the Rubin Observatory Control System. 
 
 
 - slug: ts-watcher
