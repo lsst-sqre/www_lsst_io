@@ -667,3 +667,13 @@
   description: >
     The TSSW developer guide as ported from Confluence.
 
+
+- slug: dp0-2
+  title: Data Preview 0.2
+  github: lsst/dp0-2_lsst_io
+  tags:
+    - users/science
+    - editorial/featured
+  description: >
+    DP0.2 is the second phase of the Data Preview 0 program using precursor data (simulated images from the DESC DC2 data challenge) hosted on the Rubin Science Platform.
+
