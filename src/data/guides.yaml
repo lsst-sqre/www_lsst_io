@@ -180,18 +180,6 @@
     LTD Keeper is the backend database and application that runs LSST the Docs. You can interact with the Keeper through its RESTful HTTP API.
 
 
-- slug: nb
-  title: Rubin Science Platform Notebook Aspect User Guide
-  github: lsst-dm/nb_lsst_io
-  tags:
-    - org/dm
-    - users/science
-    - editorial/featured
-    - system/science-platform
-  description: >
-    The Notebook Aspect enables you to do your science at the LSST Data Facility, with the LSST Science Pipelines, a full suite of development tools, and your own Python code. The Notebook Aspect is powered by the JupyterLab project.
-
-
 - slug: nbreport
   title: nbreport
   github: lsst-sqre/nbreport
@@ -283,6 +271,18 @@
     - system/roundtable
   description: >
     Roundtable is a Kubernetes cluster for microservices, managed by the SQuaRE team.
+
+
+- slug: rsp
+  title: Rubin Science Platform
+  github: lsst/rsp_lsst_io
+  tags:
+    - org/dm
+    - users/science
+    - editorial/featured
+    - system/science-platform
+  description: >
+    The Rubin Science Platform is an online service that enables you to access and analyze Rubin LSST data. This documentation will help you set up your user account and work with the Rubin Science Platform’s software and services.
 
 
 - slug: rubin-sim
