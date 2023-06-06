@@ -36,6 +36,9 @@
 - key: PSTN
   name: Project Science Team Technotes
 
+- key: PSTR
+  name: Project Science Team Test Report
+
 - key: RTN
   name: Rubin Technotes
 
