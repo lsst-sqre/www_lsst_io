@@ -654,3 +654,13 @@
   description: >
     DP0.2 is the second phase of the Data Preview 0 program using precursor data (simulated images from the DESC DC2 data challenge) hosted on the Rubin Science Platform.
 
+
+- slug: dp0-3
+  title: Data Preview 0.3
+  github: lsst/dp0-3_lsst_io
+  tags:
+    - users/science
+    - editorial/featured
+  description: >
+    DP0.3 provides a catalog of solar system objects from a simulated LSST ten-year wide-fast-deep survey by the Solar System Science Collaboration.
+
