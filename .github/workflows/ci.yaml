@@ -12,23 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Read .nvmrc
-        id: node_version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+      - uses: actions/checkout@v4
 
       - name: Set up node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
-
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version-file: .nvmrc
+          cache: 'npm'
 
       - name: Install npm packages
         run: npm install .
@@ -37,26 +27,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Read .nvmrc
-        id: node_version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+      - uses: actions/checkout@v4
 
       - name: Set up node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
-
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version-file: .nvmrc
+          cache: 'npm'
 
       - name: Install npm packages
         run: npm install .
 
       - name: Build Gatsby site
         run: npm run build
+
+      - name: Upload
+        if: github.ref == 'refs/heads/main'
+        uses: lsst-sqre/ltd-upload@v1
+        with:
+          project: 'www'
+          dir: 'public'
+          username: ${{ secrets.LTD_USERNAME }}
+          password: ${{ secrets.LTD_PASSWORD }}
