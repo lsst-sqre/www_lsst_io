@@ -60,3 +60,14 @@ jobs:
 
       - name: Build Gatsby site
         run: npm run build
+
+      - name: List build directory
+        run: ls -l public
+
+      - uses: lsst-sqre/build-and-push-to-ghcr@v1
+        id: build
+        with:
+          image: ${{ github.repository }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: echo Pushed ghcr.io/${{ github.repository }}:${{ steps.build.outputs.tag }}
