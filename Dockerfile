@@ -14,7 +14,7 @@ RUN chmod +x /sbin/nginx-boot
 RUN apk --update add nginx bash && \
     rm -fR /var/cache/apk/*
 
-COPY ./public /pub
+COPY public/ /pub
 
 CMD [ "/sbin/nginx-boot" ]
 EXPOSE 80
