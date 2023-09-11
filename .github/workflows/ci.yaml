@@ -60,3 +60,12 @@ jobs:
 
       - name: Build Gatsby site
         run: npm run build
+
+      - name: Upload
+        if: github.ref == 'refs/heads/main'
+        uses: lsst-sqre/ltd-upload@v1
+        with:
+          project: 'www'
+          dir: 'public'
+          username: ${{ secrets.LTD_USERNAME }}
+          password: ${{ secrets.LTD_PASSWORD }}
