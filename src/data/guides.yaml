@@ -203,7 +203,7 @@
 
 - slug: obs-controls
   title: Rubin Observatory Controls Documentation
-  github: lsst-ts/observatory-controls-docs
+  github: lsst-ts/observatory-ops-docs
   tags:
     - org/ts
     - system/observatory
