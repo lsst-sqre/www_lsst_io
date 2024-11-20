@@ -43,8 +43,8 @@ const Footer = () => (
             </a>
           </li>
           <li>
-            <a href="slack://channel?team=T06D204F2&id=C2B6DQBAL">
-              Chat in #dm-docs-support on Slack (internal)
+            <a href="slack://channel?team=T02SVMGU4&id=C07QK9N14BY">
+              Chat in #square-docs-support on Slack (internal)
             </a>
           </li>
         </ul>
