@@ -3,6 +3,9 @@
 # Each item is transformed into a category search page for that document
 # series in gatsby-node.js
 
+- key: CTN
+  name: Camera Technotes
+
 - key: DMTN
   name: Data Management Technotes
 
