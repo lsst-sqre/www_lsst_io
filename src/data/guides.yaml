@@ -668,7 +668,6 @@
   github: lsst/dp0_lsst_io
   tags:
     - users/science
-    - editorial/featured
   description: >
     DP0 serves as an early integration test of the Legacy Survey of Space and Time (LSST) Science Pipelines and the Rubin Science Platform (RSP) and to enable a limited number of scientists and students to begin early preparations for science with simulated LSST-like data sets.
 
