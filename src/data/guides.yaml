@@ -650,7 +650,6 @@
   github: lsst/dp0-2_lsst_io
   tags:
     - users/science
-    - editorial/featured
   description: >
     DP0.2 is the second phase of the Data Preview 0 program using precursor data (simulated images from the DESC DC2 data challenge) hosted on the Rubin Science Platform.
 
@@ -660,7 +659,26 @@
   github: lsst/dp0-3_lsst_io
   tags:
     - users/science
-    - editorial/featured
   description: >
     DP0.3 provides a catalog of solar system objects from a simulated LSST ten-year wide-fast-deep survey by the Solar System Science Collaboration.
+
+
+- slug: dp0
+  title: Data Preview 0
+  github: lsst/dp0_lsst_io
+  tags:
+    - users/science
+    - editorial/featured
+  description: >
+    DP0 serves as an early integration test of the Legacy Survey of Space and Time (LSST) Science Pipelines and the Rubin Science Platform (RSP) and to enable a limited number of scientists and students to begin early preparations for science with simulated LSST-like data sets.
+
+
+- slug: dp1
+  title: Data Preview 1
+  github: lsst/dp1_lsst_io
+  tags:
+    - users/science
+    - editorial/featured
+  description: >
+    Data Preview 1 contains image and catalog products from LSST Science Pipelines v29 processing of observations obtained with the LSST Commissioning Camera of seven ~1 square degree fields over seven weeks in late 2024.
 
