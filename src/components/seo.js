@@ -69,6 +69,13 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      script={[
+        {
+          defer: true,
+          'data-domain': 'lsst.io',
+          src: 'https://plausible.io/js/script.file-downloads.hash.outbound-links.js',
+        },
+      ]}
     />
   );
 }
