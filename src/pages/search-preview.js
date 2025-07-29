@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -29,9 +30,17 @@ const SearchPreviewPage = () => (
       triggerId="searchWidgetTrigger"
     />
 
-    <input placeholder="Search here" id="searchWidgetTrigger" />
+    <StyledInput placeholder="Search" id="searchWidgetTrigger" />
   </Layout>
 );
+
+const StyledInput = styled.input`
+  width: 100%;
+  box-shadow: var(--elevation-md);
+  border-radius: var(--border-radius-1);
+  font-size: 1.2rem;
+  padding: var(--space-xxs);
+`;
 
 SearchPreviewPage.propTypes = {};
 
