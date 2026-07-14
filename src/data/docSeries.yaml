@@ -54,6 +54,9 @@
 - key: SITCOMTN
   name: Systems Integration, Testing, and Commissioning Technotes
 
+- key: SOTN
+  name: Summit Operations Technical Notes
+
 - key: SQR
   name: SQuaRE Technotes
 
