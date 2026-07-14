@@ -1,0 +1,27 @@
+# Netlify build configuration.
+#
+# The build settings here (command, publish) mirror what was previously
+# configured only through the Netlify UI, so that they are visible and
+# reviewable in the repo.
+
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  # Netlify's build image ships a global libvips. Without this, sharp finds it
+  # and compiles from source instead of downloading its prebuilt binary. That
+  # compile runs through the node-gyp bundled with npm 6, whose vendored gyp
+  # opens files with mode 'rU' -- removed in Python 3.11, and the build image now
+  # ships Python 3.14. Ignoring the global libvips restores the prebuilt path.
+  #
+  # This bites the sharp inside the Essential Gatsby plugin, which Netlify
+  # auto-installs for Gatsby <= 5.11 and which we cannot uninstall from the UI.
+  SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
+
+  # Overrides .nvmrc for Netlify's Linux builder only. The Essential Gatsby
+  # plugin declares engines >= 14.17.0, so 14.15.0 trips an unsupported-engine
+  # warning. .nvmrc stays at 14.15.0 because Node 14 has no macOS arm64 build,
+  # so developers on Apple Silicon cannot install a newer 14.x without
+  # compiling it from source.
+  NODE_VERSION = "14.21.3"
