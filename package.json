@@ -145,7 +145,7 @@
     "@wojtekmaj/react-daterange-picker": "^3.3.0",
     "algoliasearch": "^4.10.5",
     "babel-plugin-styled-components": "^1.13.2",
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.15.0",
     "gatsby-background-image": "^1.5.3",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-canonical-urls": "^3.13.0",
